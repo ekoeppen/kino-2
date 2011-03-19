@@ -1,0 +1,647 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html lang="en">
+<!-- $Id: recurse.html,v 1.1.1.1 1998/12/21 17:16:44 koeppen Exp $ -->
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<TITLE>HTML 4.0 Specification</TITLE>
+<LINK rel="next" href="about.html">
+<LINK rel="contents" href="cover.html#toc">
+<LINK rel="STYLESHEET" href="style/default.css" type="text/css">
+</HEAD>
+<body>
+<div class="navbar">
+<center><a href="about.html">next</a> &nbsp; <a href="#toc">table of contents</a>
+</center>
+</div>
+
+
+<p align="right"><a href="http://www.w3.org/Consortium/"><img
+src="images/w3c_home.gif" alt="W3C" align="left" border="0"
+hspace="0"></a>HTML40-970917</p>
+
+<h1 align="center">HTML 4.0 Specification</h1>
+<P align="center">
+<strong>W3C Working Draft <i>17-Sep-1997</i></strong></P>
+
+<dl>
+<dt>This version:
+<dd><a href="http://www.w3.org/TR/WD-html40-970917/">http://www.w3.org/TR/WD-html40-970917/</a>
+<dt>Latest version:
+<dd><a href="http://www.w3.org/TR/WD-html40/">http://www.w3.org/TR/WD-html40/</a>
+<dt>Previous version:
+<dd><a href="http://www.w3.org/TR/WD-html40-970708/">http://www.w3.org/TR/WD-html40-970708/</a>
+</dl>
+
+
+<h2>Abstract</h2> 
+
+<p>This specification defines the HyperText Markup Language (HTML),
+version 4.0, the publishing language of the World Wide Web. In addition
+to the text, multimedia, and hyperlink features of the previous versions
+of HTML, HTML 4.0 supports more multimedia options, scripting languages,
+style sheets, better printing facilities, and documents that are more
+accessible to users with disabilities. HTML 4.0 also takes great strides
+towards the internationalization of documents, with the goal of making
+the Web truly World Wide.
+
+<p>HTML 4.0 is an SGML application conforming to International Standard
+ISO 8879 -- <dfn>Standard Generalized Markup Language</dfn> <a
+rel="biblioentry" href="./references.html#ref-ISO8879">[ISO8879]</a>).
+As an SGML application, the syntax of conforming HTML 4.0 documents is
+defined by the combination of the <a href="sgml/sgmldecl.html">SGML
+declaration</a> and the <a href="sgml/dtd.html">document type
+definition</a> (DTD). This specification defines the intended
+interpretation of HTML 4.0 elements and adds syntax constraints 
+that may not be expressed by the DTD alone.
+
+<h2>Status of this document</h2>
+
+<p>This is a W3C Working Draft for review by W3C members and other
+interested parties. It is a draft document and may be updated, replaced
+or obsoleted by other documents at any time. It is inappropriate to use
+W3C Working Drafts as reference material or to cite them as other than
+"work in progress". This is work in progress and does not imply
+endorsement by, or the consensus of, either W3C or members of the HTML
+working group.
+
+<p>This document has been produced as part of the <A
+HREF="http://www.w3.org/MarkUp/Activity.html">W3C HTML
+Activity</A>, and is intended as a draft of a proposed recommendation
+for HTML.
+
+<P>HTML 4.0 replaces HTML 3.2, specified in <a
+href="http://www.w3.org/TR/REC-html32">http://www.w3.org/TR/REC-html32</a>.
+
+<h2>Editors</h2>
+<UL>
+<LI><a href="http://www.w3.org/People/Raggett">Dave Raggett</a> &lt;<a href="mailto:dsr@w3.org">dsr@w3.org</a>&gt;
+<LI><a href="http://www.w3.org/People/Arnaud">Arnaud Le Hors</a> &lt;<a href="mailto:lehors@w3.org">lehors@w3.org</a>&gt;
+<LI>Ian Jacobs &lt;<a href="mailto:ij@w3.org">ij@w3.org</a>&gt;
+</UL>
+
+<h2>Comments</h2>
+
+<p>Please send detailed comments on this document to <a
+href="mailto:www-html-editor@w3.org">www-html-editor@w3.org</a>. We cannot
+guarantee a personal response but we will try when it is appropriate. Public
+discussion on HTML features takes place on <a
+href="http://www.w3.org/MarkUp/Forums#www-html">www-html@w3.org</a>.
+</p>
+
+<h2><a name="toc">Table of Contents</a></h2>
+<ol>
+<li><a href="about.html" rel="chapter">About the HTML 4.0 Specification</a>
+<ol>
+<li><a href="about.html#h-1.1">How to read the specification</a>
+<li><a href="about.html#h-1.2">How the specification is organized</a>
+<li><a href="about.html#h-1.3">Acknowledgments</a>
+</ol>
+<li><a href="intro/intro.html" rel="chapter">Introduction to HTML 4.0</a>
+<ol>
+<li><a href="intro/intro.html#h-2.1">A brief history of HTML</a>
+<li><a href="intro/intro.html#h-2.2">HTML 4.0</a>
+<ol>
+<li><a href="intro/intro.html#h-2.2.1">Internationalization</a>
+<li><a href="intro/intro.html#h-2.2.2">Accessibility</a>
+<li><a href="intro/intro.html#h-2.2.3">Tables</a>
+<li><a href="intro/intro.html#h-2.2.4">Compound documents</a>
+<li><a href="intro/intro.html#h-2.2.5">Style sheets</a>
+<li><a href="intro/intro.html#h-2.2.6">Scripting</a>
+<li><a href="intro/intro.html#h-2.2.7">Printing</a>
+</ol>
+<li><a href="intro/intro.html#h-2.3">Designing documents with HTML 4.0</a>
+<ol>
+<li><a href="intro/intro.html#h-2.3.1">Separate structure and presentation</a>
+<li><a href="intro/intro.html#h-2.3.2">Consider universal accessibility to the Web</a>
+<li><a href="intro/intro.html#h-2.3.3">Help user agents with incremental rendering</a>
+</ol>
+</ol>
+<li><a href="intro/sgmltut.html" rel="chapter">A brief SGML tutorial</a>
+<ol>
+<li><a href="intro/sgmltut.html#h-3.1">HTML syntax</a>
+<ol>
+<li><a href="intro/sgmltut.html#h-3.1.1">Entities</a>
+<li><a href="intro/sgmltut.html#h-3.1.2">Elements</a>
+<li><a href="intro/sgmltut.html#h-3.1.3">Attributes</a>
+<li><a href="intro/sgmltut.html#h-3.1.4">HTML comments</a>
+<li><a href="intro/sgmltut.html#h-3.1.5">SGML features with limited support</a>
+<ul>
+<li><a href="intro/sgmltut.html#h-3.1.5.1">Marked Sections</a>
+<li><a href="intro/sgmltut.html#h-3.1.5.2">Processing Instructions your user agent should hide these</a>
+<li><a href="intro/sgmltut.html#h-3.1.5.3">Document Type Declaration Subset</a>
+<li><a href="intro/sgmltut.html#h-3.1.5.4">Shorthand Markup Prohibited</a>
+</ul>
+</ol>
+<li><a href="intro/sgmltut.html#h-3.2">How to read the HTML DTD</a>
+<ol>
+<li><a href="intro/sgmltut.html#h-3.2.1">Block level and Inline elements</a>
+<li><a href="intro/sgmltut.html#h-3.2.2">DTD Comments</a>
+<li><a href="intro/sgmltut.html#h-3.2.3">Parameter entity definitions</a>
+<li><a href="intro/sgmltut.html#h-3.2.4">Element definitions</a>
+<ul>
+<li><a href="intro/sgmltut.html#h-3.2.4.1">Content model definitions</a>
+</ul>
+<li><a href="intro/sgmltut.html#h-3.2.5">Attribute definitions</a>
+<ul>
+<li><a href="intro/sgmltut.html#h-3.2.5.1">DTD entities in attribute definitions</a>
+<li><a href="intro/sgmltut.html#h-3.2.5.2">Boolean attributes</a>
+</ul>
+</ol>
+</ol>
+<li><a href="convent.html" rel="chapter">Definitions and Conventions</a>
+<ol>
+<li><a href="convent.html#h-4.1">Definitions</a>
+<li><a href="convent.html#h-4.2">Document conventions</a>
+<ol>
+<li><a href="convent.html#h-4.2.1">Elements and attributes</a>
+<li><a href="convent.html#h-4.2.2">Notes and examples</a>
+</ol>
+<li><a href="convent.html#h-4.3">SGML</a>
+</ol>
+<li><a href="htmlweb.html" rel="chapter">HTML and URLs</a> <em>- Locating
+resources on the Web </em>
+<ol>
+<li><a href="htmlweb.html#h-5.1">Uniform Resource Locators (URLs)</a>
+<ol>
+<li><a href="htmlweb.html#h-5.1.1">Fragment identifiers</a>
+<li><a href="htmlweb.html#h-5.1.2">Relative URLs</a>
+<li><a href="htmlweb.html#h-5.1.3">URLs in HTML</a>
+<ul>
+<li><a href="htmlweb.html#h-5.1.3.1">MAILTO URLs</a>
+</ul>
+</ol>
+</ol>
+<li><a href="charset.html" rel="chapter">HTML Document Character
+ Set</a> <em>- Character sets, character encodings, and entities</em>
+<ol>
+<li><a href="charset.html#h-6.1">The Document Character Set</a>
+<li><a href="charset.html#h-6.2">Character entities</a>
+</ol>
+<li><a href="types.html" rel="chapter">Basic HTML data
+ types</a> <em>- Character data, colors, and lengths</em>
+<ol>
+<li><a href="types.html#h-7.1">URLs</a>
+<li><a href="types.html#h-7.2">Character data</a>
+<li><a href="types.html#h-7.3">Colors</a>
+<ol>
+<li><a href="types.html#h-7.3.1">Notes on using colors</a>
+</ol>
+<li><a href="types.html#h-7.4">Lengths and Pixels</a>
+</ol>
+<li><a href="struct/global.html" rel="chapter">The global structure of an HTML document</a> <em>- The HEAD and BODY of a document
+</em>
+<ol>
+<li><a href="struct/global.html#h-8.1">HTML version information</a>
+<li><a href="struct/global.html#h-8.2">The <samp class="einst2">HTML</samp> element</a>
+<li><a href="struct/global.html#h-8.3">The <samp class="einst2">HEAD</samp> element</a>
+<ol>
+<li><a href="struct/global.html#h-8.3.1">Titles: the
+<samp class="einst2">TITLE</samp>
+element and the <samp class="ainst2">title</samp> attribute</a>
+<li><a href="struct/global.html#h-8.3.2">Meta information</a>
+<ul>
+<li><a href="struct/global.html#h-8.3.2.1">The <samp class="einst2">META</samp> element</a>
+<li><a href="struct/global.html#h-8.3.2.2">Meta data profiles</a>
+</ul>
+</ol>
+<li><a href="struct/global.html#h-8.4">The <samp class="einst2">BODY</samp> element</a>
+<ol>
+<li><a href="struct/global.html#h-8.4.1">Element identifiers: the id and class attributes</a>
+<li><a href="struct/global.html#h-8.4.2">Grouping elements: the <samp class="einst2">DIV</samp> and <samp class="einst2">SPAN</samp> elements</a>
+<li><a href="struct/global.html#h-8.4.3">Headings: The <samp class="einst2">H1</samp>,
+<samp class="einst2">H2</samp>,
+<samp class="einst2">H3</samp>,
+<samp class="einst2">H4</samp>,
+<samp class="einst2">H5</samp>,
+<samp class="einst2">H6</samp> elements</a>
+<li><a href="struct/global.html#h-8.4.4">The <samp class="einst2">ADDRESS</samp>
+element</a>
+</ol>
+</ol>
+<li><a href="struct/dirlang.html" rel="chapter">Language information and text direction</a> <em>-
+	International considerations for text</em>
+<ol>
+<li><a href="struct/dirlang.html#h-9.1">Specifying the language of content: the
+	    <samp>lang</samp> attribute</a>
+<ol>
+<li><a href="struct/dirlang.html#h-9.1.1">Inheritance of language codes</a>
+<li><a href="struct/dirlang.html#h-9.1.2">Interpretation of language codes</a>
+</ol>
+<li><a href="struct/dirlang.html#h-9.2">Specifying the direction of text: the 
+	      <samp>dir</samp> attribute</a>
+<ol>
+<li><a href="struct/dirlang.html#h-9.2.1">Introduction to the bidirectional algorithm</a>
+<li><a href="struct/dirlang.html#h-9.2.2">Inheritance of text direction information</a>
+<li><a href="struct/dirlang.html#h-9.2.3">Setting the direction of embedded text</a>
+<li><a href="struct/dirlang.html#h-9.2.4">Overriding the bidirectional algorithm: the <samp class="einst2">BDO</samp> element</a>
+<li><a href="struct/dirlang.html#h-9.2.5">Support for character directionality and joining</a>
+<li><a href="struct/dirlang.html#h-9.2.6">The effect of style sheets on bidirectionality</a>
+<li><a href="struct/dirlang.html#h-9.2.7">Undisplayable characters</a>
+</ol>
+</ol>
+<li><a href="struct/text.html" rel="chapter">Text</a> <em>- Paragraphs, Lines, and Phrases </em>
+<ol>
+<li><a href="struct/text.html#h-10.1">White space</a>
+<li><a href="struct/text.html#h-10.2">Structured text</a>
+<ol>
+<li><a href="struct/text.html#h-10.2.1">Phrasal elements: <samp class="einst2">EM</SAMP>,
+<samp class="einst2">STRONG</SAMP>, <samp class="einst2">DFN</SAMP>, <samp class="einst2">CODE</SAMP>, <samp class="einst2">SAMP</SAMP>, 
+<samp class="einst2">KBD</SAMP>, <SAMP class=
+"edef">VAR</SAMP>, <samp class="einst2">CITE</SAMP>, and <samp class="einst2">ACRONYM</SAMP></a>
+<li><a href="struct/text.html#h-10.2.2">Quotations: The <samp class="einst2">
+BLOCKQUOTE</SAMP> and <samp class="einst2">Q</SAMP>
+elements</a>
+<li><a href="struct/text.html#h-10.2.3">Subscripts and superscripts: the <SAMP class
+="edef">SUB</SAMP> and <samp class="einst2">
+SUP</SAMP> elements</a>
+</ol>
+<li><a href="struct/text.html#h-10.3">Lines and Paragraphs</a>
+<ol>
+<li><a href="struct/text.html#h-10.3.1">Paragraphs: the <samp class="einst2">P</SAMP>
+ element</a>
+<li><a href="struct/text.html#h-10.3.2">Visual rendering of paragraphs</a>
+<li><a href="struct/text.html#h-10.3.3">Controlling line breaks</a>
+<ul>
+<li><a href="struct/text.html#h-10.3.3.1">Forcing a line break: the <samp class="einst2">
+BR</SAMP> element</a>
+<li><a href="struct/text.html#h-10.3.3.2">Prohibiting a line break</a>
+</ul>
+<li><a href="struct/text.html#h-10.3.4">Hyphenation</a>
+<li><a href="struct/text.html#h-10.3.5">Preformatted text: The <samp class="einst2">PRE</SAMP> element</a>
+</ol>
+<li><a href="struct/text.html#h-10.4">Marking document changes: The INS and DEL elements</a>
+<ol>
+<li><a href="struct/text.html#h-10.4.1">Date and time format</a>
+</ol>
+</ol>
+<li><a href="struct/lists.html" rel="chapter">Lists</a> <em>- Unordered, Ordered, and Definition Lists
+</em>
+<ol>
+<li><a href="struct/lists.html#h-11.1">Unordered (<samp class="einst2">UL</samp>)
+and ordered (<samp class="einst2">OL</samp>)
+lists</a>
+<ol>
+<li><a href="struct/lists.html#h-11.1.1">Lists formatted by visual user agents</a>
+</ol>
+<li><a href="struct/lists.html#h-11.2">Definition lists: the <samp class="einst2">DL</samp>,
+<samp class="einst2">DT</samp>,
+and 
+<samp class="einst2">DD</samp> elements</a>
+<li><a href="struct/lists.html#h-11.3">The <samp class="einst2">DIR</samp>
+and <samp class="einst2">MENU</samp> elements</a>
+</ol>
+<li><a href="struct/tables.html" rel="chapter">Tables</a>
+<ol>
+<li><a href="struct/tables.html#h-12.1">Elements for constructing tables</a>
+<ol>
+<li><a href="struct/tables.html#h-12.1.1">The <samp class="einst2">TABLE</SAMP>
+element</a>
+<ul>
+<li><a href="struct/tables.html#h-12.1.1.1">Calculating the number of rows and columns in a table</a>
+<li><a href="struct/tables.html#h-12.1.1.2">Table directionality</a>
+</ul>
+<li><a href="struct/tables.html#h-12.1.2">Table Captions: The <samp class="einst2">CAPTION</SAMP> element</a>
+<li><a href="struct/tables.html#h-12.1.3">Groups of rows: the <samp class="einst2">THEAD</SAMP>, <samp class="einst2">TFOOT</SAMP>, and <samp class="einst2">TBODY</SAMP> elements</a>
+<li><a href="struct/tables.html#h-12.1.4">Groups of columns: the <samp class="einst2">COLGROUP</SAMP> and <samp class="einst2">COL</SAMP> elements
+</a>
+<ul>
+<li><a href="struct/tables.html#h-12.1.4.1">The <samp class="einst2">COLGROUP</SAMP>
+ element</a>
+<li><a href="struct/tables.html#h-12.1.4.2">The <samp class="einst2">COL</SAMP>
+element</a>
+</ul>
+<li><a href="struct/tables.html#h-12.1.5">Table rows: The <samp class="einst2">TR</SAMP> element</a>
+<li><a href="struct/tables.html#h-12.1.6">Table cells: The <samp class="einst2">TH</SAMP> and <samp class="einst2">TD</SAMP> elements</a>
+<ul>
+<li><a href="struct/tables.html#h-12.1.6.1">Labeling cells for Speech Synthesis</a>
+<li><a href="struct/tables.html#h-12.1.6.2">Cells that span several rows or columns</a>
+</ul>
+</ol>
+<li><a href="struct/tables.html#h-12.2">Table formatting by visual user agents</a>
+<ol>
+<li><a href="struct/tables.html#h-12.2.1">Horizontal and vertical alignment</a>
+<ul>
+<li><a href="struct/tables.html#h-12.2.1.1">Inheritance of alignment specifications</a>
+</ul>
+<li><a href="struct/tables.html#h-12.2.2">Borders and rules</a>
+<li><a href="struct/tables.html#h-12.2.3">Cell margins</a>
+</ol>
+<li><a href="struct/tables.html#h-12.3">Some sample tables</a>
+<ol>
+<li><a href="struct/tables.html#h-12.3.1">Sample 1</a>
+<li><a href="struct/tables.html#h-12.3.2">Sample 2</a>
+</ol>
+</ol>
+<li><a href="struct/links.html" rel="chapter">Links</a> <em>- Hypertext and Media-Independent Links 
+</em>
+<ol>
+<li><a href="struct/links.html#h-13.1">Introduction to links and anchors
+</a>
+<ol>
+<li><a href="struct/links.html#h-13.1.1">Visiting a linked resource</a>
+<li><a href="struct/links.html#h-13.1.2">Other link relationships</a>
+<li><a href="struct/links.html#h-13.1.3">Specifying links and anchors</a>
+<li><a href="struct/links.html#h-13.1.4">Link titles</a>
+<li><a href="struct/links.html#h-13.1.5">Internationalization and links</a>
+</ol>
+<li><a href="struct/links.html#h-13.2">Resource retrieval: the <samp class="einst2">A</SAMP> element
+</a>
+<ol>
+<li><a href="struct/links.html#h-13.2.1">Syntax of anchor names</a>
+<li><a href="struct/links.html#h-13.2.2">Mailto links</a>
+<li><a href="struct/links.html#h-13.2.3">Nested links</a>
+<li><a href="struct/links.html#h-13.2.4">Anchors with the <SAMP>id</SAMP> attribute</a>
+</ol>
+<li><a href="struct/links.html#h-13.3">Document relationships: the <samp class="einst2">LINK</SAMP> element</a>
+<ol>
+<li><a href="struct/links.html#h-13.3.1">Reverse Links</a>
+<li><a href="struct/links.html#h-13.3.2">Link types</a>
+<li><a href="struct/links.html#h-13.3.3">Links and external style sheets</a>
+<li><a href="struct/links.html#h-13.3.4">Links and search engines</a>
+</ol>
+<li><a href="struct/links.html#h-13.4">Path information: the <samp class="einst2">
+BASE</SAMP> element</a>
+</ol>
+<li><a href="struct/objects.html" rel="chapter">Objects, Images, and Applets</a>
+<ol>
+<li><a href="struct/objects.html#h-14.1">Including an image: the <samp class="einst2">IMG</samp> element</a>
+<li><a href="struct/objects.html#h-14.2">Generic inclusion: the <samp class="einst2">OBJECT</samp> element</a>
+<ol>
+<li><a href="struct/objects.html#h-14.2.1">Rules for rendering objects</a>
+<li><a href="struct/objects.html#h-14.2.2">Object initialization: the <samp class="einst2">PARAM</samp> element</a>
+<li><a href="struct/objects.html#h-14.2.3">URLs other than HTTP URLs</a>
+<li><a href="struct/objects.html#h-14.2.4">Object declarations and
+instantiations</a>
+</ol>
+<li><a href="struct/objects.html#h-14.3">Including an applet: the <samp class="einst2">APPLET</samp> element</a>
+<li><a href="struct/objects.html#h-14.4">Including HTML in another HTML
+document</a>
+<li><a href="struct/objects.html#h-14.5">Image maps</a>
+<ol>
+<li><a href="struct/objects.html#h-14.5.1">Client-side image maps</a>
+<ul>
+<li><a href="struct/objects.html#h-14.5.1.1">Alternate access to image maps</a>
+<li><a href="struct/objects.html#h-14.5.1.2">Client-side image maps with <samp class="einst2">MAP</samp>, <samp class="einst2">AREA</samp>, and <samp class="ainst2">usemap</samp></a>
+<li><a href="struct/objects.html#h-14.5.1.3">Client-side image maps for <samp class="einst2">OBJECT</samp>
+with <samp class="ainst2-OBJECT">shapes</samp></a>
+</ul>
+<li><a href="struct/objects.html#h-14.5.2">Server-side image maps</a>
+</ol>
+<li><a href="struct/objects.html#h-14.6">Visual presentation of images, objects, and
+applets</a>
+<ol>
+<li><a href="struct/objects.html#h-14.6.1">Width and height</a>
+<li><a href="struct/objects.html#h-14.6.2">White space around images and objects</a>
+<li><a href="struct/objects.html#h-14.6.3">Borders</a>
+<li><a href="struct/objects.html#h-14.6.4">Alignment</a>
+</ol>
+<li><a href="struct/objects.html#h-14.7">How to specify alternate text</a>
+</ol>
+<li><a href="present/styles.html" rel="chapter">Style Sheets</a> <em>- Controlling
+the presentation of an HTML document </em>
+<ol>
+<li><a href="present/styles.html#h-15.1">Adding style to HTML</a>
+<ol>
+<li><a href="present/styles.html#h-15.1.1">Setting the default style sheet language</a>
+<li><a href="present/styles.html#h-15.1.2">Inline style information</a>
+<li><a href="present/styles.html#h-15.1.3">Header style information: the <samp class="einst2">STYLE</samp> element</a>
+<li><a href="present/styles.html#h-15.1.4">Media types</a>
+<li><a href="present/styles.html#h-15.1.5">External style sheets</a>
+<li><a href="present/styles.html#h-15.1.6">Setting the default named style</a>
+<li><a href="present/styles.html#h-15.1.7">Media-dependent cascades</a>
+</ol>
+<li><a href="present/styles.html#h-15.2">Inheritance and cascading</a>
+<li><a href="present/styles.html#h-15.3">Hiding the Content of Style Elements from non-conforming
+User Agents</a>
+<li><a href="present/styles.html#h-15.4">Specifying style through HTTP headers</a>
+</ol>
+<li><a href="present/graphics.html" rel="chapter">Alignment, font styles, and horizontal rules</a>
+<ol>
+<li><a href="present/graphics.html#h-16.1">Formatting</a>
+<ol>
+<li><a href="present/graphics.html#h-16.1.1">Background color</a>
+<li><a href="present/graphics.html#h-16.1.2">Alignment</a>
+<li><a href="present/graphics.html#h-16.1.3">Floating objects</a>
+<ul>
+<li><a href="present/graphics.html#h-16.1.3.1">Float an object</a>
+<li><a href="present/graphics.html#h-16.1.3.2">Float text around an object</a>
+</ul>
+</ol>
+<li><a href="present/graphics.html#h-16.2">Fonts</a>
+<ol>
+<li><a href="present/graphics.html#h-16.2.1">Font style elements: the <samp class="einst2">TT</samp>, <samp class="einst2">I</samp>, <samp class="einst2-B">B</samp>, <samp class="einst2">BIG</samp>, <samp class="einst2">SMALL</samp>, <samp class="einst2">STRIKE</samp>, <samp class="einst2">S</samp>, and <samp class="einst2">U</samp> elements</a>
+<li><a href="present/graphics.html#h-16.2.2">Font modifier elements: <samp class="einst2">FONT</samp> and <samp class="einst2">BASEFONT</samp></a>
+</ol>
+<li><a href="present/graphics.html#h-16.3">Rules: the <samp class="einst2">HR</samp> element</a>
+</ol>
+<li><a href="present/frames.html" rel="chapter">Frames</a> <em>- Multi-view presentation of documents
+</em>
+<ol>
+<li><a href="present/frames.html#h-17.1">Layout of frames</a>
+<ol>
+<li><a href="present/frames.html#h-17.1.1">The <samp class="einst2">FRAMESET</samp>
+      element</a>
+<ul>
+<li><a href="present/frames.html#h-17.1.1.1">Rows and columns</a>
+<li><a href="present/frames.html#h-17.1.1.2">Nested frame sets</a>
+</ul>
+<li><a href="present/frames.html#h-17.1.2">The <samp class="einst2">FRAME</samp>
+element</a>
+<ul>
+<li><a href="present/frames.html#h-17.1.2.1">Setting the initial document in a frame</a>
+<li><a href="present/frames.html#h-17.1.2.2">Decorating a frame</a>
+</ul>
+</ol>
+<li><a href="present/frames.html#h-17.2">Specifying target frame information</a>
+<ol>
+<li><a href="present/frames.html#h-17.2.1">Setting the default target for links</a>
+<li><a href="present/frames.html#h-17.2.2">Target semantics</a>
+<li><a href="present/frames.html#h-17.2.3">Target names</a>
+</ol>
+<li><a href="present/frames.html#h-17.3">Alternate content</a>
+<ol>
+<li><a href="present/frames.html#h-17.3.1">The <samp class="einst2">NOFRAMES</samp>
+element</a>
+</ol>
+<li><a href="present/frames.html#h-17.4">Inline frames: the <samp class="einst2">IFRAME</samp> element</a>
+</ol>
+<li><a href="interact/forms.html" rel="chapter">Forms</a> <em>- User-input Forms:
+	Text Fields, Buttons, Menus, and more </em>
+<ol>
+<li><a href="interact/forms.html#h-18.1">The <samp class="einst2">FORM</samp> element</a>
+<li><a href="interact/forms.html#h-18.2">Controls</a>
+<ol>
+<li><a href="interact/forms.html#h-18.2.1">The <samp class="einst2">INPUT</samp> element</a>
+<ul>
+<li><a href="interact/forms.html#h-18.2.1.1">Input types</a>
+<li><a href="interact/forms.html#h-18.2.1.2">The <samp class="einst2">ISINDEX</samp>
+element</a>
+</ul>
+<li><a href="interact/forms.html#h-18.2.2">The <samp class="einst2">BUTTON</samp> element </a>
+<li><a href="interact/forms.html#h-18.2.3">The <samp class="einst2">SELECT</samp> 
+and <samp class="einst2">OPTION</samp> elements</a>
+<li><a href="interact/forms.html#h-18.2.4">The <samp class="einst2">TEXTAREA</samp>
+element</a>
+<li><a href="interact/forms.html#h-18.2.5">The <samp class="einst2">LABEL</samp> element</a>
+<li><a href="interact/forms.html#h-18.2.6">The <samp class="einst2">FIELDSET</samp>
+and <samp class="einst2">LEGEND</samp>
+elements</a>
+</ol>
+<li><a href="interact/forms.html#h-18.3">Giving focus to an element</a>
+<ol>
+<li><a href="interact/forms.html#h-18.3.1">Tabbing navigation</a>
+<li><a href="interact/forms.html#h-18.3.2">Access keys</a>
+</ol>
+<li><a href="interact/forms.html#h-18.4">Disabled and read-only elements</a>
+<ol>
+<li><a href="interact/forms.html#h-18.4.1">Disabled elements</a>
+<li><a href="interact/forms.html#h-18.4.2">Read-only elements</a>
+</ol>
+<li><a href="interact/forms.html#h-18.5">Form submission</a>
+<ol>
+<li><a href="interact/forms.html#h-18.5.1">Processing form data</a>
+<ul>
+<li><a href="interact/forms.html#h-18.5.1.1">Step one: Build a form data set</a>
+<li><a href="interact/forms.html#h-18.5.1.2">Step two: Encode the form data set</a>
+<li><a href="interact/forms.html#h-18.5.1.3">Step three: Submit the encoded form data set</a>
+</ul>
+<li><a href="interact/forms.html#h-18.5.2">Which control values are submitted</a>
+</ol>
+</ol>
+<li><a href="interact/scripts.html" rel="chapter">Scripts</a> <em>-
+Animated Documents and
+Smart Forms </em>
+<ol>
+<li><a href="interact/scripts.html#h-19.1">Designing documents for user agents that support scripting</a>
+<ol>
+<li><a href="interact/scripts.html#h-19.1.1">The <samp class="einst2">SCRIPT</SAMP>
+element</a>
+<li><a href="interact/scripts.html#h-19.1.2">Specifying the scripting language</a>
+<ul>
+<li><a href="interact/scripts.html#h-19.1.2.1">The default scripting language
+</a>
+<li><a href="interact/scripts.html#h-19.1.2.2">Local declaration of a scripting language</a>
+<li><a href="interact/scripts.html#h-19.1.2.3">References to HTML elements from a script</a>
+</ul>
+<li><a href="interact/scripts.html#h-19.1.3">Syntax of script content</a>
+<li><a href="interact/scripts.html#h-19.1.4">Intrinsic events</a>
+<ul>
+<li><a href="interact/scripts.html#h-19.1.4.1">Parsing of intrinsic event scripts</a>
+</ul>
+<li><a href="interact/scripts.html#h-19.1.5">Dynamic modification of documents</a>
+</ol>
+<li><a href="interact/scripts.html#h-19.2">Designing documents for user agents that don't support
+scripting</a>
+<ol>
+<li><a href="interact/scripts.html#h-19.2.1">The <samp class="einst2">NOSCRIPT</SAMP>
+ element</a>
+<li><a href="interact/scripts.html#h-19.2.2">Commenting out scripts</a>
+</ol>
+</ol>
+<li><a href="sgml/intro.html" rel="chapter">SGML reference information for HTML</a> <em>- Formal
+definition of HTML and validation </em>
+<ol>
+<li><a href="sgml/intro.html#h-20.1">Document Validation</a>
+<li><a href="sgml/intro.html#h-20.2">Sample SGML catalog</a>
+</ol>
+<li><a href="sgml/sgmldecl.html" rel="chapter">SGML Declaration</a>
+<ol>
+<li><a href="sgml/sgmldecl.html#h-21.1">The Document Character Set</a>
+<ol>
+<li><a href="sgml/sgmldecl.html#h-21.1.1">Data transfer</a>
+</ol>
+<li><a href="sgml/sgmldecl.html#h-21.2">The SGML Declaration</a>
+</ol>
+<li><a href="sgml/dtd.html" rel="chapter">Document Type Definition</a>
+<li><a href="sgml/loosedtd.html" rel="chapter">Transitional Document Type
+Definition</a>
+<li><a href="sgml/framesetdtd.html" rel="chapter">Frameset Document Type Definition
+</a>
+<li><a href="sgml/entities.html" rel="chapter">Named character entities</a>
+<ol>
+<li><a href="sgml/entities.html#h-25.1">Named entities for ISO 8859-1 characters</a>
+<ol>
+<li><a href="sgml/entities.html#h-25.1.1">The list of characters</a>
+</ol>
+<li><a href="sgml/entities.html#h-25.2">Named entities for symbols, mathematical symbols,
+and Greek letters</a>
+<ol>
+<li><a href="sgml/entities.html#h-25.2.1">The list of characters</a>
+</ol>
+<li><a href="sgml/entities.html#h-25.3">Named entities for markup-significant and
+	  internationalization characters</a>
+<ol>
+<li><a href="sgml/entities.html#h-25.3.1">The list of characters</a>
+</ol>
+</ol>
+</ol>
+<ol type="A">
+<li><a href="appendix/changes.html" rel="chapter">Changes between HTML 3.2 and HTML 4.0</a>
+<ol>
+<li><a href="appendix/changes.html#h-A.1">Changes to elements</a>
+<ol>
+<li><a href="appendix/changes.html#h-A.1.1">New elements</a>
+<li><a href="appendix/changes.html#h-A.1.2">Deprecated elements</a>
+<li><a href="appendix/changes.html#h-A.1.3">Obsolete elements</a>
+</ol>
+<li><a href="appendix/changes.html#h-A.2">Changes to Tables</a>
+<li><a href="appendix/changes.html#h-A.3">Changes to Forms</a>
+</ol>
+<li><a href="appendix/notes.html" rel="chapter">Performance, Implementation, and Design Notes</a>
+<ol>
+<li><a href="appendix/notes.html#h-B.1">Notes on helping search engines index your Web site</a>
+<ol>
+<li><a href="appendix/notes.html#h-B.1.1">Search robots</a>
+<ul>
+<li><a href="appendix/notes.html#h-B.1.1.1">The robots.txt file</a>
+<li><a href="appendix/notes.html#h-B.1.1.2">Robots and the META element</a>
+</ul>
+</ol>
+<li><a href="appendix/notes.html#h-B.2">Notes on tables</a>
+<ol>
+<li><a href="appendix/notes.html#h-B.2.1">Design rationale</a>
+<ul>
+<li><a href="appendix/notes.html#h-B.2.1.1">Dynamic reformatting</a>
+<li><a href="appendix/notes.html#h-B.2.1.2">Incremental display</a>
+<li><a href="appendix/notes.html#h-B.2.1.3">Structure and presentation</a>
+<li><a href="appendix/notes.html#h-B.2.1.4">Row and column groups</a>
+<li><a href="appendix/notes.html#h-B.2.1.5">Accessibility</a>
+</ul>
+<li><a href="appendix/notes.html#h-B.2.2">Recommended Layout Algorithms</a>
+<ul>
+<li><a href="appendix/notes.html#h-B.2.2.1">Fixed Layout Algorithm</a>
+<li><a href="appendix/notes.html#h-B.2.2.2">Autolayout Algorithm</a>
+</ul>
+</ol>
+<li><a href="appendix/notes.html#h-B.3">Notes on forms</a>
+<ol>
+<li><a href="appendix/notes.html#h-B.3.1">Incremental display</a>
+<li><a href="appendix/notes.html#h-B.3.2">Future projects</a>
+</ol>
+<li><a href="appendix/notes.html#h-B.4">Notes on scripting</a>
+<ol>
+<li><a href="appendix/notes.html#h-B.4.1">Reserved syntax for future script macros</a>
+<ul>
+<li><a href="appendix/notes.html#h-B.4.1.1">Current Practice for Script Macros</a>
+</ul>
+</ol>
+<li><a href="appendix/notes.html#h-B.5">Notes on accessibility</a>
+<ol>
+<li><a href="appendix/notes.html#h-B.5.1">Generating alternate text</a>
+</ol>
+</ol>
+</ol>
+<ul class="toc">
+<li><a href="references.html" rel="chapter">References</a>
+<ol>
+<li><a href="references.html#h-1.1">Normative references</a>
+<li><a href="references.html#h-1.2">Informative references</a>
+</ol>
+<li><a href="index/elements.html" rel="chapter">Index of Elements</a>
+<li><a href="index/attribs.html" rel="chapter">Index of Attributes</a>
+</ul>
+
+
+
+</body>
+</html>

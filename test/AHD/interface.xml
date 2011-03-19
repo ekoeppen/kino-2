@@ -1,0 +1,60 @@
+<!DOCTYPE interface [
+<!ELEMENT interface (title,version?,author?,description,section*,func*,code*)>
+<!ELEMENT section (title?,description?,structure*,function*)>
+<!ATTLIST section
+          name  CDATA #IMPLIED>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT version (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT type (#PCDATA)>
+<!ELEMENT alttype (#PCDATA)>
+<!ATTLIST alttype
+          target  CDATA #IMPLIED>
+<!ELEMENT description (#PCDATA)>
+<!ELEMENT structure (name,description,element*)>
+<!ELEMENT function (name,description,returns,parameter*)>
+<!ELEMENT element (name?,type,alttype*,description)>
+<!ELEMENT returns (type,alttype*,description)>
+<!ELEMENT parameter (name?,type,alttype*,description)>
+<!ELEMENT func (#PCDATA)>
+<!ELEMENT code (#PCDATA)>
+<!ATTLIST code
+          target  CDATA #IMPLIED
+          purpose CDATA #IMPLIED>
+]>
+<interface>
+  <title>Programming Interface for the Kino XML/CSS processor</title>
+
+  <version>2.2.0</version>
+
+  <author>Eckhart Köppen</author>
+
+  <description>
+    The Kino XML/CSS processor is a tree/event-based XML parser which
+    is also capable of processing CSS style sheets. It consists of a
+    parser and a DOM interface.
+  </description>
+
+  <section name="DOM">
+    <title>DOM Interface</title>
+
+    <description>The DOM interface contains all functions necessary to
+    inspect and modify the DOM tree created by the parser. It follows
+    closely the DOM Level 1 specification.</description>
+
+    <function>
+      <name>NodeNew</name>
+      <description>Creates and initializes a new node</description>
+
+      <returns>
+	<type>Node *</type>
+	<description>the created and initialized node</description>
+      </returns>
+      <parameter>
+	<type>void</type>
+	<description></description>
+      </parameter>
+    </function>
+  </section>
+</interface>

@@ -1,0 +1,36 @@
+<!doctype html [
+<!attlist li
+          onclick cdata "callFunc hide_sublist">
+<!attlist ul
+          name cdata "list">
+]>
+<html>
+  <body>
+    <func name="hide">
+      set box [pop]
+
+      if {$box != {}} then {
+        if {[PDataBoxGetProperty $box display] == "block"} then {
+          PDataBoxSetProperty $box display none
+        } else {
+          PDataBoxSetProperty $box display block
+        }
+        KinoRelayout $kino
+      }
+    </func>
+
+    <func name="hide_sublist">
+      push [PDataChildLookup $source list]
+      callFunc hide
+    </func>
+	
+    <ul style="font-size: 48" onkey="puts stderr [PDataToText $source]">
+      <li>vier
+	<ul>
+	  <li>aaa
+	  <li>bbb
+	  <li>bcc
+	</ul>
+    </ul>
+  </body>
+</html>

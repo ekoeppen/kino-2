@@ -1,0 +1,9 @@
+<broadcast>
+  <func name="onload" type="text/lua">
+    print ("lua says: document loaded")
+  </func>
+
+  <func name="onload" type="text/tcl">
+    puts "tcl says: document loaded"
+  </func>
+</broadcast>

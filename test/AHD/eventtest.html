@@ -1,0 +1,13 @@
+<eventtest style="display: block">
+  <h1><func name="onclick" type="text/tcl">#<![CDATA[
+
+set list [DocumentGetElementsByTagName $ahd_document text]
+set text [NodeListGetItem $list 0]
+NodeListDelete $list
+
+ElementSetContents $text [exec date]
+
+#]]></func>Dies ist ein Test</h1>
+  
+  <text style="display: block">Inhalt</text>
+</eventtest>

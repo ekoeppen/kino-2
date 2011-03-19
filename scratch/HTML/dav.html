@@ -1,0 +1,45 @@
+<style>
+    multistatus, response, href, propstat, prop, creationdate, 
+    getlastmodified, getcontentlength {
+    display: block;
+    float: none
+    }
+    prop {
+    color: #000080;
+    margin-left: 3em;
+    font-size: 14pt
+    }
+    multistatus {
+    font-size: 16pt;
+    margin-left: 1em;
+    }
+    href {
+    color: #008000
+    }
+</style>
+<multistatus xmlns="DAV:">
+    <response>
+      <href>/repository/button.html</href>
+      <propstat style="background-color: #ff0000">
+	<prop>
+	  <creationdate>1999-03-10T20:25:00Z</creationdate>
+	  <getcontentlength>1187</getcontentlength>
+	  <getlastmodified>Wed, 10 Mar 1999 20:25:00 GMT</getlastmodified>
+	  <resourcetype/>
+	</prop>
+	<status>HTTP/1.1 200 OK</status>
+      </propstat>
+    </response>
+    <response>
+      <href>/repository/x.html</href>
+      <propstat>
+	<prop>
+	  <creationdate>1999-03-11T15:15:29Z</creationdate>
+	  <getcontentlength>1187</getcontentlength>
+	  <getlastmodified>Thu, 11 Mar 1999 15:15:29 GMT</getlastmodified>
+	  <resourcetype/>
+	</prop>
+	<status>HTTP/1.1 200 OK</status>
+      </propstat>
+    </response>
+</multistatus>

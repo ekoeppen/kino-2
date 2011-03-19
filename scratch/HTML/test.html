@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.05 [en] (X11; I; Linux 2.1.88 i586) [Netscape]">
+   <META NAME="Author" CONTENT="johnie@debian.org (Johnie Ingram)">
+   <META NAME="Description" CONTENT="The initial installation of Debian/GNU Apache.">
+   <TITLE>Welcome to Your New Home Page!</TITLE>
+</HEAD>
+<BODY TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#0000EF" VLINK="#55188A" ALINK="#FF0000">
+
+<BR>
+
+<H1>
+Welcome to Your New Home in Cyberspace!</H1>
+
+<HR NOSHADE>
+<BR>
+
+<IMG ALIGN="right" ALT="" HEIGHT="247" WIDTH="278" SRC="icons/jhe061.gif">
+
+
+<P>This is a placeholder page installed by the <A HREF="http://www.debian.org/">Debian</A>
+release of the <A HREF="http://www.apache.org/">Apache</A> Web server package,
+because no home page was installed on this host. You may want to replace
+this as soon as possible with your own web pages, of course....
+
+<P>Unless you changed its configuration, the server is configured as follows:
+<UL>
+<LI>
+Configuration files can be found in <TT>/etc/apache</TT>.</LI>
+
+<LI>
+The <TT>DocumentRoot</TT>, which is the directory under which all your
+HTML files should exist, is set to <TT>/var/www</TT>.</LI>
+
+<LI>
+CGI scripts are looked for in <TT>/usr/lib/cgi-bin</TT>, which is where
+Debian packages will place their scripts.</LI>
+
+<LI>
+Log files are placed in <TT>/var/log/apache</TT>, and will be rotated
+daily.  The frequency of rotation can be easily changed by editing
+<TT>/etc/apache/cron.conf</TT>.</LI>
+
+<LI>
+The default directory index is <TT>index.html</TT>, meaning that requests
+for a directory <TT>/foo/bar/</TT> will give the contents of the file <TT>/var/www/foo/bar/index.html</TT>
+if it exists (assuming that <TT>/var/www</TT> is your <TT>DocumentRoot</TT>).</LI>
+
+<LI>
+User directories are enabled, and user documents will be looked for in
+the <TT>public_html</TT> directory of the users' homes.</LI>
+</UL>
+All standard Apache modules are available with this release and can be
+chosen with the <TT>apacheconfig</TT> script. Installing a new module on
+your system is just a matter of compiling it (with the apache-dev package)
+and adding a line to your <TT>httpd.conf</TT> configuration file.
+
+<P>More documentation on Apache can be found on:
+<UL>
+<LI>
+The <A HREF="/doc/apache/">Apache documentation</A> stored on your server.</LI>
+
+<LI>
+The <A HREF="http://www.apache.org/">Apache project</A> server.</LI>
+
+<LI>
+The <A HREF="http://www.apacheweek.com/">ApacheWeek</A> server.</LI>
+
+<LI>
+The <A HREF="http://hoohoo.ncsa.uiuc.edu/">NCSA</A> server which documents
+the NCSA httpd from which the Apache server is derived.</LI>
+
+<LI>
+The <A HREF="http://www.debian.org/doc/">Debian Project
+Documentation</A> which contains HOWTOs, FAQs, and software updates.</LI>
+</UL>
+
+<P>You can also consult the list of <A HREF="http://www.boutell.com/faq/">World
+Wide Web Frequently Asked Questions</A> for information.
+
+<P>If you find a bug in this Apache package, or in Apache itself,
+please forward it to the <A
+HREF="mailto:apache@packages.debian.org">maintainer of this
+package</A> who will take appropriate action. Instructions on a formal
+way of doing that, and the list of known bugs of this package, can be
+found on the <A HREF="http://www.debian.org/Bugs/">Debian Bug Tracking
+System</A>.
+
+<P>Thanks for using this package, and congratulations for your choice of
+a Debian system!
+
+<BR>
+<P ALIGN="CENTER"><IMG HEIGHT="32" WIDTH="259" SRC="icons/apache_pb.gif" ALT=""></P>
+
+<BR>
+
+<P>
+<HR NOSHADE>
+<FONT SIZE=-1><A HREF="http://www.netgod.net/">Johnie Ingram</A>,
+Southgate, Michigan &nbsp;&nbsp; 24 April 1998.</FONT>
+
+</BODY>
+</HTML>
+

@@ -1,0 +1,50 @@
+This is the Kino 2 package, an XML/CSS processor. It contains the
+following parts:
+
+- The parser library (libkinoparser) which handles XML, HTML and
+  CSS. It is tree-based, constructing a parse tree during the parsing
+  process.
+
+- The Kino widget (libkinowidget), an Xt widget usable for displaying
+  the parsed data.
+
+- The AHD library (libkinoahd) which makes it possible to handle XML
+  documents with embedded scripts. For more on this, see the doc
+  directory.
+
+- Integration components to use the Kino 2 package from within the
+  Wafe environment (see also http://nestroy.wi-inf.uni-essen.de).
+
+The toplevel directory of this package contains the following
+subdirectories:
+
+- parser: the parser library
+- widget: the Kino widget
+- ahd: AHD support library
+- wrappers: wrappers for SWIG (*Note*: these can only be built after the
+  parser and ahd library have been installed via "make install"!)
+- wafe: files to be used for the Wafe integration
+- doc: additional documentation, sample code and the interface definition
+- test: test and sample code
+
+Please refer to the files INSTALL for installation instructions and
+COPYING for the copyright status of the package.
+
+The Kino 2 package is Open Source software, contributions, bug reports
+and other feedback is always welcome. The current maintainer is
+Eckhart Köppen <Eckhart.Koeppen@uni-essen.de> who is currently
+developing the Kino package as part of his Ph.D. thesis at the
+University of Essen, Germany. The package is available either through
+the main web page at
+
+  http://nestroy.wi-inf.uni-essen.de/Koeppen/Kino/
+
+or through CVS at the following repository:
+
+  :pserver:kino@nestroy.wi-inf.uni-essen.de:/home/cvs
+
+under the module name "kino-2".
+
+In case you are wondering, yes, there is also a Kino 1 package which
+is mainly an Xt widget for HTML rendering. It was used as the basis
+for the Kino 2 package, extending it in various ways.

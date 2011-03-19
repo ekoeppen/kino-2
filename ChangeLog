@@ -1,0 +1,13 @@
+1999-04-14  Eckhart Koeppen  <koeppen@sagumumpsketuck.wi-inf.uni-essen.de>
+
+	* added more functionality to the AHDRuntime
+
+	* increased version number to 2.1.0
+
+	* added some more LGPL comments
+
+	* added some accessor functions for DOM and Parser structures
+
+	* renamed Parser->startBox to Parser->startElement and Parser->box 
+	to Parser->element
+

@@ -1,0 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN" [
+<!entity Test "Hallo">
+<!entity External SYSTEM "file:/tmp/entity">
+<!entity ExternalFile SYSTEM "file:/tmp/entity.html">
+<!entity ExternalHttp SYSTEM "http://localhost/entity.html">
+]>
+<html>
+  <head>
+    <title>Entity Test</title>
+  </head>
+
+  <body>
+    <h1>Entity Test</h1>
+
+    <p>
+      Hallo = &Test;
+
+    <p>
+      External = &External;
+    
+    <p>
+      ExternalFile = &ExternalFile;
+    
+    <p>
+      ExternalHttp = &ExternalHttp;
+
+    <p>
+      XML-Link = <link xml:link="simple"
+			show="embed" actuate="auto"
+			href="file:/usr/home/koeppen/kino-2/HTML/pre1.html"
+			style="display: inline" />
+    
+    <hr>
+    <address>
+      <a href="mailto:koeppen@sw0344.extern.uni-essen.de">Eckhart
+	K&ouml;ppen</a>
+    </address>
+    <!-- Created: Wed Jun 24 22:28:15 CEST 1998 -->
+    <!-- hhmts start -->
+    Last modified: Wed Jun 24 22:28:17 CEST 
+    <!-- hhmts end -->
+  </body>
+</html>

@@ -1,0 +1,57 @@
+Aufgaben:
+
+- "Great Rename"
+- Oberflächenelemente
+	- Date/Time-Picker
+	- Personenauswahlliste
+- Intelligent Bookmarks/WebXpress
+- Monitor für das Repository
+- Remote Delegation Demo
+- SWIG für kinoParser
+
+Fehler:
+
+- PDataInsertChild bei Arnd kaputt
+- < oder & als erstes Zeichen eines Entity-Wertes geht nicht (Character-
+  Entities erlauben!)
+- INLINE-Vorgabe für Boxen macht Probleme bei der Top-Box (H1, H2, ...)
+- Tabellen nach Text wandeln
+- PDataToText ohne Default-Attribute
+- Gadgets werden nicht gezeichnet
+- inline-Boxen tragen nicht zur Breite der Parent-Box bei
+- in ChangeManaged beim Löschen nicht neu Layouten
+- Tabelle mit leeren Zeilen kommt durcheinander (Rowspan-Spalten werden
+  nicht propagiert!)
+- Widgets beim externen Löschen auch aus dem PData entfernen
+
+Features:
+
+- Leerzeichen nach Tags nicht aufnehmen
+- Margins collapsen
+- Hex-Entities
+- XPointer, Pfadausdrücke
+- onload-Event
+- Aufzählungslisten
+- Tabellen
+- CDATA-Sektionen
+- HTML-Attribute in CSS-Attribute übertragen (FONT-FACE etc.)
+- Justify-Alignment
+- Hintergrundpixmap
+
+behoben:
+
+- fehlendes document abfangen
+- PDataBoxInsertChild auch mit NULL
+- Link-Farben werden nicht zurückgesetzt
+- PRE verschluckt Leerzeilen
+- CENTER bringt Tabellenzellen durcheinander
+- in ChangeManaged Widget-Größe und umgebende Box neu berechnen
+  -> alle PDataBoxen neu berechnen!
+- neue Boxen mit sinnvoller Information füllen
+
+Prüfen:
+
+- e->element kann sich zwischen den Callbacks ändern (in EventHandler)
+- wo geht die Breite hin bei Zellen mit colspan > 1 und großer Breite?
+  -> komplette Tabellenbreite erhöhen und dann gleichmäßig verteilen?
+

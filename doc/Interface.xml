@@ -1,0 +1,1590 @@
+<!DOCTYPE interface [
+<!ELEMENT interface (title,version?,author?,description,section*,func*,code*)>
+<!ELEMENT section (title?,description?,structure*,function*)>
+<!ATTLIST section
+          name  CDATA #IMPLIED>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT version (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT type (#PCDATA)>
+<!ELEMENT alttype (#PCDATA)>
+<!ATTLIST alttype
+          target  CDATA #IMPLIED>
+<!ELEMENT description (#PCDATA)>
+<!ELEMENT structure (name,description,element*)>
+<!ELEMENT function (name,description,returns,parameter*)>
+<!ELEMENT element (name?,type,alttype*,description)>
+<!ELEMENT returns (type,alttype*,description)>
+<!ELEMENT parameter (name?,type,alttype*,description)>
+<!ELEMENT func (#PCDATA)>
+<!ELEMENT code (#PCDATA)>
+<!ATTLIST code
+          target  CDATA #IMPLIED
+          purpose CDATA #IMPLIED>
+]>
+<interface>
+  <title>Programming Interface for the Kino XML/CSS processor</title>
+
+  <version>2.4.0</version>
+
+  <author>Eckhart Köppen</author>
+
+  <description>
+    The Kino XML/CSS processor is a tree/event-based XML parser which
+    is also capable of processing CSS style sheets. It consists of a
+    parser and a DOM interface.
+  </description>
+
+  <section name="DOM">
+    <title>DOM Interface</title>
+
+    <description>The DOM interface contains all functions necessary to
+    inspect and modify the DOM tree created by the parser. It follows
+    closely the DOM Level 1 specification.</description>
+
+    <function>
+      <name>NodeNew</name>
+      <description>Creates and initializes a new node</description>
+
+      <returns>
+	<type>Node *</type>
+	<description>the created and initialized node</description>
+      </returns>
+      <parameter>
+	<type>void</type>
+	<description></description>
+      </parameter>
+    </function>
+
+    <function>
+      <name>ElementNew</name>
+      <description>Creates and initializes a new element</description>
+
+      <returns>
+	<type>Element *</type>
+	<description></description>
+      </returns>
+      <parameter>
+	<type>void</type>
+	<description></description>
+      </parameter>
+    </function>
+
+    <function>
+      <name>DocumentNew</name>
+      <description>Creates and initializes a new document</description>
+
+      <returns>
+	<type>Document *</type>
+	<description></description>
+      </returns>
+      <parameter>
+	<type>void</type>
+	<description></description>
+      </parameter>
+    </function>
+
+    <function>
+      <name>TextNew</name>
+      <description>Creates and initializes a new text element</description>
+
+      <returns>
+	<type>Text *</type>
+	<description></description>
+      </returns>
+      <parameter>
+	<type>void</type>
+	<description></description>
+      </parameter>
+    </function>
+
+    <function>
+      <name>InsetNew</name>
+      <description>Creates and initializes a new inset element</description>
+
+      <returns>
+	<type>Inset *</type>
+	<description></description>
+      </returns>
+      <parameter>
+	<type>void</type>
+	<description></description>
+      </parameter>
+    </function>
+
+    <function>
+      <name>CDATASectionNew</name>
+      <description>Creates and initializes a new CDATA section
+	element</description>
+
+      <returns>
+	<type>CDATASection *</type>
+	<description></description>
+      </returns>
+      <parameter>
+	<type>void</type>
+	<description></description>
+      </parameter>
+    </function>
+
+
+    <function>
+      <name>NodeDelete</name>
+      <description>Removes a node from the DOM tree and frees it,
+	including child nodes</description>
+
+      <returns>
+	<type>void</type>
+	<description></description>
+      </returns>
+      <parameter>
+	<type>Node *</type>
+	<description>the node to be freed</description>
+      </parameter>
+    </function>
+
+    <function>
+      <name>NodeGetNodeType</name>
+
+      <description>
+	Returns the type of the node (ELEMENT_NODE = 1, ATTRIBUTE_NODE
+	= 2, TEXT_NODE = 3, CDATA_SECTION_NODE = 4,
+	ENTITY_REFERENCE_NODE = 5, ENTITY_NODE = 6,
+	PROCESSING_INSTRUCTION_NODE = 7, COMMENT_NODE = 8,
+	DOCUMENT_NODE = 9, DOCUMENT_TYPE_NODE = 10,
+	DOCUMENT_FRAGMENT_NODE = 11, NOTATION_NODE = 12, INSET_NODE =
+	9000, LINEBREAK_NODE = 9001)
+      </description>
+      
+      <returns>
+	<type>int</type>
+	<description></description>
+      </returns>
+      <parameter>
+	<type>Node *</type>
+	<description>the current node</description>
+      </parameter>
+    </function>
+
+    <function>
+      <name>NodeGetParentNode</name>
+      <description>Returns the parent Node</description>
+
+      <returns>
+	<type>Node *</type>
+	<description></description>
+      </returns>
+      <parameter>
+	<type>Node *</type>
+	<description>the current node</description>
+      </parameter>
+    </function>
+
+    <function>
+      <name>NodeGetOwnerDocument</name>
+      <description>Returns the containing document of the
+	Node</description>
+
+      <returns>
+	<type>Document *</type>
+	<description></description>
+      </returns>
+      <parameter>
+	<type>Node *</type>
+	<description>the current node</description>
+      </parameter>
+    </function>
+
+    <function>
+      <name>NodeGetPreviousSibling</name>
+      <description>Returns the previous sibling (within the child list
+	of the parent node) of a node</description>
+
+      <returns>
+	<type>Node *</type>
+	<description></description>
+      </returns>
+      <parameter>
+	<type>Node *</type>
+	<description>the current node</description>
+      </parameter>
+    </function>
+
+    <function>
+      <name>NodeGetNextSibling</name>
+      <description>Returns the previous sibling (within the child list
+	of the parent node) of a node</description>
+
+      <returns>
+	<type>Node *</type>
+	<description></description>
+      </returns>
+      <parameter>
+	<type>Node *</type>
+	<description>the current node</description>
+      </parameter>
+    </function>
+
+    <function>
+      <name>NodeHasChildNodes</name>
+      <description>returns 1 if a node has child nodes, 0
+	otherwise</description>
+
+      <returns>
+	<type>int</type>
+	<description></description>
+      </returns>
+      <parameter>
+	<type>Node *</type>
+	<description>the current node</description>
+      </parameter>
+    </function>
+
+    <function>
+      <name>NodeGetFirstChild</name>
+      <description>Returns the first child node of a node</description>
+
+      <returns>
+	<type>Node*</type>
+	<description></description>
+      </returns>
+      <parameter>
+	<type>Node *</type>
+	<description>the current node</description>
+      </parameter>
+    </function>
+
+    <function>
+      <name>NodeGetLastChild</name>
+      <description>Returns the last child node of a node</description>
+
+      <returns>
+	<type>Node*</type>
+	<description></description>
+      </returns>
+      <parameter>
+	<type>Node *</type>
+	<description>the current node</description>
+      </parameter>
+    </function>
+
+    <function>
+      <name>NodeAppendChild</name>
+      <description>Appends a node at the end of the child list of a
+	given node</description>
+
+      <returns>
+	<type>void</type>
+	<description></description>
+      </returns>
+      <parameter>
+	<type>Node *</type>
+	<description>the node containing the child list</description>
+      </parameter>
+      <parameter>
+	<type>Node *</type>
+	<description>the node to be appended</description>
+      </parameter>
+    </function>
+
+    <function>
+      <name>NodeInsertBefore</name>
+      <description>Inserts a node before a given node in the child
+	list of a parent node</description>
+
+      <returns>
+	<type>void</type>
+	<description></description>
+      </returns>
+      <parameter>
+	<type>Node *</type>
+	<description>the node containing the child list</description>
+      </parameter>
+      <parameter>
+	<type>Node *</type>
+	<alttype>NULL | Node *</alttype>
+	<description>the node before the new node is to be inserted or
+	  NULL if the new node is to be appended at the end of the
+	  child list</description>
+      </parameter>
+      <parameter>
+	<type>Node *</type>
+	<description>the node to be inserted</description>
+      </parameter>
+    </function>
+
+    <function>
+      <name>NodeReplaceChild</name>
+      <description>Replaces a child node and returns the replaced
+	node</description>
+
+      <returns>
+	<type>Node *</type>
+	<description>the replaced node</description>
+      </returns>
+      <parameter>
+	<type>Node *</type>
+	<description>the node containing the child list</description>
+      </parameter>
+      <parameter>
+	<type>Node *</type>
+	<description>the node to be replaced</description>
+      </parameter>
+      <parameter>
+	<type>Node *</type>
+	<description>the new node</description>
+      </parameter>
+    </function>
+
+    <function>
+      <name>NodeRemoveChild</name>
+      <description>Removes a node from the child list and returns the
+	removed node</description>
+
+      <returns>
+	<type>Node *</type>
+	<description>the removed node</description>
+      </returns>
+      <parameter>
+	<type>Node *</type>
+	<description>the node containing the child list</description>
+      </parameter>
+      <parameter>
+	<type>Node *</type>
+	<description>the node to be removed</description>
+      </parameter>
+    </function>
+
+    <function>
+      <name>NodePrint</name>
+      <description>Prints an internal representation of a node and its
+	children</description>
+
+      <returns>
+	<type>void</type>
+	<description></description>
+      </returns>
+      <parameter>
+	<type>Node *</type>
+	<description>the node to be printed</description>
+      </parameter>
+      <parameter>
+	<type>int</type>
+	<description>the indentiation level</description>
+      </parameter>
+    </function>
+
+    <function>
+      <name>NodeToText</name>
+      <description>Returns the XML source text for the given node and
+	its children</description>
+
+      <returns>
+	<type>char *</type>
+	<description>the textual representation</description>
+      </returns>
+      <parameter>
+	<type>Node *</type>
+	<description>the node to be inspected</description>
+      </parameter>
+    </function>
+
+    <function>
+      <name>NodeParentLookup</name>
+      <description>Looks for a node with a given attribute value in
+	the parent chain of a node</description>
+
+      <returns>
+	<type>Node *</type>
+	<description></description>
+      </returns>
+      <parameter>
+	<type>Node *</type>
+	<description>the current node</description>
+      </parameter>
+      <parameter>
+	<type>char *</type>
+	<description>the attribute name</description>
+      </parameter>
+      <parameter>
+	<type>char *</type>
+	<description>the attribute value to look for</description>
+      </parameter>
+    </function>
+
+    <function>
+      <name>NodeChildLookup</name>
+      <description>Looks for a node with a given attribute value among
+	the children of a node</description>
+
+      <returns>
+	<type>Node *</type>
+	<description></description>
+      </returns>
+      <parameter>
+	<type>Node *</type>
+	<description>the current node</description>
+      </parameter>
+      <parameter>
+	<type>char *</type>
+	<description>the attribute name</description>
+      </parameter>
+      <parameter>
+	<type>char *</type>
+	<description>the attribute value to look for</description>
+      </parameter>
+    </function>
+
+    <function>
+      <name>NodeGetSuccessor</name>
+      <description>Returns the next node in a depth-first
+	traversal</description> 
+      <returns>
+	<type>Node *</type>
+	<description>the following node in a depth-first
+	  traversal</description> 
+      </returns>
+      <parameter>
+	<type>Node *</type>
+	<description>the current node</description>
+      </parameter>
+    </function>
+
+    <function>
+      <name>TextGetData</name>
+      <description>Returns a reference to the value of a text
+	element</description> 
+
+      <returns>
+	<type>char *</type>
+	<description>a pointer to the text</description>
+      </returns>
+      <parameter>
+	<type>Text *</type>
+	<description>the current element</description>
+      </parameter>
+    </function>
+
+    <function>
+      <name>TextSetData</name>
+      <description>Sets the value of a text element, releases memory
+	held by the old value</description>
+
+      <returns>
+	<type>void</type>
+	<description></description>
+      </returns>
+      <parameter>
+	<type>Text *</type>
+	<description>the current element</description>
+      </parameter>
+      <parameter>
+	<type>char *</type>
+	<description>the new value</description>
+      </parameter>
+    </function>
+
+    <function>
+      <name>CDATASectionGetData</name>
+      <description>Returns a reference to the value of a CDATA section
+	element</description> 
+
+      <returns>
+	<type>char *</type>
+	<description>a pointer to the text</description>
+      </returns>
+      <parameter>
+	<type>CDATASection *</type>
+	<description>the current element</description>
+      </parameter>
+    </function>
+
+    <function>
+      <name>CDATASectionSetData</name>
+      <description>Sets the value of a CDATA section element, releases memory
+	held by the old value</description>
+
+      <returns>
+	<type>void</type>
+	<description></description>
+      </returns>
+      <parameter>
+	<type>CDATASection *</type>
+	<description>the current element</description>
+      </parameter>
+      <parameter>
+	<type>char *</type>
+	<description>the new value</description>
+      </parameter>
+    </function>
+
+    <function>
+      <name>DocumentGetElementsByTagName</name>
+      <description>Returns a list of sub-elements which have a given
+	tag name or all sub-elements if the given name is "*"</description>
+      <returns>
+	<type>NodeList *</type>
+	<description>the list of sub-elements</description>
+      </returns>
+      <parameter>
+	<type>Document *</type>
+	<description>the document where the search starts</description>
+      </parameter>
+      <parameter>
+	<type>char *</type>
+	<description>the tag name to look for</description>
+      </parameter>
+    </function>
+
+    <function>
+      <name>ElementGetTagName</name>
+      <description>Returns the tag name of an element</description>
+
+      <returns>
+	<type>char *</type>
+	<description></description>
+      </returns>
+      <parameter>
+	<type>Element *</type>
+	<description>the current element</description>
+      </parameter>
+    </function>
+
+    <function>
+      <name>ElementSetTagName</name>
+      <description>Sets the tag name of an element, releases memory
+	held by old tag name</description>
+
+      <returns>
+	<type>void</type>
+	<description></description>
+      </returns>
+      <parameter>
+	<type>Element *</type>
+	<description>the current element</description>
+      </parameter>
+      <parameter>
+	<type>char *</type>
+	<description>the new tag name</description>
+      </parameter>
+    </function>
+
+    <function>
+      <name>ElementGetNSPrefix</name>
+      <description>Returns the namespace prefix of an element</description>
+
+      <returns>
+	<type>char *</type>
+	<description></description>
+      </returns>
+      <parameter>
+	<type>Element *</type>
+	<description>the current element</description>
+      </parameter>
+    </function>
+
+    <function>
+      <name>ElementSetNSPrefix</name>
+      <description>Sets the namespace prefix of an element, releases memory
+	held by old prefix</description>
+
+      <returns>
+	<type>void</type>
+	<description></description>
+      </returns>
+      <parameter>
+	<type>Element *</type>
+	<description>the current element</description>
+      </parameter>
+      <parameter>
+	<type>char *</type>
+	<description>the new namespace prefix</description>
+      </parameter>
+    </function>
+
+    <function>
+      <name>ElementGetAttribute</name>
+      <description>Returns the value of a given attribute</description>
+
+      <returns>
+	<type>char *</type>
+	<description></description>
+      </returns>
+      <parameter>
+	<type>Element *</type>
+	<description>the current element</description>
+      </parameter>
+      <parameter>
+	<type>char *</type>
+	<description>the attribute name</description>
+      </parameter>
+    </function>
+
+    <function>
+      <name>ElementSetAttribute</name>
+      <description>Sets the value of an attribute, releases memory
+	held by old attribute value</description>
+
+      <returns>
+	<type>void</type>
+	<description></description>
+      </returns>
+      <parameter>
+	<type>Element *</type>
+	<description>the current element</description>
+      </parameter>
+      <parameter>
+	<type>char *</type>
+	<description>the attribute name</description>
+      </parameter>
+      <parameter>
+	<type>char *</type>
+	<description>the new attribute value</description>
+      </parameter>
+    </function>
+
+    <function>
+      <name>ElementSetContents</name>
+      <description>Sets the textual contents of a Element. The contents
+	is stored in a single Text element. Any previous contents is
+	deleted</description>
+
+      <returns>
+	<type>void</type>
+	<description></description>
+      </returns>
+      <parameter>
+	<type>Element *</type>
+	<description>the current element</description>
+      </parameter>
+      <parameter>
+	<type>char *</type>
+	<description>the new contents</description>
+      </parameter>
+    </function>
+
+    <function>
+      <name>ElementGetContents</name>
+      <description>Returns the textual contents of a Element. Any
+	non-textual context is ignored. The result is a new
+	allocated string which has to be freed by the caller</description>
+
+      <returns>
+	<type>char *</type>
+	<description></description>
+      </returns>
+      <parameter>
+	<type>Element *</type>
+	<description>the current element</description>
+      </parameter>
+    </function>
+
+    <function>
+      <name>ElementSetDefaultAttributes</name>
+      <description>Sets the default attribute values according to the
+	DTD</description> 
+
+      <returns>
+	<type>void</type>
+	<description></description>
+      </returns>
+      <parameter>
+	<type>Element *</type>
+	<description>the current element</description>
+      </parameter>
+    </function>
+
+    <function>
+      <name>ElementSetInherited</name>
+      <description>Copies the inheritable CSS attributes from the
+	parent element</description>
+
+      <returns>
+	<type>void</type>
+	<description></description>
+      </returns>
+      <parameter>
+	<type>Element *</type>
+	<description>the current element</description>
+      </parameter>
+    </function>
+
+    <function>
+      <name>ElementGetElementsByTagName</name>
+      <description>Returns a list of sub-elements which have a given
+	tag name or all sub-elements if the given name is "*"</description>
+      <returns>
+	<type>NodeList *</type>
+	<description>the list of sub-elements</description>
+      </returns>
+      <parameter>
+	<type>Element *</type>
+	<description>the element where the search starts</description>
+      </parameter>
+      <parameter>
+	<type>char *</type>
+	<description>the tag name to look for</description>
+      </parameter>
+    </function>
+
+    <function>
+      <name>NodeListNew</name>
+
+      <description>Creates a new NodeList</description>
+      <returns>
+	<type>NodeList *</type>
+	<description>the created NodeList</description>
+      </returns>
+      <parameter>
+	<type>void</type>
+	<description></description>
+      </parameter>
+    </function>
+
+    <function>
+      <name>NodeListDelete</name>
+      <description>Deletes a NodeList (not its contents!)</description>
+      <returns>
+	<type>void</type>
+	<description></description>
+      </returns>
+      <parameter>
+	<type>NodeList *</type>
+	<description>the NodeList to be deleted</description>
+      </parameter>
+    </function>
+
+    <function>
+      <name>NodeListAppendItem</name>
+      <description>Appends a Node at the end of a NodeList</description>
+
+      <returns>
+	<type>int</type>
+	<description>the index of the appended Node</description>
+      </returns>
+      <parameter>
+	<type>NodeList *</type>
+	<description>the NodeList where the Node is appended</description>
+      </parameter>
+      <parameter>
+	<type>Node *</type>
+	<description>the Node to be appended</description>
+      </parameter>
+    </function>
+
+    <function>
+      <name>NodeListGetLength</name>
+      <description>Returns the number of items in a NodeList</description>
+      <returns>
+	<type>int</type>
+	<description>the number of items in the list</description>
+      </returns>
+      <parameter>
+	<type>NodeList *</type>
+	<description>the NodeList</description>
+      </parameter>
+    </function>
+
+    <function>
+      <name>NodeListGetItem</name>
+      <description>Returns the Node at the given position</description>
+
+      <returns>
+	<type>Node *</type>
+	<description>The Node or NULL if the position is out of
+	  range</description>
+      </returns>
+      <parameter>
+	<type>NodeList *</type>
+	<description>the NodeList</description>
+      </parameter>
+      <parameter>
+	<type>int</type>
+	<description>the position (starting at zero)</description>
+      </parameter>
+    </function>
+
+    <function>
+      <name>NodeListRemoveItem</name>
+      <description>Removes all occurences of a node from the list</description>
+      <returns>
+	<type>Node *</type>
+	<description>the last of the removed node</description>
+      </returns>
+      <parameter>
+	<type>NodeList *</type>
+	<description>the NodeList</description>
+      </parameter>
+      <parameter>
+	<type>Node *</type>
+	<description>the Node to be removed</description>
+      </parameter>
+    </function>
+
+    <function>
+      <name>ElementMatch</name>
+      <description>Matches a given Element hierarchy against a pattern 
+	hierarchy</description>
+
+      <returns>
+	<type>NodeList *</type>
+	<description>the list of nodes that matched the pattern
+	  nodes or NULL if the pattern did not match</description> 
+      </returns>
+      <parameter>
+	<type>Element *</type>
+	<description>the given hierarchy</description>
+      </parameter>
+      <parameter>
+	<type>Element *</type>
+	<description>the pattern hierarchy</description>
+      </parameter>
+    </function>
+
+  </section>
+
+  <section name="Parser">
+    <title>Parser Interface</title>
+
+    <structure>
+      <name>Parser</name>
+      <description>Holds state information of a parser</description>
+    </structure>
+    
+    <function>
+      <name>ParserNew</name>
+      <description>Creates a new parser object</description>
+      <returns>
+	<type>Parser *</type>
+	<description>The newly allocated parser object</description>
+      </returns>
+    </function>
+
+    <function>
+      <name>ParserDelete</name>
+      <description>Deletes a parser object</description>
+      <returns>
+	<type>void</type>
+	<description></description>
+      </returns>
+      <parameter>
+	<type>Parser *</type>
+	<description>The parser object to be deleted</description>
+      </parameter>
+    </function>
+
+    <function>
+      <name>ParserSetStartElement</name>
+      <description>Sets the start element for a following parse
+	process</description>
+
+      <returns>
+	<type>void</type>
+	<description></description>
+      </returns>
+      <parameter>
+	<type>Parser *</type>
+	<description></description>
+      </parameter>
+      <parameter>
+	<type>Element *</type>
+	<description></description>
+      </parameter>
+    </function>
+
+    <function>
+      <name>ParserSetDocument</name>
+      <description>Sets the start document for the parsing
+	process</description> 
+
+      <returns>
+	<type>void</type>
+	<description></description>
+      </returns>
+      <parameter>
+	<type>Parser *</type>
+	<description></description>
+      </parameter>
+      <parameter>
+	<type>Document *</type>
+	<description></description>
+      </parameter>
+    </function>
+
+    <function>
+      <name>ParserSetURI</name>
+      <description></description>
+
+      <returns>
+	<type>void</type>
+	<description></description>
+      </returns>
+      <parameter>
+	<type>Parser *</type>
+	<description></description>
+      </parameter>
+      <parameter>
+	<type>char *</type>
+	<description></description>
+      </parameter>
+    </function>
+
+    <function>
+      <name>ParserProcessData</name>
+      <description>Process a piece of data after the parser has been
+	prepared with an initial document, URI and start
+	element</description>
+
+      <returns>
+	<type>Element *</type>
+	<description>The original element where the parse
+	  process has bee started</description>
+      </returns>
+      <parameter>
+	<type>Parser *</type>
+	<description>The parser to be used for parsing</description>
+      </parameter>
+      <parameter>
+	<type>char *</type>
+	<description>the MIME type of the text to be parsed (possible
+	  values are currently text/xml, text/html, text/css and
+	  text/plain)</description>
+      </parameter>
+      <parameter>
+	<type>char *</type>
+	<description>the text to be parsed</description>
+      </parameter>
+    </function>
+  </section>
+
+  <section name="AHD">
+    <title>AHD Interface</title>
+    <description></description>
+
+    <function>
+      <name>AHDRuntimeNew</name>
+      <description>Create a new instance of an AHD runtime</description>
+
+      <returns>
+	<type>AHDRuntime *</type>
+	<description></description>
+      </returns>
+      <parameter>
+	<type>int</type>
+	<description>port number of the internal AHD server or 0 if no 
+	server is to be used</description>
+      </parameter>
+      <parameter>
+	<type>char *</type>
+	<alttype target="wafe">NULL | char *</alttype>
+	<description>root directory of the internal AHD server or NULL 
+	if no server is to be used</description>
+      </parameter>
+    </function>
+
+    <function>
+      <name>AHDRuntimeDelete</name>
+      <description>Deletes a runtime object</description>
+
+      <returns>
+	<type>void</type>
+	<description></description>
+      </returns>
+      <parameter>
+	<type>AHDRuntime *</type>
+	<description>The object to be deleted</description>
+      </parameter>
+    </function>
+
+    <function>
+      <name>AHDRuntimeAddScriptHandler</name>
+      <description>Add a script handler to the runtime</description>
+      <returns>
+	<type>void</type>
+	<description></description>
+      </returns>
+      <parameter>
+	<type>AHDRuntime *</type>
+	<description>The AHD runtime</description>
+      </parameter>
+      <parameter>
+	<type>HandlerProc</type>
+	<description>Pointer to the script handler</description>
+      </parameter>
+      <parameter>
+	<type>void *</type>
+	<description>Callback data</description>
+      </parameter>
+    </function>
+
+    <function>
+      <name>AHDRuntimeDocumentInit</name>
+      <description>Initialize a document to be used with a
+	runtime</description>
+      <returns>
+	<type>void</type>
+	<description></description>
+      </returns>
+      <parameter>
+	<type>AHDRuntime *</type>
+	<description>The AHD runtime</description>
+      </parameter>
+      <parameter>
+	<type>Document *</type>
+	<description>The document to be initialized</description>
+      </parameter>
+    </function>
+
+    <function>
+      <name>AHDRuntimeLoad</name>
+      <description>Load a remote document referenced by a URI</description>
+      <returns>
+	<type>Document *</type>
+	<description>The loaded document</description>
+      </returns>
+      <parameter>
+	<type>AHDRuntime *</type>
+	<description>The AHD runtime</description>
+      </parameter>
+      <parameter>
+	<type>char *</type>
+	<description>The document's URI</description>
+      </parameter>
+    </function>
+
+    <function>
+      <name>AHDRuntimeUnload</name>
+      <description>Removes a document from the runtime</description>
+      <returns>
+	<type>void</type>
+	<description></description>
+      </returns>
+      <parameter>
+	<type>AHDRuntime *</type>
+	<description>The AHD runtime</description>
+      </parameter>
+      <parameter>
+	<type>Document *</type>
+	<description>The document to be unloaded</description>
+      </parameter>
+    </function>
+
+    <function>
+      <name>AHDRuntimeSave</name>
+      <description>Saves a document under its original location (only
+	for runtime-local documents)</description>
+      <returns>
+	<type>void</type>
+	<description></description>
+      </returns>
+      <parameter>
+	<type>AHDRuntime *</type>
+	<description>The AHD runtime</description>
+      </parameter>
+      <parameter>
+	<type>Document *</type>
+	<description>The document to be saved</description>
+      </parameter>
+    </function>
+
+    <function>
+      <name>AHDRuntimeStore</name>
+      <description>Stores a document in a remote runtime and activates
+	it there</description>
+      <returns>
+	<type>void</type>
+	<description></description>
+      </returns>
+      <parameter>
+	<type>AHDRuntime *</type>
+	<description>The AHD runtime</description>
+      </parameter>
+      <parameter>
+	<type>Document *</type>
+	<description>The document to be stored</description>
+      </parameter>
+      <parameter>
+	<type>char *</type>
+	<description>the remote URL</description>
+      </parameter>
+      <parameter>
+	<type>char *</type>
+	<description>the origin address for this document</description>
+      </parameter>
+    </function>
+
+    <function>
+      <name>AHDRuntimeCall</name>
+      <description>Calls an AHD function within a document using
+	parent delegation</description>
+      <returns>
+	<type>char *</type>
+	<description>The result of the called function</description>
+      </returns>
+      <parameter>
+	<type>AHDRuntime *</type>
+	<description>The AHD runtime</description>
+      </parameter>
+      <parameter>
+	<type>Node *</type>
+	<description>The current node where the call originates</description>
+      </parameter>
+      <parameter>
+	<type>char *</type>
+	<description>The function name</description>
+      </parameter>
+      <parameter>
+	<type>char *</type>
+	<description>The URL encoded parameters in name/value
+	  pairs</description>
+      </parameter>
+    </function>
+
+    <function>
+      <name>AHDRuntimeBroadcastCall</name>
+      <description>Broadcast call of an AHD function within a
+	document</description>
+      <returns>
+	<type>void</type>
+	<description></description>
+      </returns>
+      <parameter>
+	<type>AHDRuntime *</type>
+	<description>The AHD runtime</description>
+      </parameter>
+      <parameter>
+	<type>Node *</type>
+	<description>The current node where the call originates</description>
+      </parameter>
+      <parameter>
+	<type>char *</type>
+	<description>The function name</description>
+      </parameter>
+      <parameter>
+	<type>char *</type>
+	<description>The URL encoded parameters in name/value
+	  pairs</description>
+      </parameter>
+    </function>
+
+    <function>
+      <name>AHDRuntimeGet</name>
+      <description>Returns the value of an AHD variable using parent
+	delegation</description>
+      <returns>
+	<type>char *</type>
+	<description>The value of the variable</description>
+      </returns>
+      <parameter>
+	<type>AHDRuntime *</type>
+	<description>The AHD runtime</description>
+      </parameter>
+      <parameter>
+	<type>Node *</type>
+	<description>The current node where the call originates</description>
+      </parameter>
+      <parameter>
+	<type>char *</type>
+	<description>The variable name</description>
+      </parameter>
+    </function>
+
+    <function>
+      <name>AHDRuntimePut</name>
+      <description>Sets the value of an AHD variable using parent
+	delegation</description>
+      <returns>
+	<type>char *</type>
+	<description>Depending on the target of the request</description>
+      </returns>
+      <parameter>
+	<type>AHDRuntime *</type>
+	<description>The AHD runtime</description>
+      </parameter>
+      <parameter>
+	<type>Node *</type>
+	<description>The current node where the call originates</description>
+      </parameter>
+      <parameter>
+	<type>char *</type>
+	<description>The variable name</description>
+      </parameter>
+      <parameter>
+	<type>char *</type>
+	<description>The value of the variable</description>
+      </parameter>
+    </function>
+
+    <function>
+      <name>AHDRuntimeMatch</name>
+      <description>Matches a given Element hierarchy against a pattern 
+	hierarchy, triggering onmatch events</description>
+
+      <returns>
+	<type>NodeList *</type>
+	<description>the list of nodes that matched the pattern
+	  nodes or NULL if the pattern did not match</description> 
+      </returns>
+      <parameter>
+	<type>AHDRuntime *</type>
+	<description>the runtime executing the onmatch events</description>
+      </parameter>
+      <parameter>
+	<type>Element *</type>
+	<description>the given hierarchy</description>
+      </parameter>
+      <parameter>
+	<type>Element *</type>
+	<description>the pattern hierarchy</description>
+      </parameter>
+    </function>
+
+    <function>
+      <name>AHDRuntimeHere</name>
+      <description>Returns the hostname and port number of the given
+	AHD runtime</description>
+      <returns>
+	<type>char *</type>
+	<description>the hostname and port number as
+	  "hostname:port"</description> 
+      </returns>
+      <parameter>
+	<type>AHDRuntime *</type>
+	<description>the runtime</description>
+      </parameter>
+    </function>
+
+    <function>
+      <name>AHDRuntimeGetLoadedDocuments</name>
+      <description>Returns a list of the currently loaded documents in
+	the runtime</description>
+      <returns>
+	<type>NodeList *</type>
+	<description>the list of loaded documents</description>
+      </returns>
+      <parameter>
+	<type>AHDRuntime *</type>
+	<description>the runtime</description>
+      </parameter>
+    </function>
+
+    <function>
+      <name>AHDRuntimeGetOrigin</name>
+      <description>Returns the origin URL of a given document</description>
+      <returns>
+	<type>char *</type>
+	<description>the origin URL</description>
+      </returns>
+      <parameter>
+	<type>AHDRuntime *</type>
+	<description>the runtime</description>
+      </parameter>
+      <parameter>
+	<type>Document *</type>
+	<description>the document</description>
+      </parameter>
+    </function>
+  </section>
+
+  <section name="Widget">
+    <title>Widget Related Functions</title>
+
+    <function>
+      <name>HTMLInputElementNew</name>
+      <description>Creates a new HTML FORM Input element</description>
+
+      <returns>
+	<type>Element *</type>
+	<description></description>
+      </returns>
+      <parameter>
+	<type>Document *</type>
+	<description>the owning document</description>
+      </parameter>
+    </function>
+
+    <function>
+      <name>HTMLTextareaElementNew</name>
+      <description>Creates a new HTML FORM Textarea element</description>
+
+      <returns>
+	<type>Element *</type>
+	<description></description>
+      </returns>
+      <parameter>
+	<type>Document *</type>
+	<description>the owning document</description>
+      </parameter>
+    </function>
+
+    <function>
+      <name>HTMLButtonElementNew</name>
+      <description>Creates a new HTML FORM Button element</description>
+
+      <returns>
+	<type>Element *</type>
+	<description></description>
+      </returns>
+      <parameter>
+	<type>Document *</type>
+	<description>the owning document</description>
+      </parameter>
+    </function>
+
+    <function>
+      <name>ElementSetCSSProperties</name>
+      <description>Sets the values of all CSS property for an element
+	according to the current style sheet</description>
+      <returns>
+	<type>void</type>
+	<description></description>
+      </returns>
+      <parameter>
+	<type>Element *</type>
+	<description>the element</description>
+      </parameter>
+    </function>
+
+    <function>
+      <name>ElementSetCSSProperty</name>
+      <description>Sets the value of a CSS property</description>
+      <returns>
+	<type>void</type>
+	<description></description>
+      </returns>
+      <parameter>
+	<type>Element *</type>
+	<description>the element</description>
+      </parameter>
+      <parameter>
+	<type>char *</type>
+	<description>the name of the property</description>
+      </parameter>
+      <parameter>
+	<type>char *</type>
+	<description>the value of the property</description>
+      </parameter>
+    </function>
+
+    <function>
+      <name>ElementGetCSSProperty</name>
+      <description>Returns the value of a CSS property</description>
+      <returns>
+	<type>char *</type>
+	<description>the value of the property</description>
+      </returns>
+      <parameter>
+	<type>char *</type>
+	<description>the name of the property</description>
+      </parameter>
+    </function>
+  </section>
+
+  <code target="swig" purpose="header">
+<![CDATA[	
+%{
+#ifdef NATIVE_NETWORKING
+#include <errno.h>
+#include <signal.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <sys/fcntl.h>
+#include <sys/wait.h>
+#include <netinet/in.h>
+#include <netdb.h>
+#include <regex.h>
+
+#ifdef HAVE_LIBPTHREAD
+#include <pthread.h>
+#endif
+
+#include <Net.h>
+#endif
+
+#include <KinoParser.h>
+#include <AHDRuntime.h>
+#include <HTMLFormTags.h>
+
+%}
+
+%typemap(ret) char * ElementGetContents, char * NodeToText {
+	free ($source);
+}
+]]>
+  </code>
+
+  <code target="wafe" purpose="parserheader">
+<![CDATA[
+$PACKAGE = "KINOPARSER"; $MOTIFPREFIX = 1;
+
+~handles
+	KINOPARSER
+
+~require
+	kinoParser.inc
+	init Tcl_InitHashTable(&kinoParserTable, TCL_STRING_KEYS);
+
+]]>
+  </code>
+
+  <code target="wafe" purpose="ahdheader">
+<![CDATA[
+$PACKAGE = "KINOAHD"; $MOTIFPREFIX = 1;
+
+~handles
+	KINOAHD
+
+~require
+	kinoAHD.inc
+
+]]>
+  </code>
+
+  <code target="wafe" purpose="widgetheader">
+<![CDATA[
+$PACKAGE = "KINOWIDGET"; $MOTIFPREFIX = 1;
+
+~handles
+	KINOWIDGET
+
+~require
+	kinoWidget.inc
+	rConv "VALIGN" VAlign arg \
+		"baseline","top","sub","super","text_top",\
+		"middle","bottom","text_bottom" \
+	      	VALIGN_BASELINE,VALIGN_TOP,VALIGN_SUB,\
+		VALIGN_SUPER,VALIGN_TEXT_TOP,\
+		VALIGN_MIDDLE,VALIGN_BOTTOM,VALIGN_TEXT_BOTTOM
+	rConv "EventCode" EventCode arg \
+		"none","click","dbl_click",\
+		"motion","enter","leave","key" \
+		EE_NONE,EE_CLICK,EE_DBL_CLICK,\
+		EE_MOTION,EE_ENTER,EE_LEAVE,EE_KEY
+
+]]>
+  </code>
+
+  <code target="wafe" purpose="ahdfooter">
+<![CDATA[
+
+void
+AHDRuntimeSetScriptHandler
+	in: AHDRuntime *
+	in: String
+]]>
+  </code>
+
+  <code target="wafe" purpose="widgetfooter">
+<![CDATA[
+~widgetClass
+Kino
+	include <KinoParser.h>
+	include <Kino.h>
+	include <KinoP.h>
+
+#########################################################################
+
+void
+KinoRelayout
+	in: Widget
+
+void
+KinoRefresh
+	in: Widget
+
+void
+KinoSetDocument
+	in: KinoWidget
+	in: NULL | Document *
+
+void
+KinoDocumentSetHandlers
+	in: Document *
+	in: KinoWidget
+
+Document *
+KinoGetDocument
+	in: KinoWidget
+
+void
+StyleSetBoxProperty
+	in: Element *
+	in: String
+	in: String
+
+void
+StyleSetBoxProperties
+	in: Element *
+
+String
+StyleGetBoxProperty
+	in: Element *
+	in: String
+]]></code>
+
+  <code target="wafe" purpose="hashtable">
+<![CDATA[
+
+$stringTo{"Parser *"} = "wafeStringToPtr(INPUT, kinoParserTable, (void *)&OUTPUT)";
+$toString{"%Parser *"} = 'wafeStringAppendPtr(OUTPUT, INPUT,"Parser_",kinoParserTable)';
+$toString{"Parser *"} = 'wafePtrToString(INPUT, "Parser_", kinoParserTable)';
+$toStringGarbage{"Parser *"} = "TCL_VOLATILE";
+
+$stringTo{"TagHandlerInfo *"} = "wafeStringToPtr(INPUT, kinoParserTable, (void *)&OUTPUT)";
+$toString{"%TagHandlerInfo *"} = 'wafeStringAppendPtr(OUTPUT, INPUT,"TagHandlerInfo_",kinoParserTable)';
+$toString{"TagHandlerInfo *"} = 'wafePtrToString(INPUT, "TagHandlerInfo_", kinoParserTable)';
+$toStringGarbage{"TagHandlerInfo *"} = "TCL_VOLATILE";
+
+$stringTo{"LinkHandlerInfo *"} = "wafeStringToPtr(INPUT, kinoParserTable, (void *)&OUTPUT)";
+$toString{"%LinkHandlerInfo *"} = 'wafeStringAppendPtr(OUTPUT, INPUT,"LinkHandlerInfo_",kinoParserTable)';
+$toString{"LinkHandlerInfo *"} = 'wafePtrToString(INPUT, "LinkHandlerInfo_", kinoParserTable)';
+$toStringGarbage{"LinkHandlerInfo *"} = "TCL_VOLATILE";
+
+$stringTo{"EventHandlerInfo *"} = "wafeStringToPtr(INPUT, kinoParserTable, (void *)&OUTPUT)";
+$toString{"%EventHandlerInfo *"} = 'wafeStringAppendPtr(OUTPUT, INPUT,"EventHandlerInfo_",kinoParserTable)';
+$toString{"EventHandlerInfo *"} = 'wafePtrToString(INPUT, "EventHandlerInfo_", kinoParserTable)';
+$toStringGarbage{"EventHandlerInfo *"} = "TCL_VOLATILE";
+
+$stringTo{"ScriptHandlerInfo *"} = "wafeStringToPtr(INPUT, kinoParserTable, (void *)&OUTPUT)";
+$toString{"%ScriptHandlerInfo *"} = 'wafeStringAppendPtr(OUTPUT, INPUT,"ScriptHandlerInfo_",kinoParserTable)';
+$toString{"ScriptHandlerInfo *"} = 'wafePtrToString(INPUT, "ScriptHandlerInfo_", kinoParserTable)';
+$toStringGarbage{"ScriptHandlerInfo *"} = "TCL_VOLATILE";
+
+$stringTo{"NodeList *"} = "wafeStringToPtr(INPUT, kinoParserTable, (void *)&OUTPUT)";
+$toString{"NodeList *"} = 'wafePtrToString(INPUT, "NodeList_", kinoParserTable)';
+$toStringGarbage{"NodeList *"} = "TCL_VOLATILE";
+
+$stringTo{"Node *"} = "wafeStringToPtr(INPUT, kinoParserTable, (void *)&OUTPUT)";
+$toString{"Node *"} = 'wafePtrToString(INPUT, "Node_", kinoParserTable)';
+$toStringGarbage{"Node *"} = "TCL_VOLATILE";
+
+$stringTo{"Element *"} = "wafeStringToPtr(INPUT, kinoParserTable, (void *)&OUTPUT)";
+$toString{"%Element *"} = 'wafeStringAppendPtr(OUTPUT, INPUT,"Node_",kinoParserTable)';
+$toString{"Element *"} = 'wafePtrToString(INPUT, "Node_", kinoParserTable)';
+$toStringGarbage{"Element *"} = "TCL_VOLATILE";
+
+$stringTo{"Document *"} = "wafeStringToPtr(INPUT, kinoParserTable, (void *)&OUTPUT)";
+$toString{"%Document *"} = 'wafeStringAppendPtr(OUTPUT, INPUT,"Node_",kinoParserTable)';
+$toString{"Document *"} = 'wafePtrToString(INPUT, "Node_", kinoParserTable)';
+$toStringGarbage{"Document *"} = "TCL_VOLATILE";
+
+$stringTo{"Text *"} = "wafeStringToPtr(INPUT, kinoParserTable, (void *)&OUTPUT)";
+$toString{"Text *"} = 'wafePtrToString(INPUT, "Node_", kinoParserTable)';
+$toStringGarbage{"Text *"} = "TCL_VOLATILE";
+
+$stringTo{"CDATASection *"} = "wafeStringToPtr(INPUT, kinoParserTable, (void *)&OUTPUT)";
+$toString{"CDATASection *"} = 'wafePtrToString(INPUT, "Node_", kinoParserTable)';
+$toStringGarbage{"CDATASection *"} = "TCL_VOLATILE";
+
+$stringTo{"Inset *"} = "wafeStringToPtr(INPUT, kinoParserTable, (void *)&OUTPUT)";
+$toString{"Inset *"} = 'wafePtrToString(INPUT, "Node_", kinoParserTable)';
+$toStringGarbage{"Inset *"} = "TCL_VOLATILE";
+
+$stringTo{"AHDRuntime *"} = "wafeStringToPtr(INPUT, kinoParserTable, (void *)&OUTPUT)";
+$toString{"AHDRuntime *"} = 'wafePtrToString(INPUT, "AHDRuntime_", kinoParserTable)';
+$toStringGarbage{"AHDRuntime *"} = "TCL_VOLATILE";
+
+]]></code>
+</interface>

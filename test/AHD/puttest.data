@@ -1,0 +1,19 @@
+PUT /test.ahd HTTP/1.0
+Content-type: x-ahd
+Content-length: 198
+X-AHD-Origin: http://remotehost:9999/agent.ahd
+
+<puttest>
+
+  <func name="onload" type="text/lua">
+
+print ("loaded")
+
+AHDRuntimeCall (ahd_ahd,
+   ahd_element,
+   "http://localhost:9999/monitor.ahd#register",
+   "document=3")
+
+  </func>
+
+</puttest>

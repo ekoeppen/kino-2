@@ -1,0 +1,98 @@
+dnl Process this file with autoconf to produce a configure script.
+AC_INIT(parser/Parser.h)
+AM_INIT_AUTOMAKE(kino,2.5.0)
+AC_PROG_MAKE_SET
+
+CFLAGS=-g
+
+dnl Checks for programs.
+AC_PROG_CC
+AC_PROG_CPP
+AC_PROG_INSTALL
+AM_PROG_LIBTOOL
+
+dnl Export SWIG functions 
+CFLAGS="$CFLAGS -DSWIG_GLOBAL"
+
+if test "$GCC" = yes ; then
+    CFLAGS="$CFLAGS -Wall"
+fi
+
+dnl Checks for X11
+AC_PATH_XTRA
+
+dnl Checks for header files.
+AC_HEADER_STDC
+AC_CHECK_HEADERS(fcntl.h limits.h unistd.h)
+
+dnl Checks for typedefs, structures, and compiler characteristics.
+AC_C_INLINE
+
+dnl Checks for library functions.
+AC_CHECK_FUNCS(strtol)
+
+dnl Check for scripting language interpreters
+dnl AC_CHECK_LIB(lua,lua_dostring,\
+dnl 	[LIBS="-llua $LIBS"; lua=yes; AC_DEFINE(HAVE_LIBLUA)])
+dnl AC_CHECK_LIB(tcl8.0,Tcl_GlobalEval,\
+dnl 	[LIBS="-ltcl8.0 $LIBS"; tcl=yes; AC_DEFINE(HAVE_LIBTCL8_0)])
+
+dnl Check for scripting language interpreters
+AC_CHECK_LIB(lua,lua_dostring, [lua=yes; AC_DEFINE(HAVE_LIBLUA)])
+AC_CHECK_LIB(tcl8.0,Tcl_GlobalEval, [tcl=yes; AC_DEFINE(HAVE_LIBTCL8_0)])
+
+AM_CONDITIONAL(lua_found,test "$lua" = yes)
+AM_CONDITIONAL(tcl_found,test "$tcl" = yes)
+
+if test "$lua" = yes; then
+AC_CHECK_LIB(loadlib,loadlib_open, \
+	[loadlib=yes; AC_DEFINE(HAVE_LIBLOADLIB)],,[-llua -lm -ldl])
+AC_CHECK_LIB(poslib,poslib_open, \
+	[poslib=yes; AC_DEFINE(HAVE_LIBPOSLIB)],,[-llua -lm])
+fi
+
+AM_CONDITIONAL(loadlib_found,test "$loadlib" = yes)
+AM_CONDITIONAL(poslib_found,test "$poslib" = yes)
+
+dnl Check for threads library
+AC_CHECK_LIB(pthread,pthread_create, [pthread=yes; AC_DEFINE(HAVE_LIBPTHREAD)])
+AM_CONDITIONAL(pthread_found,test "$pthread" = yes)
+
+AC_DEFINE(_REENTRANT)
+
+dnl Check for Gtk and Xt
+AC_CHECK_PROG(gtk,gtk-config,yes,no)
+AM_CONDITIONAL(gtk_found,test $gtk = yes)
+AM_CONDITIONAL(x_found,test -n $X_LIB)
+
+if test "$gtk" = yes ; then
+	CFLAGS="$CFLAGS `gtk-config --cflags`"
+fi
+
+dnl Enable/disable dmalloc
+AC_ARG_ENABLE(dmalloc, [  --enable-dmalloc        enable dmalloc library],AC_DEFINE(MALLOC_TRACE))
+AM_CONDITIONAL(dmalloc, test "${enable_dmalloc+set}" = set)
+
+dnl Enable/disable Motif in the widget
+AC_ARG_ENABLE(motif,   [  --enable-motif          enable Motif support in the Xt widget library],AC_DEFINE(MOTIF))
+
+dnl Enable/disable native networking support
+AC_ARG_ENABLE(net,     [  --enable-net            enable native networking support],AC_DEFINE(NATIVE_NETWORKING))
+AM_CONDITIONAL(native_networking,test "${enable_net+set}" = set)
+
+dnl Enable/disable native scripting support
+AC_ARG_ENABLE(script,  [  --enable-script         enable native scripting support],AC_DEFINE(NATIVE_SCRIPTING))
+
+dnl Enable/disable native widget support
+AC_ARG_ENABLE(script,  [  --enable-widget         enable widget scripting support (only for the AHD)],AC_DEFINE(NATIVE_WIDGET))
+
+dnl Enable/disable profiling
+AC_ARG_ENABLE(profile, [  --enable-profiling      enable profiling], AC_DEFINE(PROFILING))
+AM_CONDITIONAL(profiling, test "${enable_profiling+set}" = set)
+
+if test "${enable_profiling+set}" = set ; then
+	CFLAGS="$CFLAGS -pg"
+	LDFLAGS="$LDFLAGS -pg"
+fi
+
+AC_OUTPUT(parser/Makefile widget/Makefile ahd/Makefile test/Makefile wrappers/Makefile doc/Makefile Makefile)

@@ -1,0 +1,1 @@
+SUBDIRS = parser widget ahd wrappers doc test

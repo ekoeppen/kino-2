@@ -1,0 +1,24 @@
+<printserver>
+
+  <var name="origin">http://remotehost/printserver.ahd</var>
+
+  <func name="onload" type="text/lua">
+
+origin = AHDRuntimeGet (ahd_ahd, ahd_element, "origin")
+
+print (origin .. " loaded")
+
+AHDRuntimeCall (ahd_ahd,
+   ahd_element,
+   AHDRuntimeHere (ahd_ahd) .. "monitor.ahd#register",
+   "document=" .. origin .. "&amp;func=notify")
+
+  </func>
+
+    <func name="notify" type="text/lua">
+
+print ("Got notification: " .. document)
+
+    </func>
+
+</printserver>

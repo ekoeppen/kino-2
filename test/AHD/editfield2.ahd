@@ -1,0 +1,99 @@
+<!DOCTYPE edittest [
+<!ELEMENT edittest ANY>
+]>
+<?xml-stylesheet href="http://localhost:9998/default.css" type="text/css"?>
+<edittest style="display: block; margin-top: 2em; font-size: 18pt">
+  <h1 class="heading1">Edit Test
+    <func name="onclick" type="text/tcl">
+<![CDATA[
+	 puts [NodeToText $ahd_document]
+	 #NodePrint [NodeGetFirstChild $ahd_document] 0
+	]]></func>
+  </h1>
+  
+  <para class="para">
+    <label class="label">Text: </label>
+    <text1 style="display: inline">Textfeld 1</text1>
+    <button> 
+      <func name="onclick" type="text/tcl">
+<![CDATA[
+	 set l [DocumentGetElementsByTagName $ahd_document text1]
+	 set text [NodeListGetItem $l 0]
+	 
+	 set l [DocumentGetElementsByTagName $ahd_document input]
+	 set edit [NodeListGetItem $l 0]
+	 
+	 ElementSetAttribute $edit value [ElementGetContents $text]
+	 ElementSetAttribute $edit peer text1
+
+	]]></func>
+    </button>
+  </para>
+  
+  <para class="para">
+    <label class="label">Text: </label>
+    <text2 style="display: inline">Textfeld 2</text2>
+    <button> 
+      <func name="onclick" type="text/tcl">
+<![CDATA[
+	      
+	 set l [DocumentGetElementsByTagName $ahd_document text2]
+	 set text [NodeListGetItem $l 0]
+	 
+	 set l [DocumentGetElementsByTagName $ahd_document input]
+	 set edit [NodeListGetItem $l 0]
+	 
+	 ElementSetAttribute $edit value [ElementGetContents $text]
+	 ElementSetAttribute $edit peer text2
+
+	#]]></func>
+    </button>
+  </para>
+  
+  <para class="para">
+    <input/>
+    <button>
+      <func name="onclick" type="text/tcl">
+	 <![CDATA[
+		  set l [DocumentGetElementsByTagName $ahd_document input]
+		  set edit [NodeListGetItem $l 0]
+		  
+		  set l [DocumentGetElementsByTagName $ahd_document \
+			     [ElementGetAttribute $edit peer]]
+		  set text [NodeListGetItem $l 0]
+
+		  ElementSetContents $text [ElementGetAttribute $edit value]
+
+		 ]]></func>
+    </button>
+  </para>
+  
+  <para class="para" style="padding-top: 1ex; padding-bottom: 1ex;
+	border-color: #000000; border-top-width: 2pt;
+	border-bottom-width: 2pt"
+	name="button_list">
+    
+    <button>
+      <func name="onclick" type="text/tcl">
+	 <![CDATA[
+		  set ip [NodeParentLookup $ahd_element name button_list]
+		  set i [HTMLInputElementNew $ahd_document]
+		  NodeAppendChild $ip $i
+	]]></func>
+    </button>
+    
+    <button>
+      <func name="onclick" type="text/tcl">#<![CDATA[
+set ip [NodeParentLookup $ahd_element name button_list]
+set l [ElementGetElementsByTagName $ip input]
+
+for {set i 0} {$i < [NodeListGetLength $l]} {incr i} {
+  NodeDelete [NodeListGetItem $l $i]
+}
+]]></func>
+    </button>
+  
+  </para>
+  
+  <h1 class="heading1">... Ende</h1>
+</edittest>

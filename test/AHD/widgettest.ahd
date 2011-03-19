@@ -1,0 +1,24 @@
+<!DOCTYPE widgettest [
+<!ELEMENT widgettest ANY>
+]>
+<widgettest style="display: block; margin: 2em">
+  <h1>Textfeld:</h1>
+  <p>ein test: <textarea style="display: inline; vertical-align: top"/></p>
+
+  <h1>Input:</h1>
+  <p>label: <input style="display: inline; vertical-align: middle"/></p>
+
+  <h1>Button:</h1>
+  <p>label: <button style="display: inline; vertical-align: middle"> 
+    <func name="onclick" type="text/tcl">#<![CDATA[
+
+set l [DocumentGetElementsByTagName $ahd_document textarea]
+
+set field [NodeListGetItem $l 0]
+puts [ElementGetAttribute $field value]
+
+#]]></func>
+  </button></p>
+
+  <testfield style="display: block">Test?</testfield>
+</widgettest>

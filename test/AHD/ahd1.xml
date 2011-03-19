@@ -1,0 +1,57 @@
+<!doctype swtdoc system [
+<!element embeddedlink - o (any)* >
+<!element func - - (any)* >
+<!element var - - (any)* >
+<!attlist li
+          onclick  cdata "callFunc hide_sublist">
+<!attlist ul
+          name     cdata "list">
+<!attlist embeddedlink
+          xml:link cdata "simple"
+          show     cdata "embed"
+          actuate  cdata "auto">
+]>
+
+<style>
+  body {font-family: sans-serif; background: white}
+</style>
+
+<embeddedlink href="http://localhost/AHD/utils.xml"/>
+
+<func name="toggle_display">
+  set box [pop]
+
+  if {$box != {}} then {
+    if {[PDataBoxGetProperty $box display] == "block"} then {
+      PDataBoxSetProperty $box display none
+    } else {
+      PDataBoxSetProperty $box display block
+    }
+    KinoRelayout $kino
+  }
+</func>
+
+<func name="hide_sublist">
+  push [PDataChildLookup $source list]
+  callFunc toggle_display
+</func>
+
+<html>
+
+  <body>
+    <h1>&Uuml;berschrift 1</h1>
+
+    <ul>
+      <li>Liste:
+	<ul>
+	  <li>eins
+	  <li>zwei
+	  <li>drei
+	</ul>
+    </ul>
+
+    <h1>&Uuml;berschrift 2</h1>
+
+
+  </body>
+</html>

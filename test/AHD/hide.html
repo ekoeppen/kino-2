@@ -1,0 +1,32 @@
+<html>
+  <func name="hide">
+    set list [PDataParentLookup $source list]
+    set display [PDataBoxGetProperty $list display]
+
+    if [expr {$display == "block"}] then {
+      PDataBoxSetProperty $list display none
+    } else {
+      PDataBoxSetProperty $list display block
+    }
+
+    PDataBoxRecalculateExtent $list
+    PDataBoxRecalculateExtent [PDataGetParent $list]
+    KinoRelayout $kino
+  </func>
+  
+    <ul style="font-size: 48">
+
+      <func name="onclick">
+	callFunc hide
+      </func>
+
+      <li>eins
+	<ul name="list">
+	  <li>aaa
+	  <li>bbb
+	  <li>bcc
+	</ul>
+      <li>zwei
+      <li>drei
+    </ul>
+</html>

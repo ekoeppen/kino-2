@@ -1,0 +1,24 @@
+<!doctype test [
+<!element dummy any>
+<!attlist dummy
+          test id #implied
+          wert ( eins | zwei | drei ) drei
+          wert ( eins | zwei | drei ) #required
+          nwert notation  ( eins | zwei | drei ) drei
+          test id #fixed "sch&ouml;ne Schei&szlig;e"
+          name cdata "hallo">
+]>
+
+<html>
+  <head name border=123 test = " 123 ">
+    <title></title>
+  </head>
+  <body>
+      <h1>Hallo</h1>
+      <p>
+	Dies ist ein Test
+      </p>
+      <dummy></dummy>
+      <empty/>
+  </body>
+</html>

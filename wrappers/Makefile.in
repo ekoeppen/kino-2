@@ -1,0 +1,475 @@
+# Makefile.in generated automatically by automake 1.3 from Makefile.am
+
+# Copyright (C) 1994, 1995, 1996, 1997, 1998 Free Software Foundation, Inc.
+# This Makefile.in is free software; the Free Software Foundation
+# gives unlimited permission to copy and/or distribute it,
+# with or without modifications, as long as this notice is preserved.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY, to the extent permitted by law; without
+# even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE.
+
+
+SHELL = /bin/sh
+
+srcdir = @srcdir@
+top_srcdir = @top_srcdir@
+VPATH = @srcdir@
+prefix = @prefix@
+exec_prefix = @exec_prefix@
+
+bindir = @bindir@
+sbindir = @sbindir@
+libexecdir = @libexecdir@
+datadir = @datadir@
+sysconfdir = @sysconfdir@
+sharedstatedir = @sharedstatedir@
+localstatedir = @localstatedir@
+libdir = @libdir@
+infodir = @infodir@
+mandir = @mandir@
+includedir = @includedir@
+oldincludedir = /usr/include
+
+DISTDIR =
+
+pkgdatadir = $(datadir)/@PACKAGE@
+pkglibdir = $(libdir)/@PACKAGE@
+pkgincludedir = $(includedir)/@PACKAGE@
+
+top_builddir = ..
+
+ACLOCAL = @ACLOCAL@
+AUTOCONF = @AUTOCONF@
+AUTOMAKE = @AUTOMAKE@
+AUTOHEADER = @AUTOHEADER@
+
+INSTALL = @INSTALL@
+INSTALL_PROGRAM = @INSTALL_PROGRAM@
+INSTALL_DATA = @INSTALL_DATA@
+INSTALL_SCRIPT = @INSTALL_SCRIPT@
+transform = @program_transform_name@
+
+NORMAL_INSTALL = :
+PRE_INSTALL = :
+POST_INSTALL = :
+NORMAL_UNINSTALL = :
+PRE_UNINSTALL = :
+POST_UNINSTALL = :
+host_alias = @host_alias@
+host_triplet = @host@
+CC = @CC@
+CPP = @CPP@
+LD = @LD@
+LIBTOOL = @LIBTOOL@
+LN_S = @LN_S@
+MAKEINFO = @MAKEINFO@
+NM = @NM@
+PACKAGE = @PACKAGE@
+RANLIB = @RANLIB@
+VERSION = @VERSION@
+gtk = @gtk@
+
+INCLUDES =  -I$(top_srcdir)/parser -I$(top_srcdir)/ahd -I$(top_srcdir)/widget
+EXTRA_DIST = kinoparser.i kinoahd.i kinowidget.i
+
+kinoincludedir = $(prefix)/include/kino
+
+@lua_found_TRUE@LUALIB = libkinoahdlua.a libkinoparserlua.a libkinowidgetlua.a
+@lua_found_TRUE@LUALTLIB = libkinoahdlua.la libkinoparserlua.la libkinowidgetlua.la
+
+@tcl_found_TRUE@TCLLIB = libkinoahdtcl.a libkinoparsertcl.a libkinowidgettcl.a
+@tcl_found_TRUE@TCLLTLIB = libkinoahdtcl.la libkinoparsertcl.la libkinowidgettcl.la
+
+lib_LIBRARIES = $(LUALIB) $(TCLLIB)
+lib_LTLIBRARIES = $(LUALTLIB) $(TCLLTLIB)
+
+libkinoahdlua_a_SOURCES = AHDLuaWrap.c
+libkinoahdlua_la_SOURCES = $(libkinoahdlua_a_SOURCES)
+libkinoahdlua_la_LDFLAGS = -lkinoahd -llua -version-info 5:0:3
+
+libkinoahdtcl_a_SOURCES = AHDTclWrap.c
+libkinoahdtcl_la_SOURCES = $(libkinoahdtcl_a_SOURCES)
+libkinoahdtcl_la_LDFLAGS = -lkinoahd -ltcl8.0 -version-info 5:0:3
+
+libkinowidgetlua_a_SOURCES = WidgetLuaWrap.c
+libkinowidgetlua_la_SOURCES = $(libkinowidgetlua_a_SOURCES)
+libkinowidgetlua_la_LDFLAGS = -llua -version-info 5:0:3
+
+libkinowidgettcl_a_SOURCES = WidgetTclWrap.c
+libkinowidgettcl_la_SOURCES = $(libkinowidgettcl_a_SOURCES)
+libkinowidgettcl_la_LDFLAGS = -ltcl8.0 -version-info 5:0:3
+
+libkinoparserlua_a_SOURCES = ParserLuaWrap.c
+libkinoparserlua_la_SOURCES = $(libkinoparserlua_a_SOURCES)
+libkinoparserlua_la_LDFLAGS = -lkinoparser -llua -version-info 5:0:3
+
+libkinoparsertcl_a_SOURCES = ParserTclWrap.c
+libkinoparsertcl_la_SOURCES = $(libkinoparsertcl_a_SOURCES)
+libkinoparsertcl_la_LDFLAGS = -lkinoparser -ltcl8.0 -version-info 5:0:3
+mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+CONFIG_CLEAN_FILES = 
+LIBRARIES =  $(lib_LIBRARIES)
+
+
+DEFS = @DEFS@ -I. -I$(srcdir) 
+CPPFLAGS = @CPPFLAGS@
+LDFLAGS = @LDFLAGS@
+LIBS = @LIBS@
+X_CFLAGS = @X_CFLAGS@
+X_LIBS = @X_LIBS@
+X_EXTRA_LIBS = @X_EXTRA_LIBS@
+X_PRE_LIBS = @X_PRE_LIBS@
+libkinoahdlua_a_LIBADD = 
+libkinoahdlua_a_OBJECTS =  AHDLuaWrap.o
+libkinoparserlua_a_LIBADD = 
+libkinoparserlua_a_OBJECTS =  ParserLuaWrap.o
+libkinowidgetlua_a_LIBADD = 
+libkinowidgetlua_a_OBJECTS =  WidgetLuaWrap.o
+libkinoahdtcl_a_LIBADD = 
+libkinoahdtcl_a_OBJECTS =  AHDTclWrap.o
+libkinoparsertcl_a_LIBADD = 
+libkinoparsertcl_a_OBJECTS =  ParserTclWrap.o
+libkinowidgettcl_a_LIBADD = 
+libkinowidgettcl_a_OBJECTS =  WidgetTclWrap.o
+AR = ar
+LTLIBRARIES =  $(lib_LTLIBRARIES)
+
+libkinoahdlua_la_LIBADD = 
+libkinoahdlua_la_OBJECTS =  AHDLuaWrap.lo
+libkinoparserlua_la_LIBADD = 
+libkinoparserlua_la_OBJECTS =  ParserLuaWrap.lo
+libkinowidgetlua_la_LIBADD = 
+libkinowidgetlua_la_OBJECTS =  WidgetLuaWrap.lo
+libkinoahdtcl_la_LIBADD = 
+libkinoahdtcl_la_OBJECTS =  AHDTclWrap.lo
+libkinoparsertcl_la_LIBADD = 
+libkinoparsertcl_la_OBJECTS =  ParserTclWrap.lo
+libkinowidgettcl_la_LIBADD = 
+libkinowidgettcl_la_OBJECTS =  WidgetTclWrap.lo
+CFLAGS = @CFLAGS@
+COMPILE = $(CC) $(DEFS) $(INCLUDES) $(CPPFLAGS) $(CFLAGS)
+LTCOMPILE = $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(INCLUDES) $(CPPFLAGS) $(CFLAGS)
+LINK = $(LIBTOOL) --mode=link $(CC) $(CFLAGS) $(LDFLAGS) -o $@
+DIST_COMMON =  Makefile.am Makefile.in
+
+
+DISTFILES = $(DIST_COMMON) $(SOURCES) $(HEADERS) $(TEXINFOS) $(EXTRA_DIST)
+
+TAR = tar
+GZIP = --best
+DEP_FILES =  .deps/AHDLuaWrap.P .deps/AHDTclWrap.P .deps/ParserLuaWrap.P \
+.deps/ParserTclWrap.P .deps/WidgetLuaWrap.P .deps/WidgetTclWrap.P
+SOURCES = $(libkinoahdlua_a_SOURCES) $(libkinoparserlua_a_SOURCES) $(libkinowidgetlua_a_SOURCES) $(libkinoahdtcl_a_SOURCES) $(libkinoparsertcl_a_SOURCES) $(libkinowidgettcl_a_SOURCES) $(libkinoahdlua_la_SOURCES) $(libkinoparserlua_la_SOURCES) $(libkinowidgetlua_la_SOURCES) $(libkinoahdtcl_la_SOURCES) $(libkinoparsertcl_la_SOURCES) $(libkinowidgettcl_la_SOURCES)
+OBJECTS = $(libkinoahdlua_a_OBJECTS) $(libkinoparserlua_a_OBJECTS) $(libkinowidgetlua_a_OBJECTS) $(libkinoahdtcl_a_OBJECTS) $(libkinoparsertcl_a_OBJECTS) $(libkinowidgettcl_a_OBJECTS) $(libkinoahdlua_la_OBJECTS) $(libkinoparserlua_la_OBJECTS) $(libkinowidgetlua_la_OBJECTS) $(libkinoahdtcl_la_OBJECTS) $(libkinoparsertcl_la_OBJECTS) $(libkinowidgettcl_la_OBJECTS)
+
+all: Makefile $(LIBRARIES) $(LTLIBRARIES)
+
+.SUFFIXES:
+.SUFFIXES: .S .c .lo .o .s
+$(srcdir)/Makefile.in: Makefile.am $(top_srcdir)/configure.in $(ACLOCAL_M4)
+	cd $(top_srcdir) && $(AUTOMAKE) --gnu wrappers/Makefile
+
+Makefile: $(srcdir)/Makefile.in  $(top_builddir)/config.status $(BUILT_SOURCES)
+	cd $(top_builddir) \
+	  && CONFIG_FILES=$(subdir)/$@ CONFIG_HEADERS= $(SHELL) ./config.status
+
+
+mostlyclean-libLIBRARIES:
+
+clean-libLIBRARIES:
+	-test -z "$(lib_LIBRARIES)" || rm -f $(lib_LIBRARIES)
+
+distclean-libLIBRARIES:
+
+maintainer-clean-libLIBRARIES:
+
+install-libLIBRARIES: $(lib_LIBRARIES)
+	@$(NORMAL_INSTALL)
+	$(mkinstalldirs) $(DESTDIR)$(libdir)
+	list='$(lib_LIBRARIES)'; for p in $$list; do \
+	  if test -f $$p; then \
+	    echo " $(INSTALL_DATA) $$p $(DESTDIR)$(libdir)/$$p"; \
+	    $(INSTALL_DATA) $$p $(DESTDIR)$(libdir)/$$p; \
+	  else :; fi; \
+	done
+	@$(POST_INSTALL)
+	@list='$(lib_LIBRARIES)'; for p in $$list; do \
+	  if test -f $$p; then \
+	    echo " $(RANLIB) $(DESTDIR)$(libdir)/$$p"; \
+	    $(RANLIB) $(DESTDIR)$(libdir)/$$p; \
+	  else :; fi; \
+	done
+
+uninstall-libLIBRARIES:
+	@$(NORMAL_UNINSTALL)
+	list='$(lib_LIBRARIES)'; for p in $$list; do \
+	  rm -f $(DESTDIR)$(libdir)/$$p; \
+	done
+
+.s.o:
+	$(COMPILE) -c $<
+
+.S.o:
+	$(COMPILE) -c $<
+
+mostlyclean-compile:
+	-rm -f *.o core *.core
+
+clean-compile:
+
+distclean-compile:
+	-rm -f *.tab.c
+
+maintainer-clean-compile:
+
+.s.lo:
+	$(LIBTOOL) --mode=compile $(COMPILE) -c $<
+
+.S.lo:
+	$(LIBTOOL) --mode=compile $(COMPILE) -c $<
+
+mostlyclean-libtool:
+	-rm -f *.lo
+
+clean-libtool:
+	-rm -rf .libs _libs
+
+distclean-libtool:
+
+maintainer-clean-libtool:
+
+libkinoahdlua.a: $(libkinoahdlua_a_OBJECTS) $(libkinoahdlua_a_DEPENDENCIES)
+	-rm -f libkinoahdlua.a
+	$(AR) cru libkinoahdlua.a $(libkinoahdlua_a_OBJECTS) $(libkinoahdlua_a_LIBADD)
+	$(RANLIB) libkinoahdlua.a
+
+libkinoparserlua.a: $(libkinoparserlua_a_OBJECTS) $(libkinoparserlua_a_DEPENDENCIES)
+	-rm -f libkinoparserlua.a
+	$(AR) cru libkinoparserlua.a $(libkinoparserlua_a_OBJECTS) $(libkinoparserlua_a_LIBADD)
+	$(RANLIB) libkinoparserlua.a
+
+libkinowidgetlua.a: $(libkinowidgetlua_a_OBJECTS) $(libkinowidgetlua_a_DEPENDENCIES)
+	-rm -f libkinowidgetlua.a
+	$(AR) cru libkinowidgetlua.a $(libkinowidgetlua_a_OBJECTS) $(libkinowidgetlua_a_LIBADD)
+	$(RANLIB) libkinowidgetlua.a
+
+libkinoahdtcl.a: $(libkinoahdtcl_a_OBJECTS) $(libkinoahdtcl_a_DEPENDENCIES)
+	-rm -f libkinoahdtcl.a
+	$(AR) cru libkinoahdtcl.a $(libkinoahdtcl_a_OBJECTS) $(libkinoahdtcl_a_LIBADD)
+	$(RANLIB) libkinoahdtcl.a
+
+libkinoparsertcl.a: $(libkinoparsertcl_a_OBJECTS) $(libkinoparsertcl_a_DEPENDENCIES)
+	-rm -f libkinoparsertcl.a
+	$(AR) cru libkinoparsertcl.a $(libkinoparsertcl_a_OBJECTS) $(libkinoparsertcl_a_LIBADD)
+	$(RANLIB) libkinoparsertcl.a
+
+libkinowidgettcl.a: $(libkinowidgettcl_a_OBJECTS) $(libkinowidgettcl_a_DEPENDENCIES)
+	-rm -f libkinowidgettcl.a
+	$(AR) cru libkinowidgettcl.a $(libkinowidgettcl_a_OBJECTS) $(libkinowidgettcl_a_LIBADD)
+	$(RANLIB) libkinowidgettcl.a
+
+mostlyclean-libLTLIBRARIES:
+
+clean-libLTLIBRARIES:
+	-test -z "$(lib_LTLIBRARIES)" || rm -f $(lib_LTLIBRARIES)
+
+distclean-libLTLIBRARIES:
+
+maintainer-clean-libLTLIBRARIES:
+
+install-libLTLIBRARIES: $(lib_LTLIBRARIES)
+	@$(NORMAL_INSTALL)
+	$(mkinstalldirs) $(DESTDIR)$(libdir)
+	@list='$(lib_LTLIBRARIES)'; for p in $$list; do \
+	  if test -f $$p; then \
+	    echo "$(LIBTOOL)  --mode=install $(INSTALL_DATA) $$p $(DESTDIR)$(libdir)/$$p"; \
+	    $(LIBTOOL)  --mode=install $(INSTALL_DATA) $$p $(DESTDIR)$(libdir)/$$p; \
+	  else :; fi; \
+	done
+
+uninstall-libLTLIBRARIES:
+	@$(NORMAL_UNINSTALL)
+	list='$(lib_LTLIBRARIES)'; for p in $$list; do \
+	  $(LIBTOOL)  --mode=uninstall rm -f $(DESTDIR)$(libdir)/$$p; \
+	done
+
+libkinoahdlua.la: $(libkinoahdlua_la_OBJECTS) $(libkinoahdlua_la_DEPENDENCIES)
+	$(LINK) -rpath $(libdir) $(libkinoahdlua_la_LDFLAGS) $(libkinoahdlua_la_OBJECTS) $(libkinoahdlua_la_LIBADD) $(LIBS)
+
+libkinoparserlua.la: $(libkinoparserlua_la_OBJECTS) $(libkinoparserlua_la_DEPENDENCIES)
+	$(LINK) -rpath $(libdir) $(libkinoparserlua_la_LDFLAGS) $(libkinoparserlua_la_OBJECTS) $(libkinoparserlua_la_LIBADD) $(LIBS)
+
+libkinowidgetlua.la: $(libkinowidgetlua_la_OBJECTS) $(libkinowidgetlua_la_DEPENDENCIES)
+	$(LINK) -rpath $(libdir) $(libkinowidgetlua_la_LDFLAGS) $(libkinowidgetlua_la_OBJECTS) $(libkinowidgetlua_la_LIBADD) $(LIBS)
+
+libkinoahdtcl.la: $(libkinoahdtcl_la_OBJECTS) $(libkinoahdtcl_la_DEPENDENCIES)
+	$(LINK) -rpath $(libdir) $(libkinoahdtcl_la_LDFLAGS) $(libkinoahdtcl_la_OBJECTS) $(libkinoahdtcl_la_LIBADD) $(LIBS)
+
+libkinoparsertcl.la: $(libkinoparsertcl_la_OBJECTS) $(libkinoparsertcl_la_DEPENDENCIES)
+	$(LINK) -rpath $(libdir) $(libkinoparsertcl_la_LDFLAGS) $(libkinoparsertcl_la_OBJECTS) $(libkinoparsertcl_la_LIBADD) $(LIBS)
+
+libkinowidgettcl.la: $(libkinowidgettcl_la_OBJECTS) $(libkinowidgettcl_la_DEPENDENCIES)
+	$(LINK) -rpath $(libdir) $(libkinowidgettcl_la_LDFLAGS) $(libkinowidgettcl_la_OBJECTS) $(libkinowidgettcl_la_LIBADD) $(LIBS)
+
+tags: TAGS
+
+ID: $(HEADERS) $(SOURCES) $(LISP)
+	here=`pwd` && cd $(srcdir) \
+	  && mkid -f$$here/ID $(SOURCES) $(HEADERS) $(LISP)
+
+TAGS:  $(HEADERS) $(SOURCES)  $(TAGS_DEPENDENCIES) $(LISP)
+	tags=; \
+	here=`pwd`; \
+	list='$(SOURCES) $(HEADERS)'; \
+	unique=`for i in $$list; do echo $$i; done | \
+	  awk '    { files[$$0] = 1; } \
+	       END { for (i in files) print i; }'`; \
+	test -z "$(ETAGS_ARGS)$$unique$(LISP)$$tags" \
+	  || (cd $(srcdir) && etags $(ETAGS_ARGS) $$tags  $$unique $(LISP) -o $$here/TAGS)
+
+mostlyclean-tags:
+
+clean-tags:
+
+distclean-tags:
+	-rm -f TAGS ID
+
+maintainer-clean-tags:
+
+distdir = $(top_builddir)/$(PACKAGE)-$(VERSION)/$(subdir)
+
+subdir = wrappers
+
+distdir: $(DISTFILES)
+	here=`cd $(top_builddir) && pwd`; \
+	top_distdir=`cd $(top_distdir) && pwd`; \
+	distdir=`cd $(distdir) && pwd`; \
+	cd $(top_srcdir) \
+	  && $(AUTOMAKE) --include-deps --build-dir=$$here --srcdir-name=$(top_srcdir) --output-dir=$$top_distdir --gnu wrappers/Makefile
+	@for file in $(DISTFILES); do \
+	  d=$(srcdir); \
+	  test -f $(distdir)/$$file \
+	  || ln $$d/$$file $(distdir)/$$file 2> /dev/null \
+	  || cp -p $$d/$$file $(distdir)/$$file; \
+	done
+
+DEPS_MAGIC := $(shell mkdir .deps > /dev/null 2>&1 || :)
+
+-include $(DEP_FILES)
+
+mostlyclean-depend:
+
+clean-depend:
+
+distclean-depend:
+
+maintainer-clean-depend:
+	-rm -rf .deps
+
+%.o: %.c
+	@echo '$(COMPILE) -c $<'; \
+	$(COMPILE) -Wp,-MD,.deps/$(*F).P -c $<
+
+%.lo: %.c
+	@echo '$(LTCOMPILE) -c $<'; \
+	$(LTCOMPILE) -Wp,-MD,.deps/$(*F).p -c $<
+	@-sed -e 's/^\([^:]*\)\.o:/\1.lo \1.o:/' \
+	  < .deps/$(*F).p > .deps/$(*F).P
+	@-rm -f .deps/$(*F).p
+info:
+dvi:
+check: all
+	$(MAKE)
+installcheck:
+install-exec: install-libLIBRARIES install-libLTLIBRARIES
+	@$(NORMAL_INSTALL)
+
+install-data: 
+	@$(NORMAL_INSTALL)
+
+install: install-exec install-data all
+	@:
+
+uninstall: uninstall-libLIBRARIES uninstall-libLTLIBRARIES
+
+install-strip:
+	$(MAKE) INSTALL_PROGRAM='$(INSTALL_PROGRAM) -s' INSTALL_SCRIPT='$(INSTALL_PROGRAM)' install
+installdirs:
+	$(mkinstalldirs)  $(DATADIR)$(libdir) $(DATADIR)$(libdir)
+
+
+mostlyclean-generic:
+	-test -z "$(MOSTLYCLEANFILES)" || rm -f $(MOSTLYCLEANFILES)
+
+clean-generic:
+	-test -z "$(CLEANFILES)" || rm -f $(CLEANFILES)
+
+distclean-generic:
+	-rm -f Makefile $(DISTCLEANFILES)
+	-rm -f config.cache config.log stamp-h stamp-h[0-9]*
+	-test -z "$(CONFIG_CLEAN_FILES)" || rm -f $(CONFIG_CLEAN_FILES)
+
+maintainer-clean-generic:
+	-test -z "$(MAINTAINERCLEANFILES)" || rm -f $(MAINTAINERCLEANFILES)
+	-test -z "$(BUILT_SOURCES)" || rm -f $(BUILT_SOURCES)
+mostlyclean:  mostlyclean-libLIBRARIES mostlyclean-compile \
+		mostlyclean-libtool mostlyclean-libLTLIBRARIES \
+		mostlyclean-tags mostlyclean-depend mostlyclean-generic
+
+clean:  clean-libLIBRARIES clean-compile clean-libtool \
+		clean-libLTLIBRARIES clean-tags clean-depend \
+		clean-generic mostlyclean
+
+distclean:  distclean-libLIBRARIES distclean-compile distclean-libtool \
+		distclean-libLTLIBRARIES distclean-tags \
+		distclean-depend distclean-generic clean
+	-rm -f config.status
+	-rm -f libtool
+
+maintainer-clean:  maintainer-clean-libLIBRARIES \
+		maintainer-clean-compile maintainer-clean-libtool \
+		maintainer-clean-libLTLIBRARIES maintainer-clean-tags \
+		maintainer-clean-depend maintainer-clean-generic \
+		distclean
+	@echo "This command is intended for maintainers to use;"
+	@echo "it deletes files that may require special tools to rebuild."
+
+.PHONY: mostlyclean-libLIBRARIES distclean-libLIBRARIES \
+clean-libLIBRARIES maintainer-clean-libLIBRARIES uninstall-libLIBRARIES \
+install-libLIBRARIES mostlyclean-compile distclean-compile \
+clean-compile maintainer-clean-compile mostlyclean-libtool \
+distclean-libtool clean-libtool maintainer-clean-libtool \
+mostlyclean-libLTLIBRARIES distclean-libLTLIBRARIES \
+clean-libLTLIBRARIES maintainer-clean-libLTLIBRARIES \
+uninstall-libLTLIBRARIES install-libLTLIBRARIES tags mostlyclean-tags \
+distclean-tags clean-tags maintainer-clean-tags distdir \
+mostlyclean-depend distclean-depend clean-depend \
+maintainer-clean-depend info dvi installcheck install-exec install-data \
+install uninstall all installdirs mostlyclean-generic distclean-generic \
+clean-generic maintainer-clean-generic clean mostlyclean distclean \
+maintainer-clean
+
+
+@lua_found_TRUE@ParserLuaWrap.c: kinoparser.i
+@lua_found_TRUE@	swig -strict 0 -module kinoparserlua -Lua -dnone -o $@ $< 
+
+@lua_found_TRUE@AHDLuaWrap.c: kinoahd.i
+@lua_found_TRUE@	swig -strict 0 -c -module kinoahdlua -Lua -dnone -o $@ $< 
+
+@lua_found_TRUE@WidgetLuaWrap.c: kinowidget.i
+@lua_found_TRUE@	swig -strict 0 -c -module kinowidgetlua -Lua -dnone -o $@ $< 
+
+@tcl_found_TRUE@ParserTclWrap.c: kinoparser.i
+@tcl_found_TRUE@	swig -strict 0 -module kinoparser -tcl -dnone -o $@ $< 
+
+@tcl_found_TRUE@AHDTclWrap.c: kinoahd.i
+@tcl_found_TRUE@	swig -strict 0 -c -module kinoahd -tcl -dnone -o $@ $< 
+
+@tcl_found_TRUE@WidgetTclWrap.c: kinowidget.i
+@tcl_found_TRUE@	swig -strict 0 -c -module kinowidget -tcl -dnone -o $@ $< 
+
+# Tell versions [3.59,3.63) of GNU make to not export all variables.
+# Otherwise a system limit (for SysV at least) may be exceeded.
+.NOEXPORT:

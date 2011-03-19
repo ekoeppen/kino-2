@@ -1,0 +1,22 @@
+<request>
+
+  <func name="onload" type="text/lua">
+
+print (ahd_origin .. " loaded")
+
+AHDRuntimeCall (ahd_ahd, ahd_element,
+   AHDRuntimeHere (ahd_ahd) .. "monitor.ahd#enter",
+   "document=" .. ahd_origin)
+
+  </func>
+    
+  <subject>Dies ist eine Nachricht</subject>
+  <from>Eckhart Köppen</from>
+  <to>Printserver</to>
+  <body>
+    Dies ist ein Test
+  </body>
+
+  <printable />
+
+</request>

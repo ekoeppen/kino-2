@@ -1,0 +1,284 @@
+<DOCTYPE>
+</DOCTYPE>
+<HTML LANG="en">
+  <HEAD>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+    <TITLE>
+      Cascading Style Sheets, Level 2</TITLE>
+    <LINK REL="next" HREF="about.html">
+  </LINK>
+    <LINK REL="STYLESHEET" HREF="style/default.css" TYPE="text/css">
+  </LINK>
+  </META>
+  </HEAD>
+  <BODY>
+    <DIV CLASS="navbar" TITLE="Navigation bar">
+      <CENTER>
+	<A CLASS=":link" HREF="about.html">
+	  next</A>
+	<A CLASS=":link" HREF="#toc">
+	  table of contents</A>
+	<A CLASS=":link" HREF="propidx.html">
+	  properties</A>
+	<A CLASS=":link" HREF="descidx.html">
+	  descriptors</A>
+	<A CLASS=":link" HREF="indexlist.html">
+	  index</A>
+      </CENTER>
+
+    </DIV>
+    <P ALIGN="right">
+      <A CLASS=":link" HREF="http://www.w3.org/">
+	<IMG SRC="./images/w3c_home.gif" ALT="W3C" ALIGN="left" BORDER="0" HSPACE="0">
+      </IMG>
+      </A>
+      WD-css2-19980128
+    </P>
+    <H1 ALIGN="center">
+      Cascading Style Sheets, level 2</H1>
+    <CENTER>
+      <STRONG>
+	W3C Working Draft <I>
+	  28-Jan-1998</I>
+      </STRONG>
+    </CENTER>
+    <DL>
+      <DT>
+	This version: </DT>
+      <DD>
+	<A CLASS=":link" HREF="http://www.w3.org/TR/1998/WD-css2-19980128">
+	  http://www.w3.org/TR/1998/WD-css2-19980128</A>
+      </DD>
+      <DT>
+	Latest version: </DT>
+      <DD>
+	<A CLASS=":link" HREF="http://www.w3.org/TR/WD-css2">
+	  http://www.w3.org/TR/WD-css2</A>
+      </DD>
+      <DT>
+	Previous version: </DT>
+      <DD>
+	<A CLASS=":link" HREF="http://www.w3.org/TR/WD-CSS2-971104">
+	  http://www.w3.org/TR/WD-CSS2-971104</A>
+      </DD>
+      <DT>
+	Editors: </DT>
+      <DD>
+	<A CLASS=":link" HREF="http://www.w3.org/People/Bos/">
+	  Bert Bos</A>
+	<<A CLASS=":link" HREF="mailto:bbos@w3.org">
+	  bbos@w3.org</A>
+	>
+	<A CLASS=":link" HREF="http://www.w3.org/People/howcome/">
+	  H&aring;kon Wium Lie</A>
+	<<A CLASS=":link" HREF="mailto:howcome@w3.org">
+	  howcome@w3.org</A>
+	>
+	<A CLASS=":link" HREF="http://www.w3.org/People/chris/">
+	  Chris Lilley</A>
+	<<A CLASS=":link" HREF="mailto:chris@w3.org">
+	  chris@w3.org</A>
+	>
+	<A CLASS=":link" HREF="http://www.w3.org/People/Jacobs/">
+	  Ian Jacobs</A>
+	<<A CLASS=":link" HREF="mailto:ij@w3.org">
+	  ij@w3.org</A>
+	> </DD>
+    </DL>
+    <H2>
+      Abstract</H2>
+    <P>
+      This specification defines Cascading Style Sheet, level 2 (CSS2). CSS2 is a style sheet language that allows authors and users to attach style (e.g. fonts, spacing and aural cues) to structured documents (e.g. HTML and XML). The CSS2 language is human readable and writable, and expresses style in common desktop publishing terminology. </P>
+    <P>
+      CSS2 builds on <A CLASS=":link" REL="biblioentry" HREF="./refs.html#ref-CSS1" CLASS="normref">
+	[CSS1]</A>
+      , specified in <A CLASS=":link" HREF="http://www.w3.org/TR/REC-CSS1-961217">
+	http://www.w3.org/TR/REC-CSS1-961217</A>
+      . All valid CSS1 style sheets are valid CSS2 style sheets. </P>
+    <H2>
+      Status of this document</H2>
+    <P>
+      This is a W3C Working Draft for review by W3C members and other interested parties. It is a draft document and may be updated, replaced or obsoleted by other documents at any time. It is inappropriate to use W3C Working Drafts as reference material or to cite them as other than "work in progress". This is work in progress and does not imply endorsement by, or the consensus of, either W3C or members of the CSS working group. </P>
+    <P>
+      This document has been produced as part of the <A CLASS=":link" HREF="http://www.w3.org/Style/Activity.html">
+	W3C Style Activity</A>
+      , and is intended as a draft of a proposed recommendation for CSS2. </P>
+    <P>
+      If you did not get this document directly from the W3C website you may want to check whether you have the latest version of this document by looking at the list of W3C technical reports at <<A CLASS=":link" HREF="http://www.w3.org/TR/">
+	http://www.w3.org/TR/</A>
+      >. </P>
+    <H2>
+      Available formats</H2>
+    <P>
+      The CSS2 specification is also available in the following formats: </P>
+    <DL>
+      <DT>
+	a plain text file: </DT>
+      <DD>
+	<A CLASS=":link" HREF="css20.txt">
+	  http://www.w3.org/TR/1998/WD-css2-19980128/css20.txt</A>
+	, </DD>
+      <DT>
+	HTML as a gzip'ed tar file: </DT>
+      <DD>
+	<A CLASS=":link" HREF="css20.tgz">
+	  http://www.w3.org/TR/1998/WD-css2-19980128/css20.tgz</A>
+	, </DD>
+      <DT>
+	HTML as a zip file (this is a '.zip' file not an '.exe'): </DT>
+      <DD>
+	<A CLASS=":link" HREF="css20.zip">
+	  http://www.w3.org/TR/1998/WD-css2-19980128/css20.zip</A>
+	, </DD>
+      <DT>
+	as well as a postscript file: </DT>
+      <DD>
+	<A CLASS=":link" HREF="css20.ps">
+	  http://www.w3.org/TR/1998/WD-css2-19980128/css20.ps</A>
+	, </DD>
+      <DT>
+	and a PDF file: </DT>
+      <DD>
+	<A CLASS=":link" HREF="css20.pdf">
+	  http://www.w3.org/TR/1998/WD-css2-19980128/css20.pdf</A>
+	. </DD>
+    </DL>
+    <P>
+      In case of a discrepancy between electronic and printed forms of the specification, the electronic version is considered the definitive version. </P>
+    <H3>
+      Available languages</H3>
+    <P>
+      The English version of this specification is the only normative version. However, for translations in other languages see <A CLASS=":link" HREF="translations.html">
+	http://www.w3.org/TR/1998/WD-css2-19980128/translations.html</A>
+      .</P>
+    <H2>
+      Comments</H2>
+    <P>
+      Please send detailed comments on this document to <A CLASS=":link" HREF="mailto:howcome@w3.org">
+	the editors</A>
+      . We cannot guarantee a personal response but we will try when it is appropriate. Public discussion on CSS features takes place on <A CLASS=":link" HREF="mailto:www-style@w3.org">
+	www-style@w3.org</A>
+      and messages are archived at <A CLASS=":link" HREF="http://lists.w3.org/Archives/Public/www-style/">
+	http://lists.w3.org/Archives/Public/www-style/</A>
+      . </P>
+    <H2>
+      <A NAME="minitoc">
+	Quick Table of Contents</A>
+    </H2>
+	<OL>
+	  <LI>
+	    <A CLASS=":link" HREF="about.html" REL="chapter">
+	      About the CSS2 Specification</A>
+	  </LI>
+	  <LI CLASS="tocline1">
+	    <A CLASS=":link" HREF="intro.html" REL="chapter">
+	      Introduction to CSS2</A>
+	  </LI>
+	  <LI CLASS="tocline1">
+	    <A CLASS=":link" HREF="conform.html" REL="chapter">
+	      Conformance: Requirements and Recommendations</A>
+	  </LI>
+	  <LI CLASS="tocline1">
+	    <A CLASS=":link" HREF="syndata.html" REL="chapter">
+	      CSS2 syntax and basic data types</A>
+	  </LI>
+	  <LI CLASS="tocline1">
+	    <A CLASS=":link" HREF="selector.html" REL="chapter">
+	      Selectors</A>
+	  </LI>
+	  <LI CLASS="tocline1">
+	    <A CLASS=":link" HREF="cascade.html" REL="chapter">
+	      Assigning property values, Cascading, and Inheritance</A>
+	  </LI>
+	  <LI CLASS="tocline1">
+	    <A CLASS=":link" HREF="media.html" REL="chapter">
+	      Media types</A>
+	  </LI>
+	  <LI CLASS="tocline1">
+	    <A CLASS=":link" HREF="visuren.html#visual-rendering-model">
+	      Visual rendering model</A>
+	  </LI>
+	  <LI CLASS="tocline1">
+	    <A CLASS=":link" HREF="visudet.html" REL="chapter">
+	      Visual rendering model details</A>
+	  </LI>
+	  <LI CLASS="tocline1">
+	    <A CLASS=":link" HREF="visufx.html" REL="chapter">
+	      Visual effects</A>
+	  </LI>
+	  <LI CLASS="tocline1">
+	    <A CLASS=":link" HREF="generate.html#generated-text">
+	      Generated content and automatic numbering</A>
+	  </LI>
+	  <LI CLASS="tocline1">
+	    <A CLASS=":link" HREF="page.html#the-page">
+	      Paged media</A>
+	  </LI>
+	  <LI CLASS="tocline1">
+	    <A CLASS=":link" HREF="colors.html" REL="chapter">
+	      Colors and Backgrounds</A>
+	  </LI>
+	  <LI CLASS="tocline1">
+	    <A CLASS=":link" HREF="fonts.html" REL="chapter">
+	      Fonts</A>
+	  </LI>
+	  <LI CLASS="tocline1">
+	    <A CLASS=":link" HREF="text.html" REL="chapter">
+	      Text</A>
+	  </LI>
+	  <LI CLASS="tocline1">
+	    <A CLASS=":link" HREF="lists.html" REL="chapter">
+	      Lists</A>
+	  </LI>
+	  <LI CLASS="tocline1">
+	    <A CLASS=":link" HREF="tables.html#visual-tables">
+	      Tables</A>
+	  </LI>
+	  <LI CLASS="tocline1">
+	    <A CLASS=":link" HREF="ui.html" REL="chapter">
+	      User interface</A>
+	  </LI>
+	  <LI CLASS="tocline1">
+	    <A CLASS=":link" HREF="aural.html#aural">
+	      Aural style sheets</A>
+	  </LI>
+	</OL>
+	<OL TYPE="A">
+	  <LI CLASS="tocline1">
+	    <A CLASS=":link" HREF="sample.html" REL="chapter">
+	      Appendix A: A sample style sheet for HTML 4.0</A>
+	  </LI>
+	  <LI CLASS="tocline1">
+	    <A CLASS=":link" HREF="changes.html" REL="chapter">
+	      Appendix B: Changes from CSS1</A>
+	  </LI>
+	  <LI CLASS="tocline1">
+	    <A CLASS=":link" HREF="notes.html" REL="chapter">
+	      Appendix C: Implementation and performance notes</A>
+	  </LI>
+	  <LI CLASS="tocline1">
+	    <A CLASS=":link" HREF="grammar.html" REL="chapter">
+	      Appendix D: The grammar of CSS2</A>
+	  </LI>
+	</OL>
+	<UL CLASS="toc">
+	  <LI CLASS="tocline1">
+	    <A CLASS=":link" HREF="refs.html" REL="chapter">
+	      References</A>
+	  </LI>
+	  <LI CLASS="tocline1">
+	    <A CLASS=":link" HREF="propidx.html" REL="chapter">
+	      Property index</A>
+	  </LI>
+	  <LI CLASS="tocline1">
+	    <A CLASS=":link" HREF="descidx.html" REL="chapter">
+	      Descriptor index</A>
+	  </LI>
+	  <LI CLASS="tocline1">
+	    <A CLASS=":link" HREF="indexlist.html" REL="chapter">
+	      Index</A>
+	  </LI>
+	</UL>
+ </BODY>
+</HTML>
+  

@@ -1,0 +1,2241 @@
+<DOCTYPE>
+</DOCTYPE>
+<HTML LANG="en">
+  <HEAD>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+    <TITLE>
+      Cascading Style Sheets, Level 2</TITLE>
+    <LINK REL="next" HREF="about.html">
+  </LINK>
+    <LINK REL="STYLESHEET" HREF="style/default.css" TYPE="text/css">
+  </LINK>
+  </META>
+  </HEAD>
+  <BODY>
+    <DIV CLASS="navbar" TITLE="Navigation bar">
+      <CENTER>
+	<A CLASS=":link" HREF="about.html">
+	  next</A>
+	<A CLASS=":link" HREF="#toc">
+	  table of contents</A>
+	<A CLASS=":link" HREF="propidx.html">
+	  properties</A>
+	<A CLASS=":link" HREF="descidx.html">
+	  descriptors</A>
+	<A CLASS=":link" HREF="indexlist.html">
+	  index</A>
+      </CENTER>
+
+    </DIV>
+    <P ALIGN="right">
+      <A CLASS=":link" HREF="http://www.w3.org/">
+	<IMG SRC="./images/w3c_home.gif" ALT="W3C" ALIGN="left" BORDER="0" HSPACE="0">
+      </IMG>
+      </A>
+      WD-css2-19980128
+    </P>
+    <H1 ALIGN="center">
+      Cascading Style Sheets, level 2</H1>
+    <CENTER>
+      <STRONG>
+	W3C Working Draft <I>
+	  28-Jan-1998</I>
+      </STRONG>
+    </CENTER>
+    <DL>
+      <DT>
+	This version: </DT>
+      <DD>
+	<A CLASS=":link" HREF="http://www.w3.org/TR/1998/WD-css2-19980128">
+	  http://www.w3.org/TR/1998/WD-css2-19980128</A>
+      </DD>
+      <DT>
+	Latest version: </DT>
+      <DD>
+	<A CLASS=":link" HREF="http://www.w3.org/TR/WD-css2">
+	  http://www.w3.org/TR/WD-css2</A>
+      </DD>
+      <DT>
+	Previous version: </DT>
+      <DD>
+	<A CLASS=":link" HREF="http://www.w3.org/TR/WD-CSS2-971104">
+	  http://www.w3.org/TR/WD-CSS2-971104</A>
+      </DD>
+      <DT>
+	Editors: </DT>
+      <DD>
+	<A CLASS=":link" HREF="http://www.w3.org/People/Bos/">
+	  Bert Bos</A>
+	<<A CLASS=":link" HREF="mailto:bbos@w3.org">
+	  bbos@w3.org</A>
+	>
+	<A CLASS=":link" HREF="http://www.w3.org/People/howcome/">
+	  H&aring;kon Wium Lie</A>
+	<<A CLASS=":link" HREF="mailto:howcome@w3.org">
+	  howcome@w3.org</A>
+	>
+	<A CLASS=":link" HREF="http://www.w3.org/People/chris/">
+	  Chris Lilley</A>
+	<<A CLASS=":link" HREF="mailto:chris@w3.org">
+	  chris@w3.org</A>
+	>
+	<A CLASS=":link" HREF="http://www.w3.org/People/Jacobs/">
+	  Ian Jacobs</A>
+	<<A CLASS=":link" HREF="mailto:ij@w3.org">
+	  ij@w3.org</A>
+	> </DD>
+    </DL>
+    <H2>
+      Abstract</H2>
+    <P>
+      This specification defines Cascading Style Sheet, level 2 (CSS2). CSS2 is a style sheet language that allows authors and users to attach style (e.g. fonts, spacing and aural cues) to structured documents (e.g. HTML and XML). The CSS2 language is human readable and writable, and expresses style in common desktop publishing terminology. </P>
+    <P>
+      CSS2 builds on <A CLASS=":link" REL="biblioentry" HREF="./refs.html#ref-CSS1" CLASS="normref">
+	[CSS1]</A>
+      , specified in <A CLASS=":link" HREF="http://www.w3.org/TR/REC-CSS1-961217">
+	http://www.w3.org/TR/REC-CSS1-961217</A>
+      . All valid CSS1 style sheets are valid CSS2 style sheets. </P>
+    <H2>
+      Status of this document</H2>
+    <P>
+      This is a W3C Working Draft for review by W3C members and other interested parties. It is a draft document and may be updated, replaced or obsoleted by other documents at any time. It is inappropriate to use W3C Working Drafts as reference material or to cite them as other than "work in progress". This is work in progress and does not imply endorsement by, or the consensus of, either W3C or members of the CSS working group. </P>
+    <P>
+      This document has been produced as part of the <A CLASS=":link" HREF="http://www.w3.org/Style/Activity.html">
+	W3C Style Activity</A>
+      , and is intended as a draft of a proposed recommendation for CSS2. </P>
+    <P>
+      If you did not get this document directly from the W3C website you may want to check whether you have the latest version of this document by looking at the list of W3C technical reports at <<A CLASS=":link" HREF="http://www.w3.org/TR/">
+	http://www.w3.org/TR/</A>
+      >. </P>
+    <H2>
+      Available formats</H2>
+    <P>
+      The CSS2 specification is also available in the following formats: </P>
+    <DL>
+      <DT>
+	a plain text file: </DT>
+      <DD>
+	<A CLASS=":link" HREF="css20.txt">
+	  http://www.w3.org/TR/1998/WD-css2-19980128/css20.txt</A>
+	, </DD>
+      <DT>
+	HTML as a gzip'ed tar file: </DT>
+      <DD>
+	<A CLASS=":link" HREF="css20.tgz">
+	  http://www.w3.org/TR/1998/WD-css2-19980128/css20.tgz</A>
+	, </DD>
+      <DT>
+	HTML as a zip file (this is a '.zip' file not an '.exe'): </DT>
+      <DD>
+	<A CLASS=":link" HREF="css20.zip">
+	  http://www.w3.org/TR/1998/WD-css2-19980128/css20.zip</A>
+	, </DD>
+      <DT>
+	as well as a postscript file: </DT>
+      <DD>
+	<A CLASS=":link" HREF="css20.ps">
+	  http://www.w3.org/TR/1998/WD-css2-19980128/css20.ps</A>
+	, </DD>
+      <DT>
+	and a PDF file: </DT>
+      <DD>
+	<A CLASS=":link" HREF="css20.pdf">
+	  http://www.w3.org/TR/1998/WD-css2-19980128/css20.pdf</A>
+	. </DD>
+    </DL>
+    <P>
+      In case of a discrepancy between electronic and printed forms of the specification, the electronic version is considered the definitive version. </P>
+    <H3>
+      Available languages</H3>
+    <P>
+      The English version of this specification is the only normative version. However, for translations in other languages see <A CLASS=":link" HREF="translations.html">
+	http://www.w3.org/TR/1998/WD-css2-19980128/translations.html</A>
+      .</P>
+    <H2>
+      Comments</H2>
+    <P>
+      Please send detailed comments on this document to <A CLASS=":link" HREF="mailto:howcome@w3.org">
+	the editors</A>
+      . We cannot guarantee a personal response but we will try when it is appropriate. Public discussion on CSS features takes place on <A CLASS=":link" HREF="mailto:www-style@w3.org">
+	www-style@w3.org</A>
+      and messages are archived at <A CLASS=":link" HREF="http://lists.w3.org/Archives/Public/www-style/">
+	http://lists.w3.org/Archives/Public/www-style/</A>
+      . </P>
+    <H2>
+      <A NAME="minitoc">
+	Quick Table of Contents</A>
+    </H2>
+    <DIV CLASS="toc">
+      <DIV CLASS="toc">
+	<OL>
+	  <LI CLASS="tocline1">
+	    <A CLASS=":link" HREF="about.html" REL="chapter">
+	      About the CSS2 Specification</A>
+	  </LI>
+	  <LI CLASS="tocline1">
+	    <A CLASS=":link" HREF="intro.html" REL="chapter">
+	      Introduction to CSS2</A>
+	  </LI>
+	  <LI CLASS="tocline1">
+	    <A CLASS=":link" HREF="conform.html" REL="chapter">
+	      Conformance: Requirements and Recommendations</A>
+	  </LI>
+	  <LI CLASS="tocline1">
+	    <A CLASS=":link" HREF="syndata.html" REL="chapter">
+	      CSS2 syntax and basic data types</A>
+	  </LI>
+	  <LI CLASS="tocline1">
+	    <A CLASS=":link" HREF="selector.html" REL="chapter">
+	      Selectors</A>
+	  </LI>
+	  <LI CLASS="tocline1">
+	    <A CLASS=":link" HREF="cascade.html" REL="chapter">
+	      Assigning property values, Cascading, and Inheritance</A>
+	  </LI>
+	  <LI CLASS="tocline1">
+	    <A CLASS=":link" HREF="media.html" REL="chapter">
+	      Media types</A>
+	  </LI>
+	  <LI CLASS="tocline1">
+	    <A CLASS=":link" HREF="visuren.html#visual-rendering-model">
+	      Visual rendering model</A>
+	  </LI>
+	  <LI CLASS="tocline1">
+	    <A CLASS=":link" HREF="visudet.html" REL="chapter">
+	      Visual rendering model details</A>
+	  </LI>
+	  <LI CLASS="tocline1">
+	    <A CLASS=":link" HREF="visufx.html" REL="chapter">
+	      Visual effects</A>
+	  </LI>
+	  <LI CLASS="tocline1">
+	    <A CLASS=":link" HREF="generate.html#generated-text">
+	      Generated content and automatic numbering</A>
+	  </LI>
+	  <LI CLASS="tocline1">
+	    <A CLASS=":link" HREF="page.html#the-page">
+	      Paged media</A>
+	  </LI>
+	  <LI CLASS="tocline1">
+	    <A CLASS=":link" HREF="colors.html" REL="chapter">
+	      Colors and Backgrounds</A>
+	  </LI>
+	  <LI CLASS="tocline1">
+	    <A CLASS=":link" HREF="fonts.html" REL="chapter">
+	      Fonts</A>
+	  </LI>
+	  <LI CLASS="tocline1">
+	    <A CLASS=":link" HREF="text.html" REL="chapter">
+	      Text</A>
+	  </LI>
+	  <LI CLASS="tocline1">
+	    <A CLASS=":link" HREF="lists.html" REL="chapter">
+	      Lists</A>
+	  </LI>
+	  <LI CLASS="tocline1">
+	    <A CLASS=":link" HREF="tables.html#visual-tables">
+	      Tables</A>
+	  </LI>
+	  <LI CLASS="tocline1">
+	    <A CLASS=":link" HREF="ui.html" REL="chapter">
+	      User interface</A>
+	  </LI>
+	  <LI CLASS="tocline1">
+	    <A CLASS=":link" HREF="aural.html#aural">
+	      Aural style sheets</A>
+	  </LI>
+	</OL>
+	<OL TYPE="A">
+	  <LI CLASS="tocline1">
+	    <A CLASS=":link" HREF="sample.html" REL="chapter">
+	      Appendix A: A sample style sheet for HTML 4.0</A>
+	  </LI>
+	  <LI CLASS="tocline1">
+	    <A CLASS=":link" HREF="changes.html" REL="chapter">
+	      Appendix B: Changes from CSS1</A>
+	  </LI>
+	  <LI CLASS="tocline1">
+	    <A CLASS=":link" HREF="notes.html" REL="chapter">
+	      Appendix C: Implementation and performance notes</A>
+	  </LI>
+	  <LI CLASS="tocline1">
+	    <A CLASS=":link" HREF="grammar.html" REL="chapter">
+	      Appendix D: The grammar of CSS2</A>
+	  </LI>
+	</OL>
+	<UL CLASS="toc">
+	  <LI CLASS="tocline1">
+	    <A CLASS=":link" HREF="refs.html" REL="chapter">
+	      References</A>
+	  </LI>
+	  <LI CLASS="tocline1">
+	    <A CLASS=":link" HREF="propidx.html" REL="chapter">
+	      Property index</A>
+	  </LI>
+	  <LI CLASS="tocline1">
+	    <A CLASS=":link" HREF="descidx.html" REL="chapter">
+	      Descriptor index</A>
+	  </LI>
+	  <LI CLASS="tocline1">
+	    <A CLASS=":link" HREF="indexlist.html" REL="chapter">
+	      Index</A>
+	  </LI>
+	</UL>
+      </DIV>
+    </DIV>
+    <H2>
+      <A NAME="toc">
+	Full Table of Contents</A>
+    </H2>
+    <DIV CLASS="toc">
+      <DIV CLASS="toc">
+	<OL>
+	  <LI CLASS="tocline1">
+	    <A CLASS=":link" HREF="about.html" REL="chapter">
+	      About the CSS2 Specification</A>
+	    <OL>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="about.html#h-1.1">
+		  Reading the specification</A>
+	      </LI>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="about.html#h-1.2">
+		  How the specification is organized</A>
+	      </LI>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="about.html#h-1.3">
+		  Conventions</A>
+		<OL>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="conform.html#doclanguage">
+		      Document language</A>
+		    elements and attributes </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="about.html#property-defs">
+		      CSS property definitions</A>
+		    <OL>
+		      <LI CLASS="tocline4">
+			<A CLASS=":link" HREF="about.html#shorthand">
+			  Shorthand properties</A>
+		      </LI>
+		    </OL>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="about.html#h-1.3.3">
+		      Notes and examples</A>
+		  </LI>
+		</OL>
+	      </LI>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="about.html#h-1.4">
+		  Acknowledgments</A>
+	      </LI>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="about.html#copyright">
+		  Copyright Notice</A>
+	      </LI>
+	    </OL>
+	  </LI>
+	  <LI CLASS="tocline1">
+	    <A CLASS=":link" HREF="intro.html" REL="chapter">
+	      Introduction to CSS2</A>
+	    <OL>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="intro.html#h-2.1">
+		  A brief CSS2 tutorial for HTML</A>
+	      </LI>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="intro.html#h-2.2">
+		  A brief CSS2 tutorial for XML</A>
+	      </LI>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="intro.html#h-2.3">
+		  The CSS2 processing model</A>
+		<OL>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="intro.html#h-2.3.1">
+		      The canvas</A>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="intro.html#h-2.3.2">
+		      CSS2 addressing model</A>
+		  </LI>
+		</OL>
+	      </LI>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="intro.html#h-2.4">
+		  CSS design principles</A>
+	      </LI>
+	    </OL>
+	  </LI>
+	  <LI CLASS="tocline1">
+	    <A CLASS=":link" HREF="conform.html" REL="chapter">
+	      Conformance: Requirements and Recommendations</A>
+	    <OL>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="conform.html#h-3.1">
+		  Definitions</A>
+	      </LI>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="conform.html#conformance">
+		  Conformance</A>
+	      </LI>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="conform.html#h-3.3">
+		  Error conditions</A>
+	      </LI>
+	    </OL>
+	  </LI>
+	  <LI CLASS="tocline1">
+	    <A CLASS=":link" HREF="syndata.html" REL="chapter">
+	      CSS2 syntax and basic data types</A>
+	    <OL>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="syndata.html#syntax">
+		  Syntax</A>
+		<OL>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="syndata.html#tokenization">
+		      Tokenization</A>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="syndata.html#h-4.1.2">
+		      Characters and case</A>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="syndata.html#h-4.1.3">
+		      Statements</A>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="syndata.html#at-rules">
+		      At-rules</A>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="syndata.html#block">
+		      Blocks</A>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="syndata.html#h-4.1.6">
+		      Rule sets, declaration blocks, and selectors</A>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="syndata.html#declaration">
+		      Declarations</A>
+		    and <A NAME="properties">
+		      properties</A>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="syndata.html#comments">
+		      Comments</A>
+		  </LI>
+		</OL>
+	      </LI>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="syndata.html#parsing-errors">
+		  Rules for handling parsing errors</A>
+	      </LI>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="syndata.html#h-4.3">
+		  Values</A>
+		<OL>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="syndata.html#h-4.3.1">
+		      Integers and real numbers</A>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="syndata.html#length-units">
+		      Lengths</A>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="syndata.html#percentage-units">
+		      Percentages</A>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="syndata.html#uri">
+		      URIs</A>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="syndata.html#color-units">
+		      Colors</A>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="syndata.html#h-4.3.6">
+		      Angles</A>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="syndata.html#h-4.3.7">
+		      Times</A>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="syndata.html#h-4.3.8">
+		      Frequencies</A>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="syndata.html#strings">
+		      Strings</A>
+		  </LI>
+		</OL>
+	      </LI>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="syndata.html#css-in-html">
+		  CSS embedded in HTML</A>
+	      </LI>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="syndata.html#css-by-itself">
+		  CSS as a stand-alone file</A>
+	      </LI>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="syndata.html#char-escapes">
+		  Character escapes in CSS</A>
+	      </LI>
+	    </OL>
+	  </LI>
+	  <LI CLASS="tocline1">
+	    <A CLASS=":link" HREF="selector.html" REL="chapter">
+	      Selectors</A>
+	    <OL>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="selector.html#h-5.1">
+		  Pattern matching</A>
+	      </LI>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="selector.html#universal-selector">
+		  Universal selector</A>
+	      </LI>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="selector.html#type-selectors">
+		  Type selectors</A>
+	      </LI>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="selector.html#descendant-selectors">
+		  Descendant selectors</A>
+	      </LI>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="selector.html#child-selectors">
+		  Child selectors</A>
+		<OL>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="selector.html#first-child">
+		      :first-child</A>
+		    pseudo-class </LI>
+		</OL>
+	      </LI>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="selector.html#adjacent-selectors">
+		  Adjacent selectors</A>
+	      </LI>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="selector.html#attribute-selectors">
+		  Attribute selectors</A>
+		<OL>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="selector.html#h-5.7.1">
+		      Matching attributes and attribute values</A>
+		    <OL>
+		      <LI CLASS="tocline4">
+			<A CLASS=":link" HREF="selector.html#h-5.7.1.1">
+			  Reusing the value of an attribute</A>
+		      </LI>
+		    </OL>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="selector.html#class-html">
+		      The "class" attribute in HTML</A>
+		  </LI>
+		</OL>
+	      </LI>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="selector.html#id-selectors">
+		  ID selectors</A>
+	      </LI>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="selector.html#grouping">
+		  Grouping</A>
+	      </LI>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="selector.html#pseudo-elements">
+		  Pseudo-elements</A>
+		and <A NAME="pseudo-classes">
+		  pseudo-classes</A>
+		<OL>
+		  <LI CLASS="tocline3">
+		    The <SPAN CLASS="index-def" TITLE="pseudo-elements:::first-line|:first-line">
+		      <A CLASS=":link" HREF="selector.html#first-line-pseudo">
+			:first-line</A>
+		    </SPAN>
+		    pseudo-element </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="selector.html#h-5.10.2">
+		      The <SPAN CLASS="index-def" TITLE="pseudo-elements:::first-letter|:first-letter">
+			:first-letter</SPAN>
+		      pseudo-element</A>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="selector.html#h-5.10.3">
+		      The <SPAN CLASS="index-def" TITLE="pseudo-elements:::before|:before">
+			:before</SPAN>
+		      and <SPAN CLASS="index-def" TITLE="pseudo-elements:::after|:after">
+			:after</SPAN>
+		      pseudo-elements</A>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="selector.html#h-5.10.4">
+		      Pseudo-elements with descendant selectors</A>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="selector.html#anchor-pseudo-classes">
+		      The Anchor pseudo-classes</A>
+		    : <SPAN CLASS="index-def" TITLE="pseudo-classes:::link|:link|'link' pseudo-class">
+		      :link</SPAN>
+		    , <SPAN CLASS="index-def" TITLE="pseudo-classes:::visited|:visited|'visited' pseudo-class">
+		      :visited</SPAN>
+		    , <SPAN CLASS="index-def" TITLE="pseudo-classes:::hover|:hover|'hover' pseudo-class">
+		      :hover</SPAN>
+		    , and <SPAN CLASS="index-def" TITLE="pseudo-classes:::active|:active|'active' pseudo-class">
+		      :active</SPAN>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="selector.html#h-5.10.6">
+		      Combining pseudo-elements with attribute selectors</A>
+		  </LI>
+		</OL>
+	      </LI>
+	    </OL>
+	  </LI>
+	  <LI CLASS="tocline1">
+	    <A CLASS=":link" HREF="cascade.html" REL="chapter">
+	      Assigning property values, Cascading, and Inheritance</A>
+	    <OL>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="cascade.html#h-6.1">
+		  Specified, computed, and absolute values</A>
+		<OL>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="cascade.html#specified-value">
+		      Specified values</A>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="cascade.html#computed-value">
+		      Computed values</A>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="cascade.html#actual-value">
+		      Actual values</A>
+		  </LI>
+		</OL>
+	      </LI>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="cascade.html#inheritance">
+		  Inheritance</A>
+		<OL>
+		  <LI CLASS="tocline3">
+		    The <SPAN CLASS="index-def" TITLE="inherit, definition of">
+		      <A CLASS=":link" HREF="cascade.html#value-def-inherit">
+			inherit</A>
+		    </SPAN>
+		    value </LI>
+		</OL>
+	      </LI>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="cascade.html#cascade">
+		  The cascade</A>
+		<OL>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="cascade.html#cascading-order">
+		      Cascading order</A>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="cascade.html#important-rules">
+		      'Important' rules</A>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="cascade.html#h-6.3.3">
+		      Cascading order in HTML</A>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="cascade.html#h-6.3.4">
+		      Precedence of non-CSS presentational hints</A>
+		  </LI>
+		</OL>
+	      </LI>
+	    </OL>
+	  </LI>
+	  <LI CLASS="tocline1">
+	    <A CLASS=":link" HREF="media.html" REL="chapter">
+	      Media types</A>
+	    <OL>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="media.html#h-7.1">
+		  Introduction to media types</A>
+	      </LI>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="media.html#h-7.2">
+		  Specifying media-dependent style sheets</A>
+		<OL>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="media.html#h-7.2.1">
+		      The @media rule</A>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="media.html#h-7.2.2">
+		      The media-dependent @import rule</A>
+		  </LI>
+		</OL>
+	      </LI>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="media.html#media-types">
+		  Recognized media types</A>
+		<OL>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="media.html#media-groups">
+		      Media groups</A>
+		  </LI>
+		</OL>
+	      </LI>
+	    </OL>
+	  </LI>
+	  <LI CLASS="tocline1">
+	    <A CLASS=":link" HREF="visuren.html#visual-rendering-model">
+	      Visual rendering model</A>
+	    <OL>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="visuren.html#h-8.1">
+		  Introduction to the visual rendering model</A>
+		<OL>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="visuren.html#h-8.1.1">
+		      The viewport</A>
+		  </LI>
+		</OL>
+	      </LI>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="visuren.html#box-model">
+		  The box model</A>
+		<OL>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="visuren.html#box-gen">
+		      Controlling box generation:</A>
+		    the <A CLASS=":link" HREF="visuren.html#propdef-display" CLASS="noxref">
+		      <SPAN CLASS="propinst-display">
+			'display'</SPAN>
+		    </A>
+		    property <OL>
+		      <LI CLASS="tocline4">
+			<A CLASS=":link" HREF="visuren.html#compact-and-run-in">
+			  Compact and run-in boxes</A>
+		      </LI>
+		    </OL>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="visuren.html#box-dimensions">
+		      Box dimensions</A>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="visuren.html#mpb-examples">
+		      Example of margins, padding, and borders</A>
+		  </LI>
+		</OL>
+	      </LI>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="visuren.html#positioning-scheme">
+		  Positioning schemes</A>
+		<OL>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="visuren.html#choose-position">
+		      Choosing a positioning scheme:</A>
+		    <A CLASS=":link" HREF="visuren.html#propdef-position" CLASS="noxref">
+		      <SPAN CLASS="propinst-position">
+			'position'</SPAN>
+		    </A>
+		    property </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="visuren.html#position-props">
+		      Box offsets</A>
+		    : <A CLASS=":link" HREF="visuren.html#propdef-top" CLASS="noxref">
+		      <SPAN CLASS="propinst-top">
+			'top'</SPAN>
+		    </A>
+		    , <A CLASS=":link" HREF="visuren.html#propdef-right" CLASS="noxref">
+		      <SPAN CLASS="propinst-right">
+			'right'</SPAN>
+		    </A>
+		    , <A CLASS=":link" HREF="visuren.html#propdef-bottom" CLASS="noxref">
+		      <SPAN CLASS="propinst-bottom">
+			'bottom'</SPAN>
+		    </A>
+		    , <A CLASS=":link" HREF="visuren.html#propdef-left" CLASS="noxref">
+		      <SPAN CLASS="propinst-left">
+			'left'</SPAN>
+		    </A>
+		  </LI>
+		</OL>
+	      </LI>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="visuren.html#normal-flow">
+		  Normal flow</A>
+		<OL>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="visuren.html#anonymous">
+		      Anonymous boxes</A>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="visuren.html#block-formatting">
+		      Block formatting context</A>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="visuren.html#inline-formatting">
+		      Inline formatting context</A>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="visuren.html#direction">
+		      Direction of inline flow</A>
+		    : the <A CLASS=":link" HREF="visuren.html#propdef-direction" CLASS="noxref">
+		      <SPAN CLASS="propinst-direction">
+			'direction'</SPAN>
+		    </A>
+		    property </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="visuren.html#relative-positioning">
+		      Relative positioning</A>
+		  </LI>
+		</OL>
+	      </LI>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="visuren.html#floats">
+		  Floats</A>
+		: the <A CLASS=":link" HREF="visuren.html#propdef-float" CLASS="noxref">
+		  <SPAN CLASS="propinst-float">
+		    'float'</SPAN>
+		</A>
+		and <A CLASS=":link" HREF="visuren.html#propdef-clear" CLASS="noxref">
+		  <SPAN CLASS="propinst-clear">
+		    'clear'</SPAN>
+		</A>
+		properties <OL>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="visuren.html#h-8.5.1">
+		      Controlling flow next to floats</A>
+		  </LI>
+		</OL>
+	      </LI>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="visuren.html#absolute-positioning">
+		  Absolute positioning</A>
+		<OL>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="visuren.html#fixed-positioning">
+		      Fixed positioning</A>
+		  </LI>
+		</OL>
+	      </LI>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="visuren.html#h-8.7">
+		  Relationships between 'display', 'position', and 'float'</A>
+	      </LI>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="visuren.html#comparison">
+		  Comparison of normal, relative, floating, absolute positioning</A>
+		<OL>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="visuren.html#h-8.8.1">
+		      Normal flow</A>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="visuren.html#h-8.8.2">
+		      Relative positioning</A>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="visuren.html#h-8.8.3">
+		      Floating a box</A>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="visuren.html#h-8.8.4">
+		      Absolute positioning</A>
+		  </LI>
+		</OL>
+	      </LI>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="visuren.html#z-order">
+		  Z-order</A>
+		: Layered presentation <OL>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="visuren.html#stack-level">
+		      Specifying the stack level</A>
+		    : the <A CLASS=":link" HREF="visuren.html#propdef-z-index" CLASS="noxref">
+		      <SPAN CLASS="propinst-z-index">
+			'z-index'</SPAN>
+		    </A>
+		    property </LI>
+		</OL>
+	      </LI>
+	    </OL>
+	  </LI>
+	  <LI CLASS="tocline1">
+	    <A CLASS=":link" HREF="visudet.html" REL="chapter">
+	      Visual rendering model details</A>
+	    <OL>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="visudet.html#h-9.1">
+		  Margin, border, and padding properties</A>
+		<OL>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="visudet.html#margin-properties">
+		      Margin properties</A>
+		    : <A CLASS=":link" HREF="visudet.html#propdef-margin-top" CLASS="noxref">
+		      <SPAN CLASS="propinst-margin-top">
+			'margin-top'</SPAN>
+		    </A>
+		    , <A CLASS=":link" HREF="visudet.html#propdef-margin-right" CLASS="noxref">
+		      <SPAN CLASS="propinst-margin-right">
+			'margin-right'</SPAN>
+		    </A>
+		    , <A CLASS=":link" HREF="visudet.html#propdef-margin-bottom" CLASS="noxref">
+		      <SPAN CLASS="propinst-margin-bottom">
+			'margin-bottom'</SPAN>
+		    </A>
+		    , <A CLASS=":link" HREF="visudet.html#propdef-margin-left" CLASS="noxref">
+		      <SPAN CLASS="propinst-margin-left">
+			'margin-left'</SPAN>
+		    </A>
+		    , and <A CLASS=":link" HREF="visudet.html#propdef-margin" CLASS="noxref">
+		      <SPAN CLASS="propinst-margin">
+			'margin'</SPAN>
+		    </A>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="visudet.html#padding-properties">
+		      Padding properties</A>
+		    : <A CLASS=":link" HREF="visudet.html#propdef-padding-top" CLASS="noxref">
+		      <SPAN CLASS="propinst-padding-top">
+			'padding-top'</SPAN>
+		    </A>
+		    , <A CLASS=":link" HREF="visudet.html#propdef-padding-right" CLASS="noxref">
+		      <SPAN CLASS="propinst-padding-right">
+			'padding-right'</SPAN>
+		    </A>
+		    , <A CLASS=":link" HREF="visudet.html#propdef-padding-bottom" CLASS="noxref">
+		      <SPAN CLASS="propinst-padding-bottom">
+			'padding-bottom'</SPAN>
+		    </A>
+		    , <A CLASS=":link" HREF="visudet.html#propdef-padding-left" CLASS="noxref">
+		      <SPAN CLASS="propinst-padding-left">
+			'padding-left'</SPAN>
+		    </A>
+		    , and <A CLASS=":link" HREF="visudet.html#propdef-padding" CLASS="noxref">
+		      <SPAN CLASS="propinst-padding">
+			'padding'</SPAN>
+		    </A>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="visudet.html#border-properties">
+		      Border properties</A>
+		    <OL>
+		      <LI CLASS="tocline4">
+			<A CLASS=":link" HREF="visudet.html#border-width-properties">
+			  Border width</A>
+			: <A CLASS=":link" HREF="visudet.html#propdef-border-top-width" CLASS="noxref">
+			  <SPAN CLASS="propinst-border-top-width">
+			    'border-top-width'</SPAN>
+			</A>
+			, <A CLASS=":link" HREF="visudet.html#propdef-border-right-width" CLASS="noxref">
+			  <SPAN CLASS="propinst-border-right-width">
+			    'border-right-width'</SPAN>
+			</A>
+			, <A CLASS=":link" HREF="visudet.html#propdef-border-bottom-width" CLASS="noxref">
+			  <SPAN CLASS="propinst-border-bottom-width">
+			    'border-bottom-width'</SPAN>
+			</A>
+			, <A CLASS=":link" HREF="visudet.html#propdef-border-left-width" CLASS="noxref">
+			  <SPAN CLASS="propinst-border-left-width">
+			    'border-left-width'</SPAN>
+			</A>
+			, and <A CLASS=":link" HREF="visudet.html#propdef-border-width" CLASS="noxref">
+			  <SPAN CLASS="propinst-border-width">
+			    'border-width'</SPAN>
+			</A>
+		      </LI>
+		      <LI CLASS="tocline4">
+			<A CLASS=":link" HREF="visudet.html#border-color-properties">
+			  Border color</A>
+			: <A CLASS=":link" HREF="visudet.html#propdef-border-top-color" CLASS="noxref">
+			  <SPAN CLASS="propinst-border-top-color">
+			    'border-top-color'</SPAN>
+			</A>
+			, <A CLASS=":link" HREF="visudet.html#propdef-border-right-color" CLASS="noxref">
+			  <SPAN CLASS="propinst-border-right-color">
+			    'border-right-color'</SPAN>
+			</A>
+			, <A CLASS=":link" HREF="visudet.html#propdef-border-bottom-color" CLASS="noxref">
+			  <SPAN CLASS="propinst-border-bottom-color">
+			    'border-bottom-color'</SPAN>
+			</A>
+			, <A CLASS=":link" HREF="visudet.html#propdef-border-left-color" CLASS="noxref">
+			  <SPAN CLASS="propinst-border-left-color">
+			    'border-left-color'</SPAN>
+			</A>
+			, and <A CLASS=":link" HREF="visudet.html#propdef-border-color" CLASS="noxref">
+			  <SPAN CLASS="propinst-border-color">
+			    'border-color'</SPAN>
+			</A>
+		      </LI>
+		      <LI CLASS="tocline4">
+			<A CLASS=":link" HREF="visudet.html#border-style-properties">
+			  Border style</A>
+			: <A CLASS=":link" HREF="visudet.html#propdef-border-top-style" CLASS="noxref">
+			  <SPAN CLASS="propinst-border-top-style">
+			    'border-top-style'</SPAN>
+			</A>
+			, <A CLASS=":link" HREF="visudet.html#propdef-border-right-style" CLASS="noxref">
+			  <SPAN CLASS="propinst-border-right-style">
+			    'border-right-style'</SPAN>
+			</A>
+			, <A CLASS=":link" HREF="visudet.html#propdef-border-bottom-style" CLASS="noxref">
+			  <SPAN CLASS="propinst-border-bottom-style">
+			    'border-bottom-style'</SPAN>
+			</A>
+			, <A CLASS=":link" HREF="visudet.html#propdef-border-left-style" CLASS="noxref">
+			  <SPAN CLASS="propinst-border-left-style">
+			    'border-left-style'</SPAN>
+			</A>
+			, and <A CLASS=":link" HREF="visudet.html#propdef-border-style" CLASS="noxref">
+			  <SPAN CLASS="propinst-border-style">
+			    'border-style'</SPAN>
+			</A>
+		      </LI>
+		      <LI CLASS="tocline4">
+			<A CLASS=":link" HREF="visudet.html#border-shorthand-properties">
+			  Border shorthand properties</A>
+			: <A CLASS=":link" HREF="visudet.html#propdef-border-top" CLASS="noxref">
+			  <SPAN CLASS="propinst-border-top">
+			    'border-top'</SPAN>
+			</A>
+			, <A CLASS=":link" HREF="visudet.html#propdef-border-bottom" CLASS="noxref">
+			  <SPAN CLASS="propinst-border-bottom">
+			    'border-bottom'</SPAN>
+			</A>
+			, <A CLASS=":link" HREF="visudet.html#propdef-border-right" CLASS="noxref">
+			  <SPAN CLASS="propinst-border-right">
+			    'border-right'</SPAN>
+			</A>
+			, <A CLASS=":link" HREF="visudet.html#propdef-border-left" CLASS="noxref">
+			  <SPAN CLASS="propinst-border-left">
+			    'border-left'</SPAN>
+			</A>
+			, and <A CLASS=":link" HREF="visudet.html#propdef-border" CLASS="noxref">
+			  <SPAN CLASS="propinst-border">
+			    'border'</SPAN>
+			</A>
+		      </LI>
+		    </OL>
+		  </LI>
+		</OL>
+	      </LI>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="visudet.html#containing-block">
+		  Containing blocks</A>
+	      </LI>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="visudet.html#box-width">
+		  Box width calculations</A>
+		<OL>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="visudet.html#the-width-property">
+		      Content width</A>
+		    : the <A CLASS=":link" HREF="visudet.html#propdef-width" CLASS="noxref">
+		      <SPAN CLASS="propinst-width">
+			'width'</SPAN>
+		    </A>
+		    property </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="visudet.html#normal-floated">
+		      Widths of boxes in the normal flow and floated boxes</A>
+		    <OL>
+		      <LI CLASS="tocline4">
+			<A CLASS=":link" HREF="visudet.html#h-9.3.2.1">
+			  Determining the content width</A>
+		      </LI>
+		      <LI CLASS="tocline4">
+			<A CLASS=":link" HREF="visudet.html#comp-margin-widths">
+			  Computing margin widths</A>
+		      </LI>
+		    </OL>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="visudet.html#h-9.3.3">
+		      Width of absolutely positioned elements</A>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="visudet.html#min-max-widths">
+		      Minimum and maximum widths</A>
+		    : <A CLASS=":link" HREF="visudet.html#propdef-min-width" CLASS="noxref">
+		      <SPAN CLASS="propinst-min-width">
+			'min-width'</SPAN>
+		    </A>
+		    and <A CLASS=":link" HREF="visudet.html#propdef-max-width" CLASS="noxref">
+		      <SPAN CLASS="propinst-max-width">
+			'max-width'</SPAN>
+		    </A>
+		  </LI>
+		</OL>
+	      </LI>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="visudet.html#box-height">
+		  Box height calculations</A>
+		<OL>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="visudet.html#the-height-property">
+		      Content height</A>
+		    : the <A CLASS=":link" HREF="visudet.html#propdef-height" CLASS="noxref">
+		      <SPAN CLASS="propinst-height">
+			'height'</SPAN>
+		    </A>
+		    property </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="visudet.html#normal-height">
+		      Determining the content height</A>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="visudet.html#h-9.4.3">
+		      Height of absolutely positioned elements</A>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="visudet.html#min-max-heights">
+		      Minimum and maximum heights</A>
+		    : <A CLASS=":link" HREF="visudet.html#propdef-min-height" CLASS="noxref">
+		      <SPAN CLASS="propinst-min-height">
+			'min-height'</SPAN>
+		    </A>
+		    and <A CLASS=":link" HREF="visudet.html#propdef-max-height" CLASS="noxref">
+		      <SPAN CLASS="propinst-max-height">
+			'max-height'</SPAN>
+		    </A>
+		  </LI>
+		</OL>
+	      </LI>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="visudet.html#collapsing-margins">
+		  Collapsing margins</A>
+	      </LI>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="visudet.html#line-height">
+		  Line height calculations</A>
+		: the <A CLASS=":link" HREF="visudet.html#propdef-line-height" CLASS="noxref">
+		  <SPAN CLASS="propinst-line-height">
+		    'line-height'</SPAN>
+		</A>
+		and <A CLASS=":link" HREF="visudet.html#propdef-vertical-align" CLASS="noxref">
+		  <SPAN CLASS="propinst-vertical-align">
+		    'vertical-align'</SPAN>
+		</A>
+		properties <OL>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="visudet.html#h-9.6.1">
+		      Leading and half-leading</A>
+		  </LI>
+		</OL>
+	      </LI>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="visudet.html#floating-constraints">
+		  Floating constraints</A>
+	      </LI>
+	    </OL>
+	  </LI>
+	  <LI CLASS="tocline1">
+	    <A CLASS=":link" HREF="visufx.html" REL="chapter">
+	      Visual effects</A>
+	    <OL>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="visufx.html#overflow-clipping">
+		  Overflow and clipping</A>
+		<OL>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="visufx.html#overflow">
+		      Overflow</A>
+		    : the <A CLASS=":link" HREF="visufx.html#propdef-overflow" CLASS="noxref">
+		      <SPAN CLASS="propinst-overflow">
+			'overflow'</SPAN>
+		    </A>
+		    property </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="visufx.html#clipping">
+		      Clipping</A>
+		    : the <A CLASS=":link" HREF="visufx.html#propdef-clip" CLASS="noxref">
+		      <SPAN CLASS="propinst-clip">
+			'clip'</SPAN>
+		    </A>
+		    property </LI>
+		</OL>
+	      </LI>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="visufx.html#visibility">
+		  Visibility</A>
+		: the <A CLASS=":link" HREF="visufx.html#propdef-visibility" CLASS="noxref">
+		  <SPAN CLASS="propinst-visibility">
+		    'visibility'</SPAN>
+		</A>
+		property </LI>
+	    </OL>
+	  </LI>
+	  <LI CLASS="tocline1">
+	    <A CLASS=":link" HREF="generate.html#generated-text">
+	      Generated content and automatic numbering</A>
+	    <OL>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="generate.html#before-after-content">
+		  The</A>
+		<SPAN CLASS="index-def" TITLE=":before|pseudo-elements:::before">
+		  :before</SPAN>
+		and <SPAN CLASS="index-def" TITLE=":after|pseudo-elements:::after">
+		  :after</SPAN>
+		pseudo elements and the <A CLASS=":link" HREF="generate.html#propdef-content" CLASS="noxref">
+		  <SPAN CLASS="propinst-content">
+		    'content'</SPAN>
+		</A>
+		property </LI>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="generate.html#h-11.2">
+		  Automatic counters and numbering</A>
+	      </LI>
+	    </OL>
+	  </LI>
+	  <LI CLASS="tocline1">
+	    <A CLASS=":link" HREF="page.html#the-page">
+	      Paged media</A>
+	    <OL>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="page.html#h-12.1">
+		  Introduction to paged media</A>
+	      </LI>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="page.html#page-box">
+		  Page boxes</A>
+		: the @page rule <OL>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="page.html#page-margins">
+		      Page margins</A>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="page.html#page-size-prop">
+		      Page size</A>
+		    : the <A CLASS=":link" HREF="page.html#propdef-size" CLASS="noxref">
+		      <SPAN CLASS="propinst-size">
+			'size'</SPAN>
+		    </A>
+		    property <OL>
+		      <LI CLASS="tocline4">
+			<A CLASS=":link" HREF="page.html#h-12.2.2.1">
+			  Rendering page boxes that do not fit a target sheet</A>
+		      </LI>
+		      <LI CLASS="tocline4">
+			<A CLASS=":link" HREF="page.html#h-12.2.2.2">
+			  Positioning the page box on the sheet</A>
+		      </LI>
+		    </OL>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="page.html#crop-mark-prop">
+		      Crop marks</A>
+		    : the <A CLASS=":link" HREF="page.html#propdef-marks" CLASS="noxref">
+		      <SPAN CLASS="propinst-marks">
+			'marks'</SPAN>
+		    </A>
+		    property </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="page.html#h-12.2.4">
+		      Left, right, and first pages</A>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="page.html#h-12.2.5">
+		      Content outside the page box</A>
+		  </LI>
+		</OL>
+	      </LI>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="page.html#page-breaks">
+		  Page breaks</A>
+		<OL>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="page.html#page-break-props">
+		      Page break properties</A>
+		    : <A CLASS=":link" HREF="page.html#propdef-page-break-before" CLASS="noxref">
+		      <SPAN CLASS="propinst-page-break-before">
+			'page-break-before'</SPAN>
+		    </A>
+		    , <A CLASS=":link" HREF="page.html#propdef-page-break-after" CLASS="noxref">
+		      <SPAN CLASS="propinst-page-break-after">
+			'page-break-after'</SPAN>
+		    </A>
+		    , <A CLASS=":link" HREF="page.html#propdef-orphans" CLASS="noxref">
+		      <SPAN CLASS="propinst-orphans">
+			'orphans'</SPAN>
+		    </A>
+		    , and <A CLASS=":link" HREF="page.html#propdef-widows" CLASS="noxref">
+		      <SPAN CLASS="propinst-widows">
+			'widows'</SPAN>
+		    </A>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="page.html#allowed-page-breaks">
+		      Allowed page breaks</A>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="page.html#h-12.3.3">
+		      Forced page breaks</A>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="page.html#h-12.3.4">
+		      "Best" page breaks</A>
+		  </LI>
+		</OL>
+	      </LI>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="page.html#h-12.4">
+		  Cascading in the page context</A>
+	      </LI>
+	    </OL>
+	  </LI>
+	  <LI CLASS="tocline1">
+	    <A CLASS=":link" HREF="colors.html" REL="chapter">
+	      Colors and Backgrounds</A>
+	    <OL>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="colors.html#colors">
+		  Foreground color</A>
+		: the <A CLASS=":link" HREF="colors.html#propdef-color" CLASS="noxref">
+		  <SPAN CLASS="propinst-color">
+		    'color'</SPAN>
+		</A>
+		property </LI>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="colors.html#h-13.2">
+		  The background</A>
+		<OL>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="colors.html#background-properties">
+		      Background properties</A>
+		    : <A CLASS=":link" HREF="colors.html#propdef-background-color" CLASS="noxref">
+		      <SPAN CLASS="propinst-background-color">
+			'background-color'</SPAN>
+		    </A>
+		    , <A CLASS=":link" HREF="colors.html#propdef-background-image" CLASS="noxref">
+		      <SPAN CLASS="propinst-background-image">
+			'background-image'</SPAN>
+		    </A>
+		    , <A CLASS=":link" HREF="colors.html#propdef-background-repeat" CLASS="noxref">
+		      <SPAN CLASS="propinst-background-repeat">
+			'background-repeat'</SPAN>
+		    </A>
+		    , <A CLASS=":link" HREF="colors.html#propdef-background-attachment" CLASS="noxref">
+		      <SPAN CLASS="propinst-background-attachment">
+			'background-attachment'</SPAN>
+		    </A>
+		    , <A CLASS=":link" HREF="colors.html#propdef-background-position" CLASS="noxref">
+		      <SPAN CLASS="propinst-background-position">
+			'background-position'</SPAN>
+		    </A>
+		    , and <A CLASS=":link" HREF="colors.html#propdef-background" CLASS="noxref">
+		      <SPAN CLASS="propinst-background">
+			'background'</SPAN>
+		    </A>
+		  </LI>
+		</OL>
+	      </LI>
+	    </OL>
+	  </LI>
+	  <LI CLASS="tocline1">
+	    <A CLASS=":link" HREF="fonts.html" REL="chapter">
+	      Fonts</A>
+	    <OL>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="fonts.html#h-14.1">
+		  Introduction</A>
+	      </LI>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="fonts.html#font-specification">
+		  Font specification</A>
+		<OL>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="fonts.html#font-properties">
+		      Font specification properties</A>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="fonts.html#font-family">
+		      Font family</A>
+		    : the <A CLASS=":link" HREF="fonts.html#propdef-font-family" CLASS="noxref">
+		      <SPAN CLASS="propinst-font-family">
+			'font-family'</SPAN>
+		    </A>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="fonts.html#font-style">
+		      Font style</A>
+		    : the <A CLASS=":link" HREF="fonts.html#propdef-font-style" CLASS="noxref">
+		      <SPAN CLASS="propinst-font-style">
+			'font-style'</SPAN>
+		    </A>
+		    , <A CLASS=":link" HREF="fonts.html#propdef-font-variant" CLASS="noxref">
+		      <SPAN CLASS="propinst-font-variant">
+			'font-variant'</SPAN>
+		    </A>
+		    , and <A CLASS=":link" HREF="fonts.html#propdef-font-weight" CLASS="noxref">
+		      <SPAN CLASS="propinst-font-weight">
+			'font-weight'</SPAN>
+		    </A>
+		    properties </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="fonts.html#font-size">
+		      Font size</A>
+		    : the <A CLASS=":link" HREF="fonts.html#propdef-font-size" CLASS="noxref">
+		      <SPAN CLASS="propinst-font-size">
+			'font-size'</SPAN>
+		    </A>
+		    and <A CLASS=":link" HREF="fonts.html#propdef-font-size-adjust" CLASS="noxref">
+		      <SPAN CLASS="propinst-font-size-adjust">
+			'font-size-adjust'</SPAN>
+		    </A>
+		    properties </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="fonts.html#font-shorthand">
+		      Shorthand font property</A>
+		    : the <A CLASS=":link" HREF="fonts.html#propdef-font" CLASS="noxref">
+		      <SPAN CLASS="propinst-font">
+			'font'</SPAN>
+		    </A>
+		    property </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="fonts.html#generic-font-families">
+		      Generic font families</A>
+		    <OL>
+		      <LI CLASS="tocline4">
+			<A CLASS=":link" HREF="fonts.html#h-14.2.6.1">
+			  serif</A>
+		      </LI>
+		      <LI CLASS="tocline4">
+			<A CLASS=":link" HREF="fonts.html#h-14.2.6.2">
+			  sans-serif</A>
+		      </LI>
+		      <LI CLASS="tocline4">
+			<A CLASS=":link" HREF="fonts.html#h-14.2.6.3">
+			  cursive</A>
+		      </LI>
+		      <LI CLASS="tocline4">
+			<A CLASS=":link" HREF="fonts.html#h-14.2.6.4">
+			  fantasy</A>
+		      </LI>
+		      <LI CLASS="tocline4">
+			<A CLASS=":link" HREF="fonts.html#h-14.2.6.5">
+			  monospace</A>
+		      </LI>
+		    </OL>
+		  </LI>
+		</OL>
+	      </LI>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="fonts.html#font-selection">
+		  Font selection</A>
+		<OL>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="fonts.html#h-14.3.1">
+		      Font Descriptions and @font-face</A>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="fonts.html#select">
+		      Descriptors for Selecting a Font</A>
+		    : <A CLASS=":link" HREF="fonts.html#descdef-font-family" CLASS="noxref">
+		      <SPAN CLASS="descinst-font-family">
+			'font-family'</SPAN>
+		    </A>
+		    , <A CLASS=":link" HREF="fonts.html#descdef-font-style" CLASS="noxref">
+		      <SPAN CLASS="descinst-font-style">
+			'font-style'</SPAN>
+		    </A>
+		    , <A CLASS=":link" HREF="fonts.html#descdef-font-variant" CLASS="noxref">
+		      <SPAN CLASS="descinst-font-variant">
+			'font-variant'</SPAN>
+		    </A>
+		    , <A CLASS=":link" HREF="fonts.html#descdef-font-weight" CLASS="noxref">
+		      <SPAN CLASS="descinst-font-weight">
+			'font-weight'</SPAN>
+		    </A>
+		    , and <A CLASS=":link" HREF="fonts.html#descdef-font-size" CLASS="noxref">
+		      <SPAN CLASS="descinst-font-size">
+			'font-size'</SPAN>
+		    </A>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="fonts.html#dataqual">
+		      Descriptors for Font Data Qualification</A>
+		    : <A CLASS=":link" HREF="fonts.html#descdef-unicode-range" CLASS="noxref">
+		      <SPAN CLASS="descinst-unicode-range">
+			'unicode-range'</SPAN>
+		    </A>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="fonts.html#unitsperem">
+		      Descriptor for Numeric Values</A>
+		    : <A CLASS=":link" HREF="fonts.html#descdef-units-per-em" CLASS="noxref">
+		      <SPAN CLASS="descinst-units-per-em">
+			'units-per-em'</SPAN>
+		    </A>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="fonts.html#referencing">
+		      Descriptor for Referencing</A>
+		    : <A CLASS=":link" HREF="fonts.html#descdef-src" CLASS="noxref">
+		      <SPAN CLASS="descinst-src">
+			'src'</SPAN>
+		    </A>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="fonts.html#matching">
+		      Descriptors for Matching</A>
+		    : <A CLASS=":link" HREF="fonts.html#descdef-panose-1" CLASS="noxref">
+		      <SPAN CLASS="descinst-panose-1">
+			'panose-1'</SPAN>
+		    </A>
+		    , <A CLASS=":link" HREF="fonts.html#descdef-stemv" CLASS="noxref">
+		      <SPAN CLASS="descinst-stemv">
+			'stemv'</SPAN>
+		    </A>
+		    , <A CLASS=":link" HREF="fonts.html#descdef-stemh" CLASS="noxref">
+		      <SPAN CLASS="descinst-stemh">
+			'stemh'</SPAN>
+		    </A>
+		    , <A CLASS=":link" HREF="fonts.html#descdef-slope" CLASS="noxref">
+		      <SPAN CLASS="descinst-slope">
+			'slope'</SPAN>
+		    </A>
+		    , <A CLASS=":link" HREF="fonts.html#descdef-cap-height" CLASS="noxref">
+		      <SPAN CLASS="descinst-cap-height">
+			'cap-height'</SPAN>
+		    </A>
+		    , <A CLASS=":link" HREF="fonts.html#descdef-x-height" CLASS="noxref">
+		      <SPAN CLASS="descinst-x-height">
+			'x-height'</SPAN>
+		    </A>
+		    , <A CLASS=":link" HREF="fonts.html#descdef-ascent" CLASS="noxref">
+		      <SPAN CLASS="descinst-ascent">
+			'ascent'</SPAN>
+		    </A>
+		    , and <A CLASS=":link" HREF="fonts.html#descdef-descent" CLASS="noxref">
+		      <SPAN CLASS="descinst-descent">
+			'descent'</SPAN>
+		    </A>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="fonts.html#synthesizing">
+		      Descriptors for Synthesis</A>
+		    : <A CLASS=":link" HREF="fonts.html#descdef-widths" CLASS="noxref">
+		      <SPAN CLASS="descinst-widths">
+			'widths'</SPAN>
+		    </A>
+		    and <A CLASS=":link" HREF="fonts.html#descdef-definition-src" CLASS="noxref">
+		      <SPAN CLASS="descinst-definition-src">
+			'definition-src'</SPAN>
+		    </A>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="fonts.html#alignment">
+		      Descriptors for Alignment</A>
+		    : <A CLASS=":link" HREF="fonts.html#descdef-baseline" CLASS="noxref">
+		      <SPAN CLASS="descinst-baseline">
+			'baseline'</SPAN>
+		    </A>
+		    , <A CLASS=":link" HREF="fonts.html#descdef-centerline" CLASS="noxref">
+		      <SPAN CLASS="descinst-centerline">
+			'centerline'</SPAN>
+		    </A>
+		    , <A CLASS=":link" HREF="fonts.html#descdef-mathline" CLASS="noxref">
+		      <SPAN CLASS="descinst-mathline">
+			'mathline'</SPAN>
+		    </A>
+		    , and <A CLASS=":link" HREF="fonts.html#descdef-topline" CLASS="noxref">
+		      <SPAN CLASS="descinst-topline">
+			'topline'</SPAN>
+		    </A>
+		  </LI>
+		</OL>
+	      </LI>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="fonts.html#font-descriptors">
+		  Font Characteristics</A>
+		<OL>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="fonts.html#universal">
+		      Introducing Font Characteristics</A>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="fonts.html#aname">
+		      Adorned font name</A>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="fonts.html#cline">
+		      Central Baseline</A>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="fonts.html#emsq">
+		      Co-ordinate units on the em square</A>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="fonts.html#cmap">
+		      Font encoding tables</A>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="fonts.html#family">
+		      Font family name</A>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="fonts.html#lrwidth">
+		      Glyph Representation widths</A>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="fonts.html#stemh">
+		      Horizontal stem width</A>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="fonts.html#cap">
+		      Height of capital glyph representations</A>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="fonts.html#xht">
+		      Height of lowercase glyph representations</A>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="fonts.html#bline">
+		      Lower Baseline</A>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="fonts.html#mline">
+		      Mathematical Baseline</A>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="fonts.html#bbox">
+		      Maximal bounding box</A>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="fonts.html#ascent">
+		      Maximum unaccented height</A>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="fonts.html#descent">
+		      Maximum unaccented depth</A>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="fonts.html#pan1">
+		      Panose-1 number</A>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="fonts.html#ucode">
+		      Range of ISO10646characters</A>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="fonts.html#tline">
+		      Top Baseline</A>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="fonts.html#stemv">
+		      Vertical stem width</A>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="fonts.html#slope">
+		      Vertical stroke angle</A>
+		  </LI>
+		</OL>
+	      </LI>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="fonts.html#algorithm">
+		  Font matching algorithm</A>
+		<OL>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="fonts.html#h-14.5.1">
+		      Examples of font matching</A>
+		  </LI>
+		</OL>
+	      </LI>
+	    </OL>
+	  </LI>
+	  <LI CLASS="tocline1">
+	    <A CLASS=":link" HREF="text.html" REL="chapter">
+	      Text</A>
+	    <OL>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="text.html#indentation-prop">
+		  Indentation</A>
+		: the <A CLASS=":link" HREF="text.html#propdef-text-indent" CLASS="noxref">
+		  <SPAN CLASS="propinst-text-indent">
+		    'text-indent'</SPAN>
+		</A>
+		property </LI>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="text.html#alignment-prop">
+		  Alignment</A>
+		the <A CLASS=":link" HREF="text.html#propdef-text-align" CLASS="noxref">
+		  <SPAN CLASS="propinst-text-align">
+		    'text-align'</SPAN>
+		</A>
+		property </LI>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="text.html#h-15.3">
+		  Decoration</A>
+		<OL>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="text.html#lining-striking-props">
+		      Underlining, over lining, striking, and blinking</A>
+		    : the <A CLASS=":link" HREF="text.html#propdef-text-decoration" CLASS="noxref">
+		      <SPAN CLASS="propinst-text-decoration">
+			'text-decoration'</SPAN>
+		    </A>
+		    property </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="text.html#text-shadow-props">
+		      Text shadows</A>
+		    : the <A CLASS=":link" HREF="text.html#propdef-text-shadow" CLASS="noxref">
+		      <SPAN CLASS="propinst-text-shadow">
+			'text-shadow'</SPAN>
+		    </A>
+		    property </LI>
+		</OL>
+	      </LI>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="text.html#spacing-props">
+		  Letter and word spacing</A>
+		: the <A CLASS=":link" HREF="text.html#propdef-letter-spacing" CLASS="noxref">
+		  <SPAN CLASS="propinst-letter-spacing">
+		    'letter-spacing'</SPAN>
+		</A>
+		and <A CLASS=":link" HREF="text.html#propdef-word-spacing" CLASS="noxref">
+		  <SPAN CLASS="propinst-word-spacing">
+		    'word-spacing'</SPAN>
+		</A>
+		properties </LI>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="text.html#h-15.5">
+		  Case</A>
+		<OL>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="text.html#caps-prop">
+		      Capitalization</A>
+		    : the <A CLASS=":link" HREF="text.html#propdef-text-transform" CLASS="noxref">
+		      <SPAN CLASS="propinst-text-transform">
+			'text-transform'</SPAN>
+		    </A>
+		    property </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="text.html#h-15.5.2">
+		      Special first letter/first line</A>
+		  </LI>
+		</OL>
+	      </LI>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="text.html#white-space-prop">
+		  White space</A>
+		: the <A CLASS=":link" HREF="text.html#propdef-white-space" CLASS="noxref">
+		  <SPAN CLASS="propinst-white-space">
+		    'white-space'</SPAN>
+		</A>
+		property </LI>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="text.html#h-15.7">
+		  Text in HTML</A>
+		<OL>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="text.html#h-15.7.1">
+		      Forcing a line break</A>
+		  </LI>
+		</OL>
+	      </LI>
+	    </OL>
+	  </LI>
+	  <LI CLASS="tocline1">
+	    <A CLASS=":link" HREF="lists.html" REL="chapter">
+	      Lists</A>
+	    <OL>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="lists.html#h-16.1">
+		  Visual formatting of lists</A>
+		<OL>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="lists.html#list-props">
+		      List properties</A>
+		    : <A CLASS=":link" HREF="lists.html#propdef-list-style-type" CLASS="noxref">
+		      <SPAN CLASS="propinst-list-style-type">
+			'list-style-type'</SPAN>
+		    </A>
+		    , <A CLASS=":link" HREF="lists.html#propdef-list-style-image" CLASS="noxref">
+		      <SPAN CLASS="propinst-list-style-image">
+			'list-style-image'</SPAN>
+		    </A>
+		    , <A CLASS=":link" HREF="lists.html#propdef-list-style-position" CLASS="noxref">
+		      <SPAN CLASS="propinst-list-style-position">
+			'list-style-position'</SPAN>
+		    </A>
+		    , and <A CLASS=":link" HREF="lists.html#propdef-list-style" CLASS="noxref">
+		      <SPAN CLASS="propinst-list-style">
+			'list-style'</SPAN>
+		    </A>
+		  </LI>
+		</OL>
+	      </LI>
+	    </OL>
+	  </LI>
+	  <LI CLASS="tocline1">
+	    <A CLASS=":link" HREF="tables.html#visual-tables">
+	      Tables</A>
+	    <OL>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="tables.html#h-17.1">
+		  Building visual tables</A>
+		<OL>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="tables.html#h-17.1.1">
+		      The 'display' property</A>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="tables.html#cell-spanning-props">
+		      Cell spanning properties:</A>
+		    <A CLASS=":link" HREF="tables.html#propdef-column-span" CLASS="noxref">
+		      <SPAN CLASS="propinst-column-span">
+			'column-span'</SPAN>
+		    </A>
+		    , and <A CLASS=":link" HREF="tables.html#propdef-row-span" CLASS="noxref">
+		      <SPAN CLASS="propinst-row-span">
+			'row-span'</SPAN>
+		    </A>
+		  </LI>
+		</OL>
+	      </LI>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="tables.html#h-17.2">
+		  Layout model of elements inside tables</A>
+		<OL>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="tables.html#h-17.2.1">
+		      Margins on rows, columns and cells</A>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="tables.html#h-17.2.2">
+		      Interactions between rows and columns</A>
+		    <OL>
+		      <LI CLASS="tocline4">
+			<A CLASS=":link" HREF="tables.html#h-17.2.2.1">
+			  Labeled diagram:</A>
+		      </LI>
+		    </OL>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="tables.html#h-17.2.3">
+		      The 'border-collapse' property</A>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="tables.html#h-17.2.4">
+		      The border styles</A>
+		  </LI>
+		</OL>
+	      </LI>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="tables.html#h-17.3">
+		  Computing widths and heights</A>
+		<OL>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="tables.html#h-17.3.1">
+		      The 'table-layout' property</A>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="tables.html#h-17.3.2">
+		      The 'collapse' value for the 'visibility' property</A>
+		  </LI>
+		</OL>
+	      </LI>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="tables.html#h-17.4">
+		  'Vertical-align' on table cells</A>
+	      </LI>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="tables.html#h-17.5">
+		  Table elements in selectors</A>
+		<OL>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="tables.html#h-17.5.1">
+		      Columns and cell selectors</A>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="tables.html#h-17.5.2">
+		      Row, column and cell pseudo-classes</A>
+		    <OL>
+		      <LI CLASS="tocline4">
+			<A CLASS=":link" HREF="tables.html#h-17.5.2.1">
+			  Row pseudo-classes:</A>
+		      </LI>
+		      <LI CLASS="tocline4">
+			<A CLASS=":link" HREF="tables.html#h-17.5.2.2">
+			  Column pseudo-classes:</A>
+		      </LI>
+		    </OL>
+		  </LI>
+		</OL>
+	      </LI>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="tables.html#h-17.6">
+		  HTML 4.0 default table stylesheet</A>
+	      </LI>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="tables.html#h-17.7">
+		  UNDER CONSTRUCTION!</A>
+		<EM>
+		  -material yet to be integrated, substituted, or discarded</EM>
+		<OL>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="tables.html#table-layout">
+		      Table layout</A>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="tables.html#h-17.7.2">
+		      Computing widths and heights</A>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="tables.html#border-placement">
+		      Placement of the borders:</A>
+		    <A CLASS=":link" HREF="tables.html#propdef-cell-spacing" CLASS="noxref">
+		      <SPAN CLASS="propinst-cell-spacing">
+			'cell-spacing'</SPAN>
+		    </A>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="tables.html#h-17.7.4">
+		      Conflict resolution for borders</A>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="tables.html#h-17.7.5">
+		      Properties for columns and rows</A>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="tables.html#h-17.7.6">
+		      Vertical alignment of cells in a row</A>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="tables.html#h-17.7.7">
+		      Horizontal alignment of cells in a column</A>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="tables.html#table-captions">
+		      Table captions</A>
+		    : the <A CLASS=":link" HREF="tables.html#propdef-caption-side" CLASS="noxref">
+		      <SPAN CLASS="propinst-caption-side">
+			'caption-side'</SPAN>
+		    </A>
+		    property </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="tables.html#generating-speech">
+		      Generating speech</A>
+		    : the <A CLASS=":link" HREF="tables.html#propdef-speak-header" CLASS="noxref">
+		      <SPAN CLASS="propinst-speak-header">
+			'speak-header'</SPAN>
+		    </A>
+		    property </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="tables.html#h-17.7.10">
+		      Table implementation notes</A>
+		  </LI>
+		</OL>
+	      </LI>
+	    </OL>
+	  </LI>
+	  <LI CLASS="tocline1">
+	    <A CLASS=":link" HREF="ui.html" REL="chapter">
+	      User interface</A>
+	    <OL>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="ui.html#cursor-props">
+		  Cursors:</A>
+		the <A CLASS=":link" HREF="ui.html#propdef-cursor" CLASS="noxref">
+		  <SPAN CLASS="propinst-cursor">
+		    'cursor'</SPAN>
+		</A>
+		property </LI>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="ui.html#system-colors">
+		  User preferences for colors</A>
+	      </LI>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="ui.html#system-fonts">
+		  User preferences for fonts</A>
+	      </LI>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="ui.html#h-18.4">
+		  Other rendering issues that depend on user agents</A>
+		<OL>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="ui.html#h-18.4.1">
+		      Magnification</A>
+		  </LI>
+		</OL>
+	      </LI>
+	    </OL>
+	  </LI>
+	  <LI CLASS="tocline1">
+	    <A CLASS=":link" HREF="aural.html#aural">
+	      Aural style sheets</A>
+	    <OL>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="aural.html#h-19.1">
+		  Introduction to aural style sheets</A>
+	      </LI>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="aural.html#volume-props">
+		  Volume properties</A>
+		: <A CLASS=":link" HREF="aural.html#propdef-volume" CLASS="noxref">
+		  <SPAN CLASS="propinst-volume">
+		    'volume'</SPAN>
+		</A>
+	      </LI>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="aural.html#speaking-props">
+		  Speaking properties</A>
+		: <A CLASS=":link" HREF="aural.html#propdef-speak" CLASS="noxref">
+		  <SPAN CLASS="propinst-speak">
+		    'speak'</SPAN>
+		</A>
+	      </LI>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="aural.html#pause-props">
+		  Pause properties</A>
+		: <A CLASS=":link" HREF="aural.html#propdef-pause-before" CLASS="noxref">
+		  <SPAN CLASS="propinst-pause-before">
+		    'pause-before'</SPAN>
+		</A>
+		, <A CLASS=":link" HREF="aural.html#propdef-pause-after" CLASS="noxref">
+		  <SPAN CLASS="propinst-pause-after">
+		    'pause-after'</SPAN>
+		</A>
+		, and <A CLASS=":link" HREF="aural.html#propdef-pause" CLASS="noxref">
+		  <SPAN CLASS="propinst-pause">
+		    'pause'</SPAN>
+		</A>
+	      </LI>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="aural.html#cue-props">
+		  Cue properties</A>
+		: <A CLASS=":link" HREF="aural.html#propdef-cue-before" CLASS="noxref">
+		  <SPAN CLASS="propinst-cue-before">
+		    'cue-before'</SPAN>
+		</A>
+		, <A CLASS=":link" HREF="aural.html#propdef-cue-after" CLASS="noxref">
+		  <SPAN CLASS="propinst-cue-after">
+		    'cue-after'</SPAN>
+		</A>
+		, and <A CLASS=":link" HREF="aural.html#propdef-cue" CLASS="noxref">
+		  <SPAN CLASS="propinst-cue">
+		    'cue'</SPAN>
+		</A>
+	      </LI>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="aural.html#mixing-props">
+		  Mixing properties</A>
+		: <A CLASS=":link" HREF="aural.html#propdef-play-during" CLASS="noxref">
+		  <SPAN CLASS="propinst-play-during">
+		    'play-during'</SPAN>
+		</A>
+	      </LI>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="aural.html#spatial-props">
+		  Spatial properties</A>
+		: <A CLASS=":link" HREF="aural.html#propdef-azimuth" CLASS="noxref">
+		  <SPAN CLASS="propinst-azimuth">
+		    'azimuth'</SPAN>
+		</A>
+		and <A CLASS=":link" HREF="aural.html#propdef-elevation" CLASS="noxref">
+		  <SPAN CLASS="propinst-elevation">
+		    'elevation'</SPAN>
+		</A>
+	      </LI>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="aural.html#voice-char-props">
+		  Voice characteristic properties</A>
+		: <A CLASS=":link" HREF="aural.html#propdef-speech-rate" CLASS="noxref">
+		  <SPAN CLASS="propinst-speech-rate">
+		    'speech-rate'</SPAN>
+		</A>
+		, <A CLASS=":link" HREF="aural.html#propdef-voice-family" CLASS="noxref">
+		  <SPAN CLASS="propinst-voice-family">
+		    'voice-family'</SPAN>
+		</A>
+		, <A CLASS=":link" HREF="aural.html#propdef-pitch" CLASS="noxref">
+		  <SPAN CLASS="propinst-pitch">
+		    'pitch'</SPAN>
+		</A>
+		, <A CLASS=":link" HREF="aural.html#propdef-pitch-range" CLASS="noxref">
+		  <SPAN CLASS="propinst-pitch-range">
+		    'pitch-range'</SPAN>
+		</A>
+		, <A CLASS=":link" HREF="aural.html#propdef-stress" CLASS="noxref">
+		  <SPAN CLASS="propinst-stress">
+		    'stress'</SPAN>
+		</A>
+		, and <A CLASS=":link" HREF="aural.html#propdef-richness" CLASS="noxref">
+		  <SPAN CLASS="propinst-richness">
+		    'richness'</SPAN>
+		</A>
+	      </LI>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="aural.html#speech-props">
+		  Speech properties</A>
+		: <A CLASS=":link" HREF="aural.html#propdef-speak-punctuation" CLASS="noxref">
+		  <SPAN CLASS="propinst-speak-punctuation">
+		    'speak-punctuation'</SPAN>
+		</A>
+		, <A CLASS=":link" HREF="aural.html#propdef-speak-date" CLASS="noxref">
+		  <SPAN CLASS="propinst-speak-date">
+		    'speak-date'</SPAN>
+		</A>
+		, <A CLASS=":link" HREF="aural.html#propdef-speak-numeral" CLASS="noxref">
+		  <SPAN CLASS="propinst-speak-numeral">
+		    'speak-numeral'</SPAN>
+		</A>
+		, and <A CLASS=":link" HREF="aural.html#propdef-speak-time" CLASS="noxref">
+		  <SPAN CLASS="propinst-speak-time">
+		    'speak-time'</SPAN>
+		</A>
+	      </LI>
+	    </OL>
+	  </LI>
+	</OL>
+	<OL TYPE="A">
+	  <LI CLASS="tocline1">
+	    <A CLASS=":link" HREF="sample.html" REL="chapter">
+	      Appendix A: A sample style sheet for HTML 4.0</A>
+	  </LI>
+	  <LI CLASS="tocline1">
+	    <A CLASS=":link" HREF="changes.html" REL="chapter">
+	      Appendix B: Changes from CSS1</A>
+	    <OL>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="changes.html#h-2.1">
+		  New functionality</A>
+	      </LI>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="changes.html#h-2.2">
+		  Updated descriptions</A>
+	      </LI>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="changes.html#h-2.3">
+		  Changes</A>
+	      </LI>
+	    </OL>
+	  </LI>
+	  <LI CLASS="tocline1">
+	    <A CLASS=":link" HREF="notes.html" REL="chapter">
+	      Appendix C: Implementation and performance notes</A>
+	    <OL>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="notes.html#h-3.1">
+		  Order of property value calculation</A>
+	      </LI>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="notes.html#h-3.2">
+		  Colors</A>
+		<OL>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="notes.html#gamma-correction">
+		      Gamma Correction</A>
+		  </LI>
+		</OL>
+	      </LI>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="notes.html#h-3.3">
+		  Fonts</A>
+		<OL>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="notes.html#h-3.3.1">
+		      Glossary of font terms</A>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="notes.html#coneg">
+		      Font retrieval</A>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="notes.html#panose">
+		      Meaning of the Panose Digits</A>
+		  </LI>
+		  <LI CLASS="tocline3">
+		    <A CLASS=":link" HREF="notes.html#truetype-unicode">
+		      Deducing Unicode Ranges for TrueType</A>
+		  </LI>
+		</OL>
+	      </LI>
+	    </OL>
+	  </LI>
+	  <LI CLASS="tocline1">
+	    <A CLASS=":link" HREF="grammar.html" REL="chapter">
+	      Appendix D: The grammar of CSS2</A>
+	    <OL>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="grammar.html#h-4.1">
+		  Grammar</A>
+	      </LI>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="grammar.html#h-4.2">
+		  Lexical scanner</A>
+	      </LI>
+	    </OL>
+	  </LI>
+	</OL>
+	<UL CLASS="toc">
+	  <LI CLASS="tocline1">
+	    <A CLASS=":link" HREF="refs.html" REL="chapter">
+	      References</A>
+	    <UL>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="refs.html#h-1.1">
+		  Normative references</A>
+	      </LI>
+	      <LI CLASS="tocline2">
+		<A CLASS=":link" HREF="refs.html#h-1.2">
+		  Informative references</A>
+	      </LI>
+	    </UL>
+	  </LI>
+	  <LI CLASS="tocline1">
+	    <A CLASS=":link" HREF="propidx.html" REL="chapter">
+	      Property index</A>
+	  </LI>
+	  <LI CLASS="tocline1">
+	    <A CLASS=":link" HREF="descidx.html" REL="chapter">
+	      Descriptor index</A>
+	  </LI>
+	  <LI CLASS="tocline1">
+	    <A CLASS=":link" HREF="indexlist.html" REL="chapter">
+	      Index</A>
+	  </LI>
+	</UL>
+      </DIV>
+    </DIV>
+    <P ALIGN="center" CLASS="policyfooter">
+      <A CLASS=":link" HREF="about.html#copyright">
+	Copyright</A>
+      &copy; 1997 <A CLASS=":link" HREF="http://www.w3.org">
+	W3C</A>
+      (<A CLASS=":link" HREF="http://www.lcs.mit.edu">
+	MIT</A>
+      , <A CLASS=":link" HREF="http://www.inria.fr/">
+	INRIA</A>
+      , <A CLASS=":link" HREF="http://www.keio.ac.jp/">
+	Keio</A>
+      ), All Rights Reserved.</P>
+    <DIV CLASS="navbar" TITLE="Navigation bar">
+
+      <CENTER>
+	<A CLASS=":link" HREF="about.html">
+	  next</A>
+	<A CLASS=":link" HREF="#toc">
+	  table of contents</A>
+	<A CLASS=":link" HREF="propidx.html">
+	  properties</A>
+	<A CLASS=":link" HREF="descidx.html">
+	  descriptors</A>
+	<A CLASS=":link" HREF="indexlist.html">
+	  index</A>
+      </CENTER>
+    </DIV>
+  </BODY>
+</HTML>
+  

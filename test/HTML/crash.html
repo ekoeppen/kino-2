@@ -1,0 +1,189 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>KinoView Anleitung V1.0</title>
+    <author>Arnd Beenen</author>
+  </head>
+  <body>
+    <center>
+      <H1>KinoView V1.0</H1><BR>
+      <H3>Ein Werkzeug zur Bearbeitung und Verwaltung von XML Dokumenten</H3><BR>
+      Dieses Programm ist Bestandteil der gleichnamigen Diplomarbeit an der UGH Essen
+      <BR><BR>
+      Autor: Arnd Beenen<BR>
+    </center>
+    <BR>
+    <H3>1. Einleitung</H3>
+    <P>
+      KinoView dient zum Bearbeiten und Verwalten von XML Dokumenten. Im folgenden
+      wird die Funktionsweise des Programm näher erläutert. Für tiefergehende
+      Informationen verweise ich auf die Diplomarbeit.
+    </P>
+    <H3>2. Voraussetzungen</H3>
+    <P>
+      KinoView wurde mit Hilfe von Wafe programmiert. Es muß mindestens die
+      Version 1.0.19 installiert sein. 
+      Das Programmpaket ist unter <A SRC="http://www.wi-inf.uni-essen.de"> 
+      http://www.wi-inf.uni-essen.de </A>zu bekommen.
+    </P>
+    <P>
+      Desweiteren verwendet KinoView das Kino-Widget. In der oben beschriebenen
+      Distribution von Wafe ist das Kino zwar enthalten, allerdings noch nicht
+      vollständig. Es muß mindestens die Version 2.11.10 enthalten sein.
+      Ist dies nicht der Fall kann die Kino-lib auch nachträglich eingebunden werden.
+      Im Programm ist ein entsprechender Aufruf enthalten. 
+      <BR>
+      Die Kino-Lib: <code> m-kino2Gen.so </code> muß in dem im Quellcode stehenden Verzeichnis
+      sein. Momentan lautet dies: 
+      <BR><BR>
+      <center>
+	<code> /usr/X11R6/lib/X11/wafe/tcllib/bin/ </code> 
+      </center>
+      <BR><BR>
+      Die entsprechende Zeile ist ganz oben im Quellcode enthalten und kann leicht
+      mit einem Editor angepaßt werden. Sollte Kino in einer späteren Wafe-Version
+      komplett enthalten sein, kann diese Zeile auskommentiert werden.
+    </P>
+    <H3>3. Bedienung</H3>
+    <H4>3.1 Menü - Datei</H4>
+    <H4>3.1.1 Neuer Baum</H4>
+    <P>
+      Der aktuelle Baum und der Inhalt des Kino-Widgets werden gelöscht.
+    </P>
+    <H4>3.1.2 Datei laden</H4>
+    <P>
+      Ermöglicht das laden von lokal gespeicherten Dateien. Korrespondierend kann der Button 
+      "<<---- Laden" unterhalb des Dateiauswahlfensters gedrückt werden.
+      Unter "Selection" ist die gewünschte Datei einzutragen.
+    </P>
+    <H4>3.1.3 Speichern</H4>
+    <P>
+      Speichert eine Datei unter dem Namen im Feld "Selection". Korrespondierend kann der Button 
+      unterhalb der HTML-Ausgabe gedrückt werden.
+    </P>
+    <H4>3.1.4 Nur als Text speichern</H4>
+    <P>
+      Speichert nur den Text des aktuellen Dokumentes. In dem folgendem Dialog kann der gewünschte
+      Dateinamen eingetragen werden.
+    </P>
+    <H4>3.1.5 Netzdatei laden</H4>
+    <P>
+      Ist die Datei nicht lokal sondern im Netz abgelegt, so kann man diese Funktion benutzen.
+      Im Dialog muß die Adresse des Quellrechners und der Name der Datei eingetragen werden.
+    </P>
+    <H4>3.1.6 Netzdatei speichern</H4>
+    <P>
+      Ebenso wie das Laden über ein Netzwerk ist es auch möglich eine Datei über das Netzwerk
+      zu speichern.
+    </P>
+    <H4>3.1.7 Beenden</H4>
+    <P>
+      Beendet die KinoView. Korrespondierend kann der Button "Beenden" unterhalb der HTML-Ausgabe
+      gedrückt werden.
+    </P>
+    <H4>3.2 Bearbeiten</H4>
+    <H4>3.2.1 Baum erneuern</H4>
+    <P>
+      Der Baum wird gelöscht und neu aufgebaut.
+    </P>
+    <H4>3.2.2 Baum löschen</H4>
+    <P>
+      Der Baum wird gelöscht. Der Inhalt des Kino-Widgets bleibt allerdings bestehen.
+    </P>
+    <H4>3.2.3 PData kopieren</H4>
+    <P>
+     Kopiert das aktuell ausgewählte PData-Element inklusive eventueller Kinder.
+    </P>
+    <H4>3.2.4 PData ausschneiden</H4>
+    <P>
+      Schneidet das aktuell ausgewählte PData-Element inklusive eventueller Kinder aus.
+    </P>
+    <H4>3.2.5 PData einfügen</H4>
+    <P>
+      Man kann ein PData-Element auf zwei Arten einfügen:
+      <OL>
+      <LI> Einfügen als Kind einer PDataBox</LI>
+      <LI> Einfügen innerhalb des selben Astes</LI>
+      </OL>
+      <BR>
+      Fügt man das Element als Kind einer PDataBox ein, muß man vorher die gewünschte Box selektieren.
+      Nach anwählen der Funktionen wird das Element als letztes Kind eingefügt.
+      <BR><BR>
+      Wird das Element innerhalb des selben Astes eingefügt, so wird es oberhalb des ausgewählten
+      PData-Elements eingefügt.
+      <BR><BR>
+    </P>
+    <H4>3.2.6 PData sichern</H4>
+    <P>
+      Es ist auch möglich den Zwischenspeicher lokal zu sichern. Das PData-Element wird unter
+      den im "Selection" Feld bezeichneten Namen gespeichert.
+      <BR>  
+      Korrespondierend kann auch der Button <strong>Zwischenspeicher sichern</strong> gedrückt
+      werden.
+    </P>
+    <H4>3.2.7 PData löschen</H4>
+    <P>
+      Das aktuell ausgewählte PData (inklusive eventueller Kinder) wird gelöscht.
+    </P>
+    <H4>3.2.8 Neues PData</H4>
+    <P>
+      Ein neues PData-Element wird oberhalb des gerade ausgewählten Elements eingefügt.
+      Es können folgende PData-Elemente eingefügt werden:
+      <OL>
+      <LI>PDataBox</LI>
+      <LI>PDataText</LI>
+      <LI>Linebreak</LI>
+      </OL>
+    </P>
+    <H4>3.2.9 Neues Kind</H4>
+    <P>
+      Ein neues PData-Element wird als letztes Kind der ausgewählten PDataBox eingefügt.
+      Es können folgende PData-Elemente eingefügt werden:
+      <OL>
+      <LI>PDataBox</LI>
+      <LI>PDataText</LI>
+      <LI>Linebreak</LI>
+      </OL>
+      <strong>Achtung: Es muß eine Box ausgewählt sein.</strong>
+    </P>
+    <P>
+      Hinweis: Zum derzeitigen Zeitpunkt ist es noch nicht möglich Insets einzufügen, da Kino 
+      dieses noch nicht unterstützt.
+    </P>
+    <H4>3.3 Optionen</H4>
+    <H4>3.3.1 Refresh</H4>
+    <P> 
+      automatisch: Der Baum wird nach jeder Manipulation automatisch aufgebaut. Dies ist die
+      Defaulteinstellung.
+      <BR><BR>
+      durch User: Der Benutzer muß den Neuaufbau des Baumes durch <strong>Baum erneuern</strong> 
+      selber auslösen.
+      <BR><BR>
+      Hinweis: Bei einer sehr hohen Anzahl an Elementen im Baum kann eine Löschung des Baumes sehr
+      langsam sein. Dies ist ein Problem von X Windows und hat nichts mit dem KinoView zu tun.
+      Sollte es zu erheblichen Verzögerungen kommen, sollte man den Baum nach jeder Aktion selbst 
+      erneuern. Dies kann im Einzelfall zu einer erheblichen Beschleunigung führen.
+    </P>
+    <H4>3.3.2 Details</H4>
+    <P>
+      Detail: Es wird ein Teil des Inhalts von PDataText-Elementen angezeigt. Dies soll die
+      Navigation durch den Baum vereinfachen.
+      <BR><BR>
+      Outline: Die Inhalte werden nicht angezeigt. Dies ist die Defaulteinstellung.
+    </P>
+    <H4>3.3.3. Fenster</H4>
+    <P>
+      In diesem Menü kann die angezeigten Fenster ein- und ausgeschaltet werden.
+    </P>
+    <H4>3.4 Weitere Bedienungselemente</H4>
+    <H4>3.4.1 Preview</H4>
+    <P>
+      Zeigt ein Preview der unter "Selection" stehenden Datei.
+    </P>
+    <H4>3.4.2 Kopieren</H4>
+    <P>
+      Kopiert die unter "Selection" stehende Datei in den Zwischenspeicher. Der Inhalt der Datei
+      kann danach in einen bestehenden oder neuen PData-Baum eingefügt werden.
+    </P>
+  </BODY>
+</html>

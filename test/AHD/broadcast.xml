@@ -1,0 +1,35 @@
+<broadcast>
+
+  <func name="test_me" type="text/lua">
+
+print ("in test_me ... (lua version), t == " .. t .. ", a == " .. a)
+ahd_result = "Hallo"
+
+  </func>
+
+  <func name="onload" type="text/lua">
+
+print ("lua says: document loaded")
+if ParserNew ~= nil then
+   print ("   Kino accessible")
+   print ("   Current node reachable at " .. AHDRuntimeHere (ahd_ahd))
+
+   l = AHDRuntimeGetLoadedDocuments (ahd_ahd)
+   print ("   Number of loaded documents: " .. NodeListGetLength (l))
+
+   r = AHDRuntimeCall (ahd_ahd, ahd_element, "test_me", "t=3&a=4")
+   print (r)
+end
+
+  </func>
+
+  <func name="onload" type="text/tcl">
+
+puts "tcl says: document loaded"
+if {[info command ParserNew] != ""} {
+  puts "   Kino accessible"
+  puts "   Current node reachable at [AHDRuntimeHere $ahd_ahd]"
+}
+
+  </func>
+</broadcast>

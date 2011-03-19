@@ -1,0 +1,22 @@
+<simple style="display: block; background-color: #ffffff">
+  <tag style="
+       display: block;
+       float: none;
+       font-family: sans-serif;
+       font-size: 172%;
+       font-weight: bold;
+       margin-top: 0.5ex;
+       margin-bottom: 1ex;
+       border-bottom-color: #49718e;
+       border-bottom-width: 0.2ex
+       ">Test</tag>
+  <tag style="display: block">
+    dies ist ein test
+  </tag>
+
+  dies ist ein test?
+
+  <tag style="display: block">
+    dies ist ein test
+  </tag>
+</simple>

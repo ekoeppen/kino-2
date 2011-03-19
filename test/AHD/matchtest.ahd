@@ -1,0 +1,22 @@
+<!DOCTYPE matchtest>
+<matchtest>
+  <func name="onload" type="text/tcl">
+<![CDATA[
+    set l [DocumentGetElementsByTagName $ahd_document tester]
+    AHDRuntimeMatch $ahd_ahd [NodeListGetItem $l 0] [NodeListGetItem $l 1]
+]]>
+  </func>
+
+  <tester>
+    <elem>Test</elem>
+  </tester>
+
+  <tester role="matcher">
+    <func name="onmatch" type="text/tcl">
+<![CDATA[
+	 puts "matched $ahd_caller"
+]]>
+    </func>
+    <elem/>
+  </tester>
+</matchtest>

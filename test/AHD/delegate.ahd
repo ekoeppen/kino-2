@@ -1,0 +1,13 @@
+<test>
+ <delegate xml:link="simple" actuate="user" show="new"
+	   href="http://localhost:9999/request.ahd"/>
+  
+  <func name="onload" type="text/tcl">
+# <![CDATA[
+
+puts "source loaded"
+AHDRuntimeCall $ahd_ahd $ahd_element activate ""
+					
+# ]]>
+  </func>
+</test>

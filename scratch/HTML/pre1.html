@@ -1,0 +1,49 @@
+<pre>
+#include &lt;iostream.h>
+
+const int max_stack_groesse = 1000;
+enum grenz_zustand {leer = -1, voll = max_stack_groesse-1};
+typedef char stack_element;
+
+struct stack {
+  stack_element e[max_stack_groesse];
+  int groesse;
+};
+
+void reset(stack *s) {
+  s->groesse = leer;
+}
+
+void push(stack_element x, stack *s) {
+  s-> e[++ s->groesse] = x;
+}
+
+stack_element pop(stack *s) {
+  return s->e[ s->groesse --];
+}
+
+int ist_leer(const stack *s) {
+  return s->groesse == leer;
+}
+
+int ist_voll(const stack *s) {
+  return s->groesse == voll;
+}
+
+
+int main() {
+  stack s, *sp = &s;
+  char *teststring = "Jetzt kommt der John Wayne";
+
+  reset(sp);
+
+  for (int i=0; teststring[i]; i++)
+    if (!ist_voll(sp))
+      push(teststring[i], sp);
+ 
+  while (!ist_leer(sp))
+    cout &lt;&lt; pop(sp);
+
+  cout &lt;&lt; endl;
+}
+</pre>
