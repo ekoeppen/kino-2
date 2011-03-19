@@ -13,7 +13,7 @@ following parts:
   directory.
 
 - Integration components to use the Kino 2 package from within the
-  Wafe environment (see also http://nestroy.wi-inf.uni-essen.de).
+  Wafe environment (see also http://nm.wu-wien.ac.at/nm/wafe).
 
 The toplevel directory of this package contains the following
 subdirectories:
@@ -30,20 +30,16 @@ subdirectories:
 Please refer to the files INSTALL for installation instructions and
 COPYING for the copyright status of the package.
 
-The Kino 2 package is Open Source software, contributions, bug reports
-and other feedback is always welcome. The current maintainer is
-Eckhart Köppen <Eckhart.Koeppen@uni-essen.de> who is currently
-developing the Kino package as part of his Ph.D. thesis at the
-University of Essen, Germany. The package is available either through
-the main web page at
+The Kino 2 package is Open Source software, contributions, bug reports and
+other feedback is always welcome. The current maintainer is Eckhart Köppen
+<support@40hz.org> who wrote Kino 2 as part of his Ph.D. thesis at the
+University of Essen, Germany:
 
-  http://nestroy.wi-inf.uni-essen.de/Koeppen/Kino/
+http://duepublico.uni-duisburg-essen.de/servlets/DocumentServlet?id=10121
 
-or through CVS at the following repository:
+The package is available on GitHub at:
 
-  :pserver:kino@nestroy.wi-inf.uni-essen.de:/home/cvs
-
-under the module name "kino-2".
+http://github.com/ekoeppen/kino-2
 
 In case you are wondering, yes, there is also a Kino 1 package which
 is mainly an Xt widget for HTML rendering. It was used as the basis
